@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: #00AFB9;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +9,23 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-lewagon h1 {
+color: white;
+font-weight: 700;
+font-family: 'Merriweather Sans', sans-serif;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+}
+
+.navbar-nav{
+  text-align: right;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+    font-size: 22px;
 }

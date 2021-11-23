@@ -7,7 +7,89 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600&display=swap');
+
 
 // Your CSS partials
 @import "components/index";
+@import "components/footer";
 @import "pages/index";
+
+body {
+font-family: 'Merriweather Sans', sans-serif;
+}
+body {
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+// /* Toggle Styles */
+
+#viewport {
+  padding-left: 260px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+
+#sidebar {
+  position: fixed;
+  left: 250px;
+  width: 240px;
+  height: 100%;
+  top: 82px;
+  margin-left: -250px;
+  overflow-y: auto;
+  background: #37474F;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#sidebar header {
+  background-color: #263238;
+  font-size: 20px;
+  line-height: 52px;
+  text-align: center;
+}
+
+#sidebar header a {
+  color: #fff;
+  display: block;
+  text-decoration: none;
+}
+
+#sidebar header a:hover {
+  color: #fff;
+}
+
+
+#sidebar .nsidebar a{
+  background: none;
+  color: white;
+  font-size: 14px;
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+}
+
+#sidebar .nsidebar a:hover{
+  background: none;
+  color: #ECEFF1;
+}
+
+#sidebar .nsidebar a i{
+  margin-right: 16px;
+}
+
+.nsidebar {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    flex-direction: column;
+}
