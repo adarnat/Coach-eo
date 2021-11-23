@@ -3,22 +3,24 @@ class SportClassesController < ApplicationController
 # skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-  @sport_class = Sport_class.all
+  @sport_classes = current_user.sport_classes
   end
 
   def show
-    @sport_class = Sport_class.find(params[:id])
-    # authorize @plush
+@sport_class = current_user.sport_classes.find_by_id(params[:id])
+
+   if @sport_class
+    else
+      redirect_to sport_classes_path
+    end
   end
 
   def new
-    @sport_class = Sport_class.new
-    # authorize @Sport_class
+    @sport_class = SportClass.new
   end
 
   def create
-  @sport_class = Sport_class.new(sport_class_params)
-  # authorize @Sport_class
+  @sport_class = SportClass.new(sport_class_params)
   @sport_class.client_id = current_user.id
     if @sport_class.save
       redirect_to @home
@@ -28,8 +30,7 @@ class SportClassesController < ApplicationController
   end
 
   def destroy
-    @sport_class = Sport_class.find(params[:id])
-    # authorize @Sport_class
+    @sport_class = SportClass.find(params[:id])
       @sport_class.destroy
 
     redirect_to sport_class_path

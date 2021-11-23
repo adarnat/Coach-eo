@@ -1,0 +1,17 @@
+<div id="viewport">
+  <div class="cards-grid">
+    <% @sport_classes.each do |sport_class| %>
+      <%= link_to sport_class_path(sport_class) do %>
+        <div class="card" >
+            <h4 class="card-title"><%= sport_class.name %></h4>
+        </div>
+          <div class="card-body">
+            <p class="card-text"><%= sport_class.description %></p>
+            <p class="card-text"><%= sport_class.coach %></p>
+            <h6></i><span><%= sport_class.category %></span></h6>
+          </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+</div>
