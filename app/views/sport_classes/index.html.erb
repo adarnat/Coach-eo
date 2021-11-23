@@ -4,11 +4,12 @@
       <%= link_to sport_class_path(sport_class) do %>
         <div class="card" >
             <h4 class="card-title"><%= sport_class.name %></h4>
-        </div>
-          <div class="card-body">
+            <div class="card-body">
             <p class="card-text"><%= sport_class.description %></p>
             <p class="card-text"><%= sport_class.coach %></p>
             <h6></i><span><%= sport_class.category %></span></h6>
+            <a class="card-text" href="#" class="btn btn-danger"><%= link_to "Remove"%></a>
+          </div>
           </div>
       <% end %>
     <% end %>
