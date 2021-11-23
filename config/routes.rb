@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:user_profile] do
-    resources :sport_classes, only: [:show, :new, :create]
+    resources :sport_classes, only: [:show, :new, :create, :index]
   end
 
-  resources :sport_classes, only: [:destroy]
+  resources :sport_classes, only: [:destroy, :index]
 end

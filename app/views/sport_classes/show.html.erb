@@ -1,0 +1,17 @@
+<div id="viewport">
+  <div class="row justify-content-around">
+    <% @sport_classes.each do |sport_class| %>
+  <div class="card" class="col-4" style="width: 22rem;" >
+
+        <h5 class="card-title text-align-center">Nom:<%= sport_class.name %></h5>
+        <h5 class="card-title text-align-center">description:<%= sport_class.description %></h5>
+        <p class="card-text">Coach:<%= sport_class.coach %>/10</p>
+        <p class="card-text">Catégorie: <%= sport_class.category %></p>
+        <a class="card-text" href="#" class="btn btn-primary"><%= link_to "Remove"%></a>
+      </div>
+    <% end %>
+  </div>
+</div>
+  </div>
+</div>
+</body>
