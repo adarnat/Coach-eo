@@ -87,7 +87,7 @@ crossfit_john = SportClass.create!(
   coach: john_coach
 )
 
-puts "#{SportClass.count} sprot classes were created"
+puts "#{SportClass.count} sport classes were created"
 
 # ==================
 # Créneaux Yoga Mike
@@ -118,10 +118,13 @@ puts "#{TimeSlot.count} slots were created"
 # Booking Créneau 1 Yoga Mike
 # ===========================
 
+clients = Users.where(is_client?)
 
-Booking.create!(
-  time_slot: creneau_yoga_mike,
-  client: alex_client
-)
+10.times do
+  Booking.create!(
+    time_slot: TimeSlot.all.sample,
+    client: clients.sample
+  )
+end
 
 puts "#{Booking.count} bookings were created"
