@@ -10,36 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_23_105656) do
+ActiveRecord::Schema.define(version: 2021_11_23_142605) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
     t.bigint "time_slot_id", null: false
-    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "client_id"
+    t.index ["client_id"], name: "index_bookings_on_client_id"
     t.index ["time_slot_id"], name: "index_bookings_on_time_slot_id"
-    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "sport_classes", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.string "category"
-    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_sport_classes_on_user_id"
+    t.bigint "coach_id"
+    t.index ["coach_id"], name: "index_sport_classes_on_coach_id"
   end
 
   create_table "time_slots", force: :cascade do |t|
     t.string "level"
     t.integer "group_size"
     t.float "price"
-    t.date "start_at"
-    t.string "time"
+    t.datetime "start_at"
     t.datetime "end_at"
     t.bigint "sport_class_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -60,7 +59,7 @@ ActiveRecord::Schema.define(version: 2021_11_23_105656) do
   end
 
   add_foreign_key "bookings", "time_slots"
-  add_foreign_key "bookings", "users"
-  add_foreign_key "sport_classes", "users"
+  add_foreign_key "bookings", "users", column: "client_id"
+  add_foreign_key "sport_classes", "users", column: "coach_id"
   add_foreign_key "time_slots", "sport_classes"
 end
