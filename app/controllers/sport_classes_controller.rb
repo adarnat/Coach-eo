@@ -31,7 +31,11 @@ class SportClassesController < ApplicationController
 
   def destroy
     @sport_class = SportClass.find(params[:id])
-    @sport_class.destroy
+    # if @sport_class.booking.any?
+    #   flash[:alert] = "Ce cours a déjà été réservé et ne peut donc pas être supprimée"
+    # else
+      @sport_class.destroy
+    # end
 
     redirect_to sport_class_path
   end
