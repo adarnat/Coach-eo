@@ -14,14 +14,20 @@
           <%= link_to sport_class_path(sport_class) do %>
               <h4 class="card-title"><%= sport_class.category %></h4>
             <div class="card-body">
-            <h6 class="card-text">Nom de la séance: <%= sport_class.name %></h6>
-              <p class="card-text">Description: <%= sport_class.description %></p>
+            <h6 class="card-text"> <%= sport_class.name %></h6>
+            <p>Level</p>
+              <p class="card-description overflow-auto">Description: <%= sport_class.description %></p>
+            </div>
+            <div class="details">
               <p class="card-text">Coach: <%= sport_class.coach.email %></p>
+              <p class="center">15€</p>
+              <p>max 6pers</p>
             </div>
           </div>
         <% end %>
             <div class="button">
               <%= link_to "", sport_class, method: :delete, data: { confirm: "Are you sure?" }, class: "fas fa-trash" %>
+              <%= link_to "", edit_sport_class_path(sport_class), class: "fas fa-pen" %>
             </div>
       </div>
     <% end %>

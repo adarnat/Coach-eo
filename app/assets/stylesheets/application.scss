@@ -12,6 +12,8 @@
 
 // Your CSS partials
 @import "components/index";
+@import "components/form";
+@import "components/card";
 @import "components/footer";
 @import "pages/sport_classes_index";
 @import "pages/sport_classes_new";
@@ -37,6 +39,16 @@ body {
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  padding-right: 14px;
+}
+
+#sidebar h1 {
+color: white;
+font-weight: 700;
+font-family: 'Merriweather Sans', sans-serif;
+margin-left: 25px;
+padding-bottom: 60px;
+padding-top:7px;
 }
 
 
@@ -45,10 +57,10 @@ body {
   left: 250px;
   width: 240px;
   height: 100%;
-  top: 82px;
+  top: 0;
   margin-left: -250px;
   overflow-y: auto;
-  background: #37474F;
+  background: #342e37;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -56,7 +68,7 @@ body {
 }
 
 #sidebar header {
-  background-color: #263238;
+  background-color: #342e37;
   font-size: 20px;
   line-height: 52px;
   text-align: center;
@@ -77,11 +89,13 @@ body {
   background: none;
   color: white;
   font-size: 14px;
-  padding: 22px 24px;
+  padding: 22px 4px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   font-size: 18px;
 }
+
+
 
 #sidebar .nsidebar a:hover{
   background: none;
@@ -97,4 +111,35 @@ body {
     margin-bottom: 0;
     list-style: none;
     flex-direction: column;
+}
+
+#text {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 900;
+}
+
+li{
+  display: flex;
+  align-items: center
+}
+
+.fa-home:before {
+    content: "\f015";
+    padding-right: 0;
+    padding-left: 30px;
+}
+
+.fa-calendar-week:before{
+    padding-right: 0;
+    padding-left: 30px;
+}
+
+.fa-users:before{
+    padding-right: 0;
+    padding-left: 30px;
+}
+
+.fa-dumbbell:before{
+    padding-right: 0;
+    padding-left: 30px;
 }

@@ -11,5 +11,5 @@ Rails.application.routes.draw do
     resources :sport_classes, only: [:show, :new, :create, :index]
   end
 
-  resources :sport_classes, only: [:show, :destroy, :index, :new, :create]
+  resources :sport_classes
 end

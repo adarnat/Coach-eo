@@ -21,12 +21,21 @@ class SportClassesController < ApplicationController
 
   def create
   @sport_class = SportClass.new(sport_class_params)
-  # @sport_class.client_id = current_user.id
     if @sport_class.save
       redirect_to sport_classes_path
     else
       render :new
     end
+  end
+
+  def edit
+    @sport_class = SportClass.find(params[:id])
+  end
+
+  def update
+    @sport_class = SportClass.find(params[:id])
+    @sport_class.update(sport_class_params)
+    redirect_to sport_classes_path
   end
 
   def destroy
