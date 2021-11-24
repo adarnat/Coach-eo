@@ -7,7 +7,7 @@ class SportClassesController < ApplicationController
   end
 
   def show
-@sport_class = current_user.sport_classes.find_by_id(params[:id])
+  @sport_class = current_user.sport_classes.find_by_id(params[:id])
 
    if @sport_class
     else
@@ -31,7 +31,7 @@ class SportClassesController < ApplicationController
 
   def destroy
     @sport_class = SportClass.find(params[:id])
-      @sport_class.destroy
+    @sport_class.destroy
 
     redirect_to sport_class_path
   end

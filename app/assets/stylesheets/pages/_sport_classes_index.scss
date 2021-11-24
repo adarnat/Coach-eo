@@ -20,6 +20,7 @@
     background-clip: border-box;
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 2px;
+    height: 300px;
 }
 
 .card button{
@@ -28,17 +29,17 @@ position: relative;
 }
 
 .card-body{
-  height: 170px;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
 
 .card-title{
   background-color: #00AFB9;
-color: white;
-text-align: center;
-padding:5px;
-margin: 0;
+  color: white;
+  text-align: center;
+  padding:5px;
+  margin: 0;
 }
 
 .card {
@@ -49,4 +50,22 @@ margin: 0;
 
 .container{
   width: 800px;
+}
+
+.button{
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  color: #fff;
+}
+
+.fa-trash:before {
+    color: #fff;
+}
+
+.top_barre{
+  border-bottom: grey solid 1px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: space-between;
 }

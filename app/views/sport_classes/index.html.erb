@@ -1,8 +1,8 @@
 <div id="viewport">
-<div class="top_barre">
-<h1>Voici le catalogue de tes séances de sport:</h1>
-<%= link_to 'Ajouter une séance de sport', new_sport_class_path, class: "button" %>
-</div>
+  <div class="top_barre">
+  <h1>Voici le catalogue de tes séances de sport:</h1>
+  <%= link_to 'Ajouter une séance de sport', new_sport_class_path, class: "button1" %>
+  </div>
 </div>
 
 
@@ -12,19 +12,16 @@
       <div class="card">
           <div class="card-corps">
           <%= link_to sport_class_path(sport_class) do %>
-            <h4 class="card-title"><%= sport_class.name %></h4>
+              <h4 class="card-title"><%= sport_class.category %></h4>
             <div class="card-body">
-              <p class="card-text"><%= sport_class.description %></p>
-              <p class="card-text"><%= sport_class.coach.email %></p>
-              <h6></i><span><%= sport_class.category %></span></h6>
+            <h6 class="card-text">Nom de la séance: <%= sport_class.name %></h6>
+              <p class="card-text">Description: <%= sport_class.description %></p>
+              <p class="card-text">Coach: <%= sport_class.coach.email %></p>
             </div>
           </div>
         <% end %>
-            <div class="bouton">
-              <%= link_to "", sport_class_path(?),
-              method: :delete,
-              data: { confirm: "Are you sure?" },
-              class: "fas fa-trash" %>
+            <div class="button">
+              <%= link_to "", sport_class, method: :delete, data: { confirm: "Are you sure?" }, class: "fas fa-trash" %>
             </div>
       </div>
     <% end %>
