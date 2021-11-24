@@ -11,6 +11,6 @@ class User < ApplicationRecord
   end
 
   def is_client?
-    sport_classes.count == 0
+    !sport_classes.any?
   end
 end

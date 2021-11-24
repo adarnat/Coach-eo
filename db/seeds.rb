@@ -16,13 +16,15 @@ User.destroy_all
 # =======
 
 mike_coach = User.create!(
-  # name: "Mike",
+  first_name: "Mike",
+  last_name: "Horn",
   email: "mike@gmail.com",
   password: "password"
 )
 
 john_coach = User.create!(
-  # name: "John",
+  first_name: "John",
+  last_name: "John",
   email: "john@gmail.com",
   password: "password"
 )
@@ -32,19 +34,22 @@ john_coach = User.create!(
 # =======
 
 alex_client = User.create!(
-  # name: "Alex",
+  first_name: "Alex",
+  last_name: "Larbalet",
   email: "alex@gmail.com",
   password: "password"
 )
 
 henri_client = User.create!(
-  # name: "Henri",
+  first_name: "Henri",
+  last_name: "IV",
   email: "henri@gmail.com",
   password: "password"
 )
 
 miguel_client = User.create!(
-  # name: "Miguel",
+  first_name: "Miguel",
+  last_name: "Sanchez",
   email: "miguel@gmail.com",
   password: "password"
 )
@@ -56,16 +61,32 @@ puts "#{User.count} users were created"
 # ================
 
 yoga_mike = SportClass.create!(
+  category: "Yoga",
   name: "Air yoga",
   description: "Yoga dans les rideaux pour un niveau intermédiaire",
-  category: "Yoga",
+  level: "Intermédiaire",
+  group_size: 10,
+  price: 20,
+  duration: 120,
+  address1: "4 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
   coach: mike_coach
 )
 
 meditation_mike = SportClass.create!(
-  name: "Médidation en plein air",
-  description: "Venez vous ressourcer au milieu de la nature, accompagné du chant des oiseaux. Tout le monde il est beau, tout le monde il est gentil",
   category: "Méditation",
+  name: "Méditation en plein air",
+  description: "Venez vous ressourcer au milieu de la nature, accompagné du chant des oiseaux. Tout le monde il est beau, tout le monde il est gentil",
+  level: "Tous niveaux",
+  group_size: 5,
+  price: 30,
+  duration: 60,
+  address1: "4 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
   coach: mike_coach
 )
 
@@ -74,16 +95,32 @@ meditation_mike = SportClass.create!(
 # ================
 
 pilates_john = SportClass.create!(
+  category: "Pilates",
   name: "Initiation au pilates",
   description: "Cours de découverte du pilates pour débutant",
-  category: "Pilates",
+  level: "Débutant",
+  group_size: 3,
+  price: 20,
+  duration: 90,
+  address1: "4 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
   coach: john_coach
 )
 
 crossfit_john = SportClass.create!(
-  name: "Crossfit intensif",
-  description: "Cours de crossfit en salle pour intermédiaires et experts. Musculature squelettique s'abstenir...",
   category: "Crossfit",
+  name: "Crossfit intensif",
+  description: "Cours individuel de crossfit pour expert. Musculature squelettique s'abstenir...",
+  level: "Expert",
+  group_size: 1,
+  price: 20,
+  duration: 120,
+  address1: "4 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
   coach: john_coach
 )
 
@@ -93,38 +130,161 @@ puts "#{SportClass.count} sport classes were created"
 # Créneaux Yoga Mike
 # ==================
 
-creneau_yoga_mike = TimeSlot.create!(
+creneau_yoga_mike_1 = TimeSlot.create!(
+  name: "Air Yoga",
+  description: "Yoga dans les rideaux pour un niveau intermédiaire",
   level: "Intermédiaire",
-  group_size: 10,
+  group_size: 5,
   price: 20,
+  address1: "4 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
   start_at: DateTime.strptime("20/11/2021 8:00", "%d/%m/%Y %H:%M"),
   end_at: DateTime.strptime("20/11/2021 9:30", "%d/%m/%Y %H:%M"),
   sport_class: yoga_mike
 )
 
-creneau_meditation_mike = TimeSlot.create!(
-  level: "Tous niveaux",
+  creneau_yoga_mike_2 = TimeSlot.create!(
+  name: "Air Yoga",
+  description: "Yoga dans les rideaux pour un niveau intermédiaire",
+  level: "Intermédiaire",
   group_size: 5,
   price: 20,
-  start_at: DateTime.strptime("23/11/2021 10:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("23/11/2021 12:00", "%d/%m/%Y %H:%M"),
+  address1: "4 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("24/11/2021 10:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("24/11/2021 12:00", "%d/%m/%Y %H:%M"),
   sport_class: yoga_mike
+)
+
+# ========================
+# Créneaux Meditation Mike
+# ========================
+
+creneau_meditation_mike_1 = TimeSlot.create!(
+  name: "Méditation en plein air",
+  description: "Venez vous ressourcer au milieu de la nature, accompagné du chant des oiseaux. Tout le monde il est beau, tout le monde il est gentil",
+  level: "Tous niveaux",
+  group_size: 10,
+  price: 20,
+  address1: "4 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("23/11/2021 14:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("23/11/2021 16:00", "%d/%m/%Y %H:%M"),
+  sport_class: meditation_mike
+)
+
+creneau_meditation_mike_1 = TimeSlot.create!(
+  name: "Méditation en plein air",
+  description: "Venez vous ressourcer au milieu de la nature, accompagné du chant des oiseaux. Tout le monde il est beau, tout le monde il est gentil",
+  level: "Tous niveaux",
+  group_size: 10,
+  price: 20,
+  address1: "4 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("26/11/2021 15:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("26/11/2021 17:00", "%d/%m/%Y %H:%M"),
+  sport_class: meditation_mike
+)
+
+# ====================
+# Créneaux Pilates John
+# ====================
+
+creneau_pilates_john_1 = TimeSlot.create!(
+  name: "Initiation au pilates",
+  description: "Cours de découverte du pilates pour débutant",
+  level: "Débutant",
+  group_size: 3,
+  price: 20,
+  address1: "4 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("22/11/2021 15:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("22/11/2021 17:00", "%d/%m/%Y %H:%M"),
+  sport_class: pilates_john
+)
+
+creneau_pilates_john_2 = TimeSlot.create!(
+  name: "Pilates niveau avancé",
+  description: "Pour aller plus loin dans le pilates",
+  level: "Expert",
+  group_size: 5,
+  price: 30,
+  address1: "15 rue Crillon",
+  address2: "",
+  post_code: "69006",
+  town: "Lyon",
+  start_at: DateTime.strptime("26/11/2021 15:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("26/11/2021 17:00", "%d/%m/%Y %H:%M"),
+  sport_class: pilates_john
+)
+
+# ======================
+# Créneaux Crossfit John
+# ======================
+
+creneau_crossfit_john_1 = TimeSlot.create!(
+  name: "Crossfit intensif",
+  description: "Cours individuel de crossfit pour expert. Musculature squelettique s'abstenir...",
+  level: "Expert",
+  group_size: 1,
+  price: 50,
+  address1: "4 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("23/11/2021 12:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("23/11/2021 13:00", "%d/%m/%Y %H:%M"),
+  sport_class: crossfit_john
+)
+
+creneau_crossfit_john_2 = TimeSlot.create!(
+  name: "Crossfit intensif",
+  description: "Cours d'initiation au crossfit en petit groupe",
+  level: "Débutant",
+  group_size: 5,
+  price: 40,
+  address1: "4 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("27/11/2021 15:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("27/11/2021 16:30", "%d/%m/%Y %H:%M"),
+  sport_class: crossfit_john
 )
 
 puts "#{TimeSlot.count} slots were created"
 
 
 # ===========================
-# Booking Créneau 1 Yoga Mike
+# Booking Créneau automatique
 # ===========================
 
-clients = Users.where(is_client?)
-
-10.times do
-  Booking.create!(
-    time_slot: TimeSlot.all.sample,
-    client: clients.sample
-  )
+TimeSlot.all.each do |timeslot|
+  clients = User.all.map { |user| user if user.is_client? }.compact
+  rand(0..timeslot.group_size).times do
+    # clients = clients.map { |client| client if timeslot.any? }.compact
+    Booking.create!(
+      time_slot: timeslot,
+      client: clients.sample
+    )
+  end
 end
+
+# 10.times do
+#   Booking.create!(
+#     time_slot: TimeSlot.all.sample,
+#     client: clients.sample
+#   )
+# end
 
 puts "#{Booking.count} bookings were created"
