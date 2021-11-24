@@ -15,8 +15,8 @@
               <h4 class="card-title"><%= sport_class.category %></h4>
             <div class="card-body">
             <h6 class="card-text">Nom de la séance: <%= sport_class.name %></h6>
-              <p class="card-text">Description: <%= sport_class.description %></p>
               <p class="card-text">Coach: <%= sport_class.coach.email %></p>
+              <p class="card-text overflow-auto">Description: <%= sport_class.description %></p>
             </div>
           </div>
         <% end %>

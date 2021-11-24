@@ -1,13 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600&display=swap');
 
-footer {position: fixed; bottom: 0; left: 0; right: 0}
-
-.footer_top{
-  padding: 100px;
+footer {
+  position:absolute;
+  bottom:0;
+  width:100%;
+  padding-top:50px;
+  height:50px;
 }
 
+
 .text-center{
-  background-color: #00AFB9;
+  background-color: #342e37;
   color: white ;
 }
 
