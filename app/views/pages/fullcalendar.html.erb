@@ -1,14 +1,102 @@
-<hr>
 
-<h2>Calendrier coach</h2>
-
+<div class="container">
+  <h1>Calendrier coach</h1>
 
 <div id="coach_calendar" style="width: 800px; height: 200px" data-calendar-id="22" data-events=<%= @yoga_events.to_json%>>
 </div>
 
-<h2>Calendrier client</h2>
+<div class="modal fade" id="event-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <form id = "formadd" name="save-event" method="post">
+          <div class="form-group">
+            <label>Title</label>
+            <input type="text" name="title" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label>Event start</label>
+            <input type="text" name="evtStart" class="form-control col-xs-3" />
+          </div>
+          <div class="form-group">
+            <label>Event end</label>
+            <input type="text" name="evtEnd" class="form-control col-xs-3" />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
 
+<form id="form1" action="" method="get" class="form-example">
+  <div class="form-example">
+    <label for="name">Enter a class name: </label>
+    <input type="text" name="name" id="name" required>
+  </div>
+<div class="form-example">
+    <label for="date">Enter a date: </label>
+    <input type="date" id="date" name="date" required >
+  </div>
+  <div class="form-example">
+    <label for="email">Enter a debut time: </label>
+    <input type="time" id="debut_time" name="debut_time" required >
+  </div>
+    <div class="form-example">
+    <label for="email">Enter a ending time: </label>
+    <input type="time" id="ending_time" name="ending_time" required >
+  </div>
+  <div class="form-example">
+    <input type="submit" value="Validate">
+  </div>
+</form>
+
+
+<div class="container">
+  <h1>Calendrier Client</h1>
 <div id="client_calendar" style="width: 800px; height: 200px" data-calendar-id="22" data-events=<%= @yoga_events.to_json%>>
 </div>
 
-<hr>
+<div class="modal fade" id="event-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <form name="save-event" method="post">
+          <div class="form-group">
+            <label>Title</label>
+            <input type="text" name="title" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label>Event start</label>
+            <input type="text" name="evtStart" class="form-control col-xs-3" />
+          </div>
+          <div class="form-group">
+            <label>Event end</label>
+            <input type="text" name="evtEnd" class="form-control col-xs-3" />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
