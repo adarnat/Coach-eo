@@ -55,15 +55,15 @@ const initCoachCalendar = () => {
       console.log(currentStartTime, currentEndTime)
       document.getElementById('debut_time').value = currentStartTime;
       document.getElementById('ending_time').value = currentEndTime;
+      console.log(currentDate)
+      document.getElementById('date').value = currentDate
+      $('#exampleModal').modal('show')
 
-
-      const number = prompt("Nombre de participants")
-
-      calendar.addEvent({
-        title: number,
-        start: selectionInfo.start,
-        end: selectionInfo.end
-      })
+      // calendar.addEvent({
+      //   title: "à remplir",
+      //   start: selectionInfo.start,
+      //   end: selectionInfo.end
+      // })
 
     },
     headerToolbar: {
@@ -77,17 +77,8 @@ const initCoachCalendar = () => {
         start: '2021-11-25', // a property!
         end: '2021-11-26' // a property! ** see important note below about 'end' **
       }
-    ],
-    eventClick: onclick = (info) => {
-      if (info && info.event) {
-        const event = calendar.getEventById(info.event.id);
-        console.log(info.event);
-        if (confirm("Are you sure to remove " + info.event.title + " ?")) {
-          event.remove();
-          deleteTimeSlot(info.event.id)
-        }
-      }
-    },
+    ]
+
   });
 
   calendar.render()
@@ -132,10 +123,9 @@ const addSlotToCalendar = () => {
       document.getElementById('ending_time').value = currentEndTime;
 
 
-      const number = prompt("Nombre de participants")
 
       calendar.addEvent({
-        title: number,
+        title: "à remplir",
         start: selectionInfo.start,
         end: selectionInfo.end
       })
