@@ -13,12 +13,10 @@
 
 }
 
-.btn .btn-danger{
-  color: red;
-}
 
 
-.fa-arrow-circle-left:before {
+
+.fa-arrow-circle-left {
     content: "\f0a8";
     color: #FFB20F;
     text-decoration: none;
@@ -28,4 +26,5 @@
 .fa-arrow-circle-left:hover {
     content: "\f0a8";
     text-decoration: none;
+    color: #342e37;
 }

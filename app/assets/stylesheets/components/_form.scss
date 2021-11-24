@@ -1,0 +1,39 @@
+.container_registration{
+  background-color: white;
+  padding: 70px;
+  width: 800px;
+  margin: auto;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.container_registration h2{
+  color: #FFB20F;
+  text-align: center;
+  font-family:'Merriweather Sans', sans-serif;
+  padding-bottom: 30px;
+
+}
+
+.button2{
+  background-color:#FFB20F ;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px;
+  margin: auto;
+  margin-top: 100px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.button2:hover{
+  background-color:#342e37;
+}
+
+.btn{
+  color: #342e37;
+}
+
+.btn:hover{
+  color: white;
+}

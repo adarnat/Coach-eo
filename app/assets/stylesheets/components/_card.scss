@@ -10,8 +10,11 @@
     border: none;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-    border-radius: 2px;
     height: 100%;
+}
+
+.card:hover{
+  background-color: #342e3717;
 }
 
 .card button{
@@ -44,7 +47,7 @@ position: relative;
 
 .card a{
   text-decoration: none;
-  color: black;
+  color: #342e37;
 }
 
 
@@ -70,13 +73,29 @@ position: relative;
   margin-top: 20px;
 }
 
-.card {
-  border: none;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-}
+
 
 .card-description{
   font-size: 15px;
   font-weight: 300;
+}
+
+.fa-trash{
+    content: "\f1f8";
+    color:#342e37;
+}
+.fa-trash:hover{
+    content: "\f1f8";
+    color:#FFB20F;
+}
+
+
+.fa-pen {
+    content: "\f304";
+    color:#342e37;
+}
+
+.fa-pen:hover {
+    content: "\f304";
+    color:#FFB20F;
 }

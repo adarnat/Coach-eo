@@ -1,5 +1,5 @@
 <div id="viewport">
-  <%= link_to 'Back', sport_classes_path %>
+  <%= link_to '', sport_classes_path, class:"fas fa-arrow-circle-left" %>
   <div class="container_registration">
   <h2>Séance de sport</h2>
     <%= simple_form_for(@sport_class) do |f| %>
@@ -27,7 +27,7 @@
     'Voile', 'Volleyball', 'Voltige', 'VTT', 'Wakeboard', 'Waterpolo', 'Yoga', 'Zumba']%>
       <%= f.hidden_field :coach_id,  :value => current_user.id %>
 
-      <div class="form-actions">
+      <div class="button2">
         <%= f.button :submit %>
       </div>
     <% end %>
