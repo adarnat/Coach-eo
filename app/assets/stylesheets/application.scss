@@ -13,15 +13,20 @@
 // Your CSS partials
 @import "components/index";
 @import "components/footer";
-@import "pages/index";
+@import "pages/sport_classes_index";
+@import "pages/sport_classes_new";
+@import "pages/sport_classes_show";
 
 body {
-font-family: 'Merriweather Sans', sans-serif;
+max-width: 100%;
+
+
 }
 body {
   overflow-x: hidden;
-  font-family: 'Roboto', sans-serif;
   font-size: 16px;
+  font-family: 'Merriweather Sans', sans-serif;
+  margin: 0;
 }
 
 // /* Toggle Styles */
@@ -36,7 +41,7 @@ body {
 
 
 #sidebar {
-  position: fixed;
+  position: absolute;
   left: 250px;
   width: 240px;
   height: 100%;

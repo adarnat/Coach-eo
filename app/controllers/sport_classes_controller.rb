@@ -7,7 +7,7 @@ class SportClassesController < ApplicationController
   end
 
   def show
-@sport_class = current_user.sport_classes.find_by_id(params[:id])
+  @sport_class = current_user.sport_classes.find_by_id(params[:id])
 
    if @sport_class
     else
@@ -21,9 +21,9 @@ class SportClassesController < ApplicationController
 
   def create
   @sport_class = SportClass.new(sport_class_params)
-  @sport_class.client_id = current_user.id
+  # @sport_class.client_id = current_user.id
     if @sport_class.save
-      redirect_to @home
+      redirect_to sport_classes_path
     else
       render :new
     end
@@ -31,7 +31,7 @@ class SportClassesController < ApplicationController
 
   def destroy
     @sport_class = SportClass.find(params[:id])
-      @sport_class.destroy
+    @sport_class.destroy
 
     redirect_to sport_class_path
   end
@@ -39,7 +39,7 @@ class SportClassesController < ApplicationController
   private
 
   def sport_class_params
-    params.require(:sport_class).permit(:name, :description, :category, :coach)
+    params.require(:sport_class).permit(:name, :description, :category, :coach_id)
   end
 
 end

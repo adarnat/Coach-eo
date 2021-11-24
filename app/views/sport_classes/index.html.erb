@@ -1,17 +1,29 @@
 <div id="viewport">
-  <div class="cards-grid">
-    <% @sport_classes.each do |sport_class| %>
-      <%= link_to sport_class_path(sport_class) do %>
-        <div class="card" >
-            <h4 class="card-title"><%= sport_class.name %></h4>
-        </div>
-          <div class="card-body">
-            <p class="card-text"><%= sport_class.description %></p>
-            <p class="card-text"><%= sport_class.coach %></p>
-            <h6></i><span><%= sport_class.category %></span></h6>
-          </div>
-      <% end %>
-    <% end %>
+  <div class="top_barre">
+  <h1>Voici le catalogue de tes séances de sport:</h1>
+  <%= link_to 'Ajouter une séance de sport', new_sport_class_path, class: "button1" %>
   </div>
 </div>
+
+
+<div id="viewport">
+  <div class="cards-grid">
+    <% @sport_classes.each do |sport_class| %>
+      <div class="card">
+          <div class="card-corps">
+          <%= link_to sport_class_path(sport_class) do %>
+              <h4 class="card-title"><%= sport_class.category %></h4>
+            <div class="card-body">
+            <h6 class="card-text">Nom de la séance: <%= sport_class.name %></h6>
+              <p class="card-text">Description: <%= sport_class.description %></p>
+              <p class="card-text">Coach: <%= sport_class.coach.email %></p>
+            </div>
+          </div>
+        <% end %>
+            <div class="button">
+              <%= link_to "", sport_class, method: :delete, data: { confirm: "Are you sure?" }, class: "fas fa-trash" %>
+            </div>
+      </div>
+    <% end %>
+  </div>
 </div>
