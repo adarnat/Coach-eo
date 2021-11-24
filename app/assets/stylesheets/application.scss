@@ -12,6 +12,7 @@
 
 // Your CSS partials
 @import "components/index";
+@import "components/card";
 @import "components/footer";
 @import "pages/sport_classes_index";
 @import "pages/sport_classes_new";
@@ -37,6 +38,7 @@ body {
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  padding-right: 14px;
 }
 
 #sidebar h1 {
@@ -45,6 +47,7 @@ font-weight: 700;
 font-family: 'Merriweather Sans', sans-serif;
 margin-left: 25px;
 padding-bottom: 60px;
+padding-top:7px;
 }
 
 
@@ -85,11 +88,13 @@ padding-bottom: 60px;
   background: none;
   color: white;
   font-size: 14px;
-  padding: 22px 24px;
+  padding: 22px 4px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   font-size: 18px;
 }
+
+
 
 #sidebar .nsidebar a:hover{
   background: none;
@@ -105,4 +110,35 @@ padding-bottom: 60px;
     margin-bottom: 0;
     list-style: none;
     flex-direction: column;
+}
+
+#text {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 900;
+}
+
+li{
+  display: flex;
+  align-items: center
+}
+
+.fa-home:before {
+    content: "\f015";
+    padding-right: 0;
+    padding-left: 30px;
+}
+
+.fa-calendar-week:before{
+    padding-right: 0;
+    padding-left: 30px;
+}
+
+.fa-users:before{
+    padding-right: 0;
+    padding-left: 30px;
+}
+
+.fa-dumbbell:before{
+    padding-right: 0;
+    padding-left: 30px;
 }

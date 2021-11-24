@@ -25,18 +25,17 @@
 <h1>Coach'eo</h1>
     <ul class="nsidebar">
       <li>
-        <%= link_to "Tableau de bord", root_path %>
+       <i class="fas fa-home"></i> <%= link_to "Tableau de bord", root_path%>
       </li>
       <li>
-        <%= link_to "Agenda", time_slots_path %>
+        <i class="fas fa-calendar-week"></i></i> <%= link_to "Agenda", time_slots_path %>
       </li>
       <li>
-        <a href="#">
-          <i></i> Clients
+          <i class="fas fa-users"></i><i></i><%= link_to "Clients", root_path %>
         </a>
       </li>
       <li>
-        <%= link_to "Séance de sport", sport_classes_path %>
+        <i class="fas fa-dumbbell"></i><%= link_to "Séance de sport", sport_classes_path %>
       </li>
     </ul>
   </div>
@@ -44,10 +43,10 @@
     <section> </section>
      <%# <div class="footer_top"></div> %>
     <%= yield %>
-<footer>
+<%# <footer>
       <div class="text-center">
         <p class="mb-0 py-2">© 2021 Coach'eo rights reserved.</p>
       </div>
-</footer>
+</footer> %>
   </body>
 </html>

@@ -1,14 +1,23 @@
 <div id="viewport">
-<%= link_to 'Back', sport_classes_path %>
+<%= link_to '', sport_classes_path, class:"fas fa-arrow-circle-left" %>
     <%# <% @sport_classes.each do |sport_class| %>
   <div class="card-sport" >
-
-        <h5 class="card-title text-align-center">Nom:<%= @sport_class.name %></h5>
-        <h5 class="card-title text-align-center">description:<%= @sport_class.description %></h5>
-        <p class="card-text">Coach:<%= @sport_class.coach %>/10</p>
-        <p class="card-text">Catégorie: <%= @sport_class.category %></p>
-        <%= link_to "Supprimer cette séance", @sport_class, method: :delete, data: { confirm: "Are you sure?" }, class: "fas fa-trash" %>
-
+      <div class="card">
+          <div class="card-corps">
+        <p class="card-title"><%= @sport_class.category %></p>
+       <div class="card-body">
+        <h6 class="card-text"><%= @sport_class.name %></h6>
+        <p>Level</p>
+        <h5 class="card-description">description:<%= @sport_class.description %></h5>
+        <div class="details">
+           <p class="card-text">Coach:<%= @sport_class.coach.email %>/10</p>
+           <p class="center">15€</p>
+            <p>max 6pers</p>
+          </div>
+          <div class="button">
+          <%= link_to "", @sport_class, method: :delete, data: { confirm: "Are you sure?" }, class: "fas fa-trash" %>
+          <%= link_to "", edit_sport_class_path(@sport_class), class: "fas fa-pen" %>
+          </div>
       </div>
     <%# <% end %>
   </div>
