@@ -1,12 +1,12 @@
 <div id="viewport">
-  <%= link_to 'Back', user_sport_classes_path %>
+  <%= link_to 'Back', sport_classes_path %>
   <div class="container_registration">
   <h2>Séance de sport</h2>
     <%= simple_form_for(@sport_class) do |f| %>
     <%= f.input :name %>
       <%= f.input :description %>
       <%= f.input :category %>
-      <%= f.input :coach %>
+      <%= f.hidden_field :coach_id,  :value => current_user.id %>
 
       <div class="form-actions">
         <%= f.button :submit %>

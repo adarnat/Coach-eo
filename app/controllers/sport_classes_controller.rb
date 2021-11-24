@@ -21,9 +21,9 @@ class SportClassesController < ApplicationController
 
   def create
   @sport_class = SportClass.new(sport_class_params)
-  @sport_class.client_id = current_user.id
+  # @sport_class.client_id = current_user.id
     if @sport_class.save
-      redirect_to @home
+      redirect_to sport_classes_path
     else
       render :new
     end
@@ -39,7 +39,7 @@ class SportClassesController < ApplicationController
   private
 
   def sport_class_params
-    params.require(:sport_class).permit(:name, :description, :category, :coach)
+    params.require(:sport_class).permit(:name, :description, :category, :coach_id)
   end
 
 end

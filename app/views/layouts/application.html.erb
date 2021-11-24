@@ -15,12 +15,11 @@
   </head>
 
   <body>
+
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
 
-    <%= yield %>
-
-<div id="viewport">
+<%# <div id="viewport"> %>
   <!-- Sidebar -->
   <div id="sidebar">
     <ul class="nsidebar">
@@ -42,6 +41,7 @@
 </div>
     <%# <section> </section> %>
      <%# <div class="footer_top"></div> %>
+    <%= yield %>
 <footer>
       <div class="text-center">
         <p class="mb-0 py-2">© 2021 Coach'eo rights reserved.</p>
