@@ -7,7 +7,8 @@
         <h5 class="card-title text-align-center">description:<%= @sport_class.description %></h5>
         <p class="card-text">Coach:<%= @sport_class.coach %>/10</p>
         <p class="card-text">Catégorie: <%= @sport_class.category %></p>
-        <a class="card-text" href="#" class="btn btn-primary"><%= link_to "Remove"%></a>
+        <%= link_to "Supprimer cette séance", @sport_class, method: :delete, data: { confirm: "Are you sure?" }, class: "fas fa-trash" %>
+
       </div>
     <%# <% end %>
   </div>
