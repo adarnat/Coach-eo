@@ -33,4 +33,7 @@ import { initCoachCalendar, initClientCalendar } from '../init_calendar';
     // Call your functions here, e.g:
   initCoachCalendar();
   initClientCalendar();
+
+
+
 });
