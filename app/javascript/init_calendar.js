@@ -46,7 +46,7 @@ const initDragAndDrop = () => {
     itemSelector: '.fc-event',
     eventData: function (eventEl) {
       return {
-        title: eventEl.innerText.toLowerCase()
+        title: eventEl.innerText
       };
     }
   });
