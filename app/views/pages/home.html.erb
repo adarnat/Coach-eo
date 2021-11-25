@@ -1,15 +1,18 @@
 
 <div  id="viewport">
-    <br>
-    <%= Date.today.strftime('%d.%m.%Y') %>
+    <div class="titre">
       <% if current_user.nil? %>
         <p>Merci de vous connecter à votre espace coach</p>
       <% else %>
        <h1>Bienvenue <%=current_user.first_name %>!</h1>
+       <div class="calendar">
+    <h2> <i class="far fa-calendar"></i> <%= Date.today.strftime('%d.%m.%Y') %> </h2>
+       </div>
+    </div>
 
   <div class="card-agenda">
     <div class="card-features">
-    <div class="card-slot">
+    <div class="card-slot-top">
     <h6>Horaire</h6>
     <h6>Nom de la séance</h6>
     <h6>Niveau</h6>
@@ -18,13 +21,11 @@
     </div>
         <% @time_slots.each do |time_slot| %>
           <div class="card-slot">
-            <div class="item-timeslot">
-              <p><%= time_slot.start_at.strftime('%H:%M') %></p>
-            </div>
+            <div class="item-timeslot"><p><%= time_slot.start_at.strftime('%H:%M') %></p></div>
             <div class="item-timeslot"><p><%= time_slot.name %></p></div>
             <div class="item-timeslot"><p><%= time_slot.level %></p></div>
-            <div class="item-timeslot"><p><%= time_slot.sport_class.duration %></p></div>
-            <div class="item-timeslot"><p><%= time_slot.group_size %></p></div>
+            <div class="item-timeslot"><p><%= time_slot.sport_class.duration %> min</p></div>
+            <div class="item-timeslot"><p><%= time_slot.group_size %><i class="fas fa-user-friends"></i></p></div>
           </div>
         <% end %>
     </div>

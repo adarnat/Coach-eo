@@ -1,20 +1,78 @@
 // Specific CSS for your home-page
 
 .card-slot {
-border-bottom: solid, #CACBD6;
-border-top: solid 1px #CACBD6;
+// border-bottom: solid, #CACBD6;
+// border-top: solid 1px #CACBD6;
 display: flex;
 padding: 10px;
-margin: 30px;
+margin: 10px;
 justify-content: space-between;
+box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+font-family: 'Merriweather Sans', sans-serif;
+}
+
+.card-slot-top {
+display: flex;
+padding: 10px;
+margin: 10px;
+justify-content: space-between;
+font-family: 'Merriweather Sans', sans-serif;
+background-color: #FFB20F;
+box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.card-slot-top h6{
+font-weight: bolder;
+width: 150px;
+color: white;
+font-size: 18px;
+margin-top: 10px;
 }
 
 .card-slot h6 {
 color: #CACBD6;
 }
 
-.item-timeslot {
-  padding: 20px;
-  margin: 30px;
+.item-timeslot p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 150px;
+  font-family: 'Merriweather Sans', sans-serif;
+}
 
+
+.card-slot .fa-user-friends:before {
+    content: "\f500";
+    padding-left: 10px;
+    color: black;
+}
+
+.titre h1{
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.titre{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.titre h2{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.fa-calendar:before {
+    content: "\f133";
+    font-size: 262px;
+}
+
+.calendar{
+  position: absolute;
+  top: 0;
+  right: 0;
 }
