@@ -32,5 +32,7 @@ class PagesController < ApplicationController
         end: '2021-11-26T20:30:00+01:00'
       }
     ]
+
+
   end
 end
