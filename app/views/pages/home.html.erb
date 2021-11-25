@@ -1,41 +1,24 @@
 
-<head>
-  <div  id="viewport">
-  <br>
-  <h1>Bienvenue <%=current_user.email %>!</h1>
-  </div>
-</head>
-<br>
+<div  id="viewport">
+    <br>
+    <%= Date.today %>
+      <% if current_user.nil? %>
+        <p>Merci de vous connecter à votre espace coach</p>
+      <% else %>
+       <h1>Bienvenue <%=current_user.first_name %>!</h1>
 
-<body>
-<div class="container features">
-    <div class="card">
-    <span class="card-header-title m-0">Voici votre planning de la journée</span>
-        <%# <div id="coach_calendar" style="width: 800px; height: 200px" data-calendar-id="22" data-events=<%= @yoga_events.to_json%>
+  <div class="card-agenda">
+    <div class="card-features">
+        <% @time_slots.each do |time_slot| %>
+          <div class="card-slot">
+            <div class="item-timeslot"><p><%= time_slot.start_at.strftime('%H:%M') %></p></div>
+            <div class="item-timeslot"><p><%= time_slot.name %></p></div>
+            <div class="item-timeslot"><p><%= time_slot.level %></p></div>
+            <div class="item-timeslot"><p><%= time_slot.group_size %></p></div>
+            <div class="item-timeslot"><p><%= time_slot.sport_class.duration %></p></div>
+          </div>
+        <% end %>
     </div>
   </div>
-
-
-  <div class="container Stats&clients">
-    Stats & clients
-    <%# <p>Vous avez <%=@users.count_client%>
-    <div class="d-inline-flex p-2 bd-highlight">
-      Stats
-      <div class="card">
-      </div>
-    </div>
-    <div class="d-inline-flex p-2 bd-highlight">
-      <div class="card clients">
-      <ul class="list-group">
-        <li class="list-group-item">An item</li>
-        <li class="list-group-item">A second item</li>
-        <li class="list-group-item">A third item</li>
-        <li class="list-group-item">A fourth item</li>
-        <li class="list-group-item">And a fifth one</li>
-      </ul>
-      </div>
-    </div>
-  </div>
-
+    <% end %>
 </div>
-</body>

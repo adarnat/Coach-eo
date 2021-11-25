@@ -2,6 +2,9 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home, :fullcalendar ]
 
   def home
+    if current_user.present?
+      @time_slots = TimeSlot.includes(:sport_class).where(sport_classes: { coach_id: current_user.id }).where("start_at BETWEEN ? and ?", Date.current.beginning_of_day, Date.current.end_of_day)
+    end
   end
 
   def fullcalendar
@@ -19,10 +22,6 @@ class PagesController < ApplicationController
         end: '2021-11-26T20:30:00+01:00'
       }
     ]
-  end
-
-  def count_client
-    current_user.sport_classes.time_slots.bookings.client_id.uniq().count
   end
 
 end
