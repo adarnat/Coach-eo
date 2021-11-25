@@ -6,11 +6,11 @@
         <p class="card-title"><%= @sport_class.category %></p>
        <div class="card-body">
         <h6 class="card-text"><%= @sport_class.name %></h6>
-        <h5 class="card-description">description:<%= @sport_class.description %></h5>
+        <h5 class="card-description-show"><strong>Description: </strong> <%= @sport_class.description %></h5>
         <div class="details-show">
           <p class="card-text"><%= @sport_class.group_size %><i class="fas fa-user-friends"></i></i></p>
-          <p class="card-text"><%= @sport_class.price %> €</p>
-          <p class="card-text"><%= @sport_class.duration %> min</p>
+          <p class="card-center-show"><%= @sport_class.price %> €</p>
+          <p class="card-center-show2"><%= @sport_class.duration %> min</p>
           <p class="card-text"><%= @sport_class.level %></p>
         </div>
           <div class="button">
