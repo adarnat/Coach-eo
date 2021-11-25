@@ -1,7 +1,5 @@
 class TimeSlot < ApplicationRecord
 
-  LEVELS = ['Débutant', 'Intermédiaire', 'Expert', 'Tous niveaux']
-
   belongs_to :sport_class
   has_many :bookings
 

@@ -15,13 +15,14 @@
               <h4 class="card-title"><%= sport_class.category %></h4>
             <div class="card-body">
             <h6 class="card-text"> <%= sport_class.name %></h6>
-            <p>Level</p>
+            <p class="card-text"><%= sport_class.level %></p>
               <p class="card-description overflow-auto">Description: <%= sport_class.description %></p>
             </div>
             <div class="details">
-              <p class="card-text">Coach: <%= sport_class.coach.email %></p>
-              <p class="center">15€</p>
-              <p>max 6pers</p>
+              <p class="card-text"><%= sport_class.group_size %><i class="fas fa-user-friends"></i></i></p>
+              <p class="card-center"><%= sport_class.price %> €</p>
+              <p class="card-text"><%= sport_class.duration %> min</p>
+<%# ////////// %>
             </div>
           </div>
         <% end %>

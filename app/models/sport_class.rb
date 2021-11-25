@@ -21,6 +21,8 @@ class SportClass < ApplicationRecord
     'Trapèze', 'Triathlon', 'Trottinette', 'ULM', 'Ultimate', 'Ultimate fresbee', 'Vélo',
     'Voile', 'Volleyball', 'Voltige', 'VTT', 'Wakeboard', 'Waterpolo', 'Yoga', 'Zumba']
 
+    LEVELS = ['Débutant', 'Intermédiaire', 'Expert', 'Tous niveaux']
+
   belongs_to :coach, class_name: "User"
   has_many :time_slots
 

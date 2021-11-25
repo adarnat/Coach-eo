@@ -17,12 +17,29 @@
   background-color: #342e3717;
 }
 
+.card-show a{
+  text-decoration: none;
+  color: #342e37;
+}
+
 .card button{
 position: relative;
+}
+
+.details-show p{
+  color: white;
+margin: auto;
 
 }
 
 .card h6 {
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.card-show h6 {
     text-decoration: none;
     font-size: 25px;
     font-weight: 700;
@@ -73,6 +90,20 @@ position: relative;
   margin-top: 20px;
 }
 
+.details-show{
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  text-align: center;
+  background-color: #FFB20F;
+  vertical-align: middle;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  right: 0;
+  border-radius: 0px 0px 5px 5px;
+}
+
 
 
 .card-description{
@@ -98,4 +129,15 @@ position: relative;
 .fa-pen:hover {
     content: "\f304";
     color:#FFB20F;
+}
+
+.card-center{
+  border-left: solid white;
+  border-right: solid white;
+  width: 100px;
+}
+
+.fa-user-friends:before {
+    content: "\f500";
+    padding-left: 10px;
 }
