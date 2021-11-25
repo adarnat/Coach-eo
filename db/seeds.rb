@@ -29,6 +29,14 @@ john_coach = User.create!(
   password: "password"
 )
 
+victoire_coach = User.create!(
+  first_name: "Victoire",
+  last_name: "Dassier",
+  email: "victoire@gmail.com",
+  password: "password"
+)
+
+
 # =======
 # Clients
 # =======
@@ -54,10 +62,46 @@ miguel_client = User.create!(
   password: "password"
 )
 
+
+dinah_client = User.create!(
+  first_name: "Dinah",
+  last_name: "Miaou",
+  email: "dinah@gmail.com",
+  password: "password"
+)
+
+
+holly_client = User.create!(
+  first_name: "Holly",
+  last_name: "Bellemare",
+  email: "holly@gmail.com",
+  password: "password"
+)
+
+arthur_client = User.create!(
+  first_name: "Arthur",
+  last_name: "Laforêt",
+  email: "arthur@gmail.com",
+  password: "password"
+)
+
+cecile_client = User.create!(
+  first_name: "Cécile",
+  last_name: "Chevalier",
+  email: "cecile@gmail.com",
+  password: "password"
+)
+
+jeanro_client = User.create!(
+  first_name: "Jeanro",
+  last_name: "Croissant",
+  email: "jeanro@gmail.com",
+=======
 miguel_client = User.create!(
   first_name: "Miguel",
   last_name: "Sanchez",
   email: "miguel@gmail.com",
+
   password: "password"
 )
 
@@ -129,6 +173,25 @@ crossfit_john = SportClass.create!(
   post_code: "69001",
   town: "Lyon",
   coach: john_coach
+)
+
+# ================
+# Cours coach Victoire
+# ================
+
+crossfit_john = SportClass.create!(
+  category: "Ski",
+  name: "Ski de piste",
+  description: "Venez goûter la poudreuse tout schuss sur les pistes",
+  level: "Expert",
+  group_size: 5,
+  price: 50,
+  duration: 120,
+  address1: "4 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  coach: victoire_coach
 )
 
 puts "#{SportClass.count} sport classes were created"
@@ -357,6 +420,23 @@ creneau_crossfit_john_2 = TimeSlot.create!(
 
 puts "#{TimeSlot.count} slots were created"
 
+# ======================
+# Créneaux Ski Victoire
+# ======================
+creneau_ski_victoire = TimeSlot.create!(
+  name: "Ski de piste ",
+  description: "Tout schuss sur les pistes",
+  level: "Expert",
+  group_size: 5,
+  price: 50,
+  address1: "4 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("01/12/2021 15:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("01/12/2021 16:00", "%d/%m/%Y %H:%M"),
+  sport_class: ski_victoire
+)
 
 # ===========================
 # Booking Créneau automatique
