@@ -166,6 +166,48 @@ creneau_yoga_mike_1 = TimeSlot.create!(
   end_at: DateTime.strptime("24/11/2021 12:00", "%d/%m/%Y %H:%M"),
   sport_class: yoga_mike
 )
+  creneau_yoga_mike_3 = TimeSlot.create!(
+  name: "Pilates",
+  description: "Pilates sur reformer",
+  level: "Débutant",
+  group_size: 1,
+  price: 60,
+  address1: "4 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("25/11/2021 14:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("25/11/2021 15:00", "%d/%m/%Y %H:%M"),
+  sport_class: yoga_mike
+)
+  creneau_yoga_mike_4 = TimeSlot.create!(
+  name: "Air Yoga",
+  description: "Yoga dans les rideaux pour un niveau intermédiaire",
+  level: "Intermédiaire",
+  group_size: 5,
+  price: 20,
+  address1: "4 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("25/11/2021 10:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("25/11/2021 12:00", "%d/%m/%Y %H:%M"),
+  sport_class: yoga_mike
+)
+  creneau_yoga_mike_5 = TimeSlot.create!(
+  name: "alta Yoga",
+  description: "Yoga sur tapis",
+  level: "Expert",
+  group_size: 7,
+  price: 20,
+  address1: "4 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("25/11/2021 9:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("25/11/2021 10:00", "%d/%m/%Y %H:%M"),
+  sport_class: yoga_mike
+)
 
 # ========================
 # Créneaux Meditation Mike

@@ -3,32 +3,32 @@
   <div class="container_registration">
   <h2>Séance de sport</h2>
     <%= simple_form_for(@sport_class) do |f| %>
-    <%= f.input :name %>
-      <%= f.input :description %>
-      <%= f.input :category , collection: ['Aerobic', 'Alpinisme', 'Aquabike', 'Aquagym', 'Arts du cirque',
-    'Athlétisme', 'Aviation', 'Aviron', 'Badminton', 'Biathlon', 'Boxe', 'Boxe anglaise',
-    'Boxe chinoise', 'Boxe française', 'Boxe thaïlandaise', 'Canoë', 'Canoë-kayak',
-    'Canyoning', 'Corde à sauter', 'Course', 'Course à pied', 'Course d’orientation',
-    'Course de cote', 'Cross training', 'Cross-country', 'Crossfit', 'Cyclisme',
-    'Cyclisme sur route', 'Cyclo cross', 'Danse', 'Danse africaine', 'Danse classique',
-    'Danse contemporaine', 'Danse country', 'Danse indienne', 'Danse orientale',
-    'Danse rock', 'Enduro', 'Equitation', 'Escalade', 'Escrime', 'Fitness', 'Flag',
-    'Football', 'Footing', 'Golf', 'Gymnastique', 'Gymnastique artistique', 'Gymnastique rythmique',
-    'Haltérophilie', 'Handball', 'Handisport', 'Hip hop', 'Judo', 'Karaté', 'Karting',
-    'Kayak', 'Luge', 'Lutte', 'Marathon', 'Marche', 'Marche nordique', 'Marche sportive',
-    'Méditation', 'Musculation', 'Natation', 'Natation synchronisée', 'Paddle', 'Parachutisme',
-    'Paramoteur', 'Parapente', 'Parkour', 'Patinage', 'Patinage artistique', 'Patinage de vitesse',
-    'Pétanque', 'Pilates', 'Ping pong', 'Planche à voile', 'Plongée', 'Plongeon',
-    'Pole dance', 'Polo', 'Roller', 'Rugby', 'Salsa', 'Samba', 'Sambo', 'Saut à la perche',
-    'Saut en longueur', 'Sauvetage', 'Self défense', 'Ski', 'Ski alpin', 'Ski de fond',
-    'Ski nautique', 'Slackline', 'Snowboard', 'Snowkite', 'Stretching', 'Surf', 'Taekwondo',
-    'Tango', 'Tennis', 'Tennis de table', 'Tir', 'Tir à l’arc', 'Trail', 'Trampoline',
-    'Trapèze', 'Triathlon', 'Trottinette', 'ULM', 'Ultimate', 'Ultimate fresbee', 'Vélo',
-    'Voile', 'Volleyball', 'Voltige', 'VTT', 'Wakeboard', 'Waterpolo', 'Yoga', 'Zumba']%>
+      <%= f.input :category , label: false, label: 'Catégorie', collection: SportClass::SPORT_CATEGORY%>
+      <%= f.input :name,label: false, placeholder: 'Nom'  %>
+      <%= f.input :description, label: false, placeholder: 'Description' %>
+      <%= f.input :level,
+                  label: "Niveau",
+                  as: :radio_buttons,
+                  input_html: { class: "tag-selector" },
+                  item_wrapper_class: 'tag-item',
+                  collection: SportClass::LEVELS%>
+      <%= f.input :group_size,label: false, label: 'Type de groupe',
+                  as: :radio_buttons,
+                  input_html: { class: "tag-selector" },
+                  item_wrapper_class: 'tag-item',
+                  collection: ['Individuel', 'Collectif'] %>
+      <%= f.input :group_size, label: 'Capacité maximale', collection: 1..30 %>
+      <%= f.input :price,label: false, placeholder: 'Prix' %>
+      <%= f.input :address1, label: false, placeholder: 'Adresse' %>
+      <%= f.input :address2, label: false, placeholder: 'Adresse bis' %>
+      <div class="form-group1">
+        <%= f.input :post_code, label: false, placeholder: 'Code postale' %>
+        <%= f.input :town, label: false, placeholder: 'Ville' %>
+      </div>
       <%= f.hidden_field :coach_id,  :value => current_user.id %>
 
       <div class="button2">
-        <%= f.button :submit %>
+        <%= f.button :submit,label: false, placeholder: 'Enregistrer' %>
       </div>
     <% end %>
 
