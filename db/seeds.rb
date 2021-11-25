@@ -96,14 +96,10 @@ jeanro_client = User.create!(
   first_name: "Jeanro",
   last_name: "Croissant",
   email: "jeanro@gmail.com",
-=======
-miguel_client = User.create!(
-  first_name: "Miguel",
-  last_name: "Sanchez",
-  email: "miguel@gmail.com",
-
   password: "password"
 )
+
+
 
 puts "#{User.count} users were created"
 
@@ -179,7 +175,7 @@ crossfit_john = SportClass.create!(
 # Cours coach Victoire
 # ================
 
-crossfit_john = SportClass.create!(
+ski_victoire = SportClass.create!(
   category: "Ski",
   name: "Ski de piste",
   description: "Venez goûter la poudreuse tout schuss sur les pistes",
