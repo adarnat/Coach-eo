@@ -1,1 +1,20 @@
 // Specific CSS for your home-page
+
+.card-slot {
+border-bottom: solid, #CACBD6;
+border-top: solid 1px #CACBD6;
+display: flex;
+padding: 10px;
+margin: 30px;
+justify-content: space-between;
+}
+
+.card-slot h6 {
+color: #CACBD6;
+}
+
+.item-timeslot {
+  padding: 20px;
+  margin: 30px;
+
+}

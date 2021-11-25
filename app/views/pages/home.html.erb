@@ -1,5 +1,33 @@
 
 <div  id="viewport">
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+    <br>
+    <%= Date.today.strftime('%d.%m.%Y') %>
+      <% if current_user.nil? %>
+        <p>Merci de vous connecter à votre espace coach</p>
+      <% else %>
+       <h1>Bienvenue <%=current_user.first_name %>!</h1>
+
+  <div class="card-agenda">
+    <div class="card-features">
+    <div class="card-slot">
+    <h6>Horaire</h6>
+    <h6>Nom de la séance</h6>
+    <h6>Niveau</h6>
+    <h6>Durée</h6>
+    <h6>Capacité</h6>
+    </div>
+        <% @time_slots.each do |time_slot| %>
+          <div class="card-slot">
+            <div class="item-timeslot">
+              <p><%= time_slot.start_at.strftime('%H:%M') %></p>
+            </div>
+            <div class="item-timeslot"><p><%= time_slot.name %></p></div>
+            <div class="item-timeslot"><p><%= time_slot.level %></p></div>
+            <div class="item-timeslot"><p><%= time_slot.sport_class.duration %></p></div>
+            <div class="item-timeslot"><p><%= time_slot.group_size %></p></div>
+          </div>
+        <% end %>
+    </div>
+  </div>
+    <% end %>
 </div>
