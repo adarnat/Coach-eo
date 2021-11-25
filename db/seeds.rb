@@ -54,6 +54,13 @@ miguel_client = User.create!(
   password: "password"
 )
 
+miguel_client = User.create!(
+  first_name: "Miguel",
+  last_name: "Sanchez",
+  email: "miguel@gmail.com",
+  password: "password"
+)
+
 puts "#{User.count} users were created"
 
 # ================
@@ -273,10 +280,14 @@ TimeSlot.all.each do |timeslot|
   clients = User.all.map { |user| user if user.is_client? }.compact
   rand(0..timeslot.group_size).times do
     # clients = clients.map { |client| client if timeslot.any? }.compact
-    Booking.create!(
-      time_slot: timeslot,
-      client: clients.sample
-    )
+    client = clients.sample
+    if client.present?
+      Booking.create!(
+        time_slot: timeslot,
+        client: client
+      )
+      clients.delete(client)
+    end
   end
 end
 

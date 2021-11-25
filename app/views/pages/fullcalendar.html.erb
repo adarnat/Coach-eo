@@ -29,6 +29,19 @@
 
 
 
+
+<div class="container">
+  <h1>Calendrier Client</h1>
+<div id="client_calendar" style="width: 800px; height: 200px" data-calendar-id="22" data-events=<%= @yoga_events.to_json%>>
+</div>
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -46,7 +59,7 @@
         <form id="form1" action="" method="get" class="form-example">
           <div class="form-example">
             <label for="name">Choose a class: </label>
-         <div data-controller="hello>">
+        <div data-controller="hello>">
             <input type="text" name="name" id="name" required>
           </div>
         <div class="form-example">
@@ -65,6 +78,42 @@
             <input type="submit" value="Validate">
           </div>
         </form>
+
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <h3>Vrai formulaire</h3>
+
+        <%= simple_form_for(@time_slot) do |f| %>
+          <%= f.input :level %>
+          <%= f.input :group_size %>
+          <%= f.input :price %>
+          <%= f.input :start_at, html5: true %>
+          <%= f.input :end_at, html5: true %>
+          <%= f.input :name %>
+          <%= f.input :description %>
+          <%= f.input :address1 %>
+          <%= f.input :address2 %>
+          <%= f.input :post_code %>
+          <%= f.input :town %>
+
+          <%= f.submit %>
+      <% end %>
+
+
+
+
+
+
+
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+
 
 
       </div>
