@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :sport_classes, foreign_key: "coach_id"
   has_many :bookings, foreign_key: "client_id"
+  has_many :time_slots, through: :sport_classes
 
   def is_coach?
     sport_classes.any?
@@ -13,4 +14,5 @@ class User < ApplicationRecord
   def is_client?
     !sport_classes.any?
   end
+
 end
