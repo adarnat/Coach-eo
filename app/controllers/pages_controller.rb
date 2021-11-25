@@ -15,8 +15,8 @@ class PagesController < ApplicationController
       {
         id: 45,
         title: 'yoga',
-        start: '2021-11-26T08:00:00+01:00',
-        end: '2021-11-26T9:30:00+01:00'
+        start: '2021-11-26T18:00:00+01:00',
+        end: '2021-11-26T20:30:00+01:00'
       }
     ]
   end
