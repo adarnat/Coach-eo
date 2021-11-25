@@ -6,7 +6,7 @@ import listPlugin from '@fullcalendar/list';
 
 let coachEvents;
 let coachCalendar;
-let coachCalendarEl
+let coachCalendarEl;
 
 const eventCoachClick = (info) => {
   console.log("j'ai cliqué sur un event de coach calendar")
@@ -60,8 +60,5 @@ const initCoachCalendar = () => {
     initDragAndDrop()
   }
 }
-
-
-
 
 export { initCoachCalendar }

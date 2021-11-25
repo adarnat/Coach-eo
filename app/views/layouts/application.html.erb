@@ -22,7 +22,8 @@
 <%# <div id="viewport"> %>
   <!-- Sidebar -->
   <div id="sidebar">
-<h1>Coach'eo</h1>
+    <h1>Coach'eo</h1>
+    <% if current_user.present? %>
     <ul class="nsidebar">
       <li>
        <i class="fas fa-home"></i> <%= link_to "Tableau de bord", root_path%>
@@ -38,6 +39,7 @@
         <i class="fas fa-dumbbell"></i><%= link_to "Séance de sport", sport_classes_path %>
       </li>
     </ul>
+    <% end %>
   </div>
 </div>
     <section> </section>
