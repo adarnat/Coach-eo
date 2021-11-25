@@ -1,0 +1,15 @@
+#external-events {
+  position: fixed;
+  z-index: 2;
+  top: 120px;
+  left: 300px;
+  width: 150px;
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  background: #eee;
+}
+
+#external-events .fc-event {
+  cursor: move;
+  margin: 3px 0;
+}

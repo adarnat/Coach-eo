@@ -25,6 +25,7 @@ require("channels")
 // External imports
 import "bootstrap";
 
+
 // Internal imports, e.g:
 import { initCoachCalendar, initClientCalendar } from '../init_calendar';
 
@@ -37,3 +38,5 @@ import { initCoachCalendar, initClientCalendar } from '../init_calendar';
 
 
 });
+
+import "controllers"
