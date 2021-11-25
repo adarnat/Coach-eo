@@ -1,3 +1,4 @@
+
 <div id="viewport">
   <div class="top_barre">
   <h1>Voici le catalogue de tes séances de sport:</h1>
@@ -23,12 +24,12 @@
               <p class="center">15€</p>
               <p>max 6pers</p>
             </div>
-          </div>
         <% end %>
             <div class="button">
               <%= link_to "", sport_class, method: :delete, data: { confirm: "Are you sure?" }, class: "fas fa-trash" %>
               <%= link_to "", edit_sport_class_path(sport_class), class: "fas fa-pen" %>
             </div>
+          </div>
       </div>
     <% end %>
   </div>
