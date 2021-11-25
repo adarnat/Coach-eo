@@ -74,8 +74,13 @@ const initCoachCalendar = () => {
     events: [
       { // this object will be "parsed" into an Event Object
         title: 'Yoga', // a property!
-        start: '2021-11-25', // a property!
-        end: '2021-11-26' // a property! ** see important note below about 'end' **
+        start: '2021-11-26T08:00:00+01:00', // a property!
+        end: '2021-11-26T08:00:00+01:00' // a property! ** see important note below about 'end' **
+      },
+      {
+        title: 'Test', // a property!
+        start: '2021-11-24', // a property!
+        end: '2021-11-24' // a property! ** see important note below about 'end' **
       }
     ]
 

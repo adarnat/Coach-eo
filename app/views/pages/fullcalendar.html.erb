@@ -57,6 +57,42 @@
           </div>
         </form>
 
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <h3>Vrai formulaire</h3>
+
+        <%= simple_form_for([@sport_class, @time_slot]) do |f| %>
+          <%= f.input :level %>
+          <%= f.input :group_size %>
+          <%= f.input :price %>
+          <%= f.input :start_at, html5: true %>
+          <%= f.input :end_at, html5: true %>
+          <%= f.input :name %>
+          <%= f.input :description %>
+          <%= f.input :address1 %>
+          <%= f.input :address2 %>
+          <%= f.input :post_code %>
+          <%= f.input :town %>
+
+          <%= f.submit %>
+      <% end %>
+
+
+
+
+
+
+
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+
+
 
       </div>
       <div class="modal-footer">
