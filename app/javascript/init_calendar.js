@@ -1,34 +1,21 @@
 import { Calendar } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
-import interactionPlugin from '@fullcalendar/interaction';
+import interactionPlugin, {Draggable} from '@fullcalendar/interaction';
 import listPlugin from '@fullcalendar/list';
 
+let coachEvents;
+let coachCalendar;
+let coachCalendarEl
 
-const eventCoachReceive = (addInfo) => {
-  console.log("je suis dans eventCoachReceive", addInfo)
-  }
-
-const eventCoachDrop = (event) => {
-  console.log("je suis dans eventCoachDrop", event)
+const eventCoachClick = (info) => {
+  console.log("j'ai cliqué sur un event de coach calendar")
+  console.log(info.event)
+  $("#exampleModal").modal('show')
 }
 
-const selectCoachInterval = (event) => {
-  console.log("je suis dans selectCoachInterval", event)
-}
-
-
-const initCoachCalendar = () => {
-  console.log("je suis dans initCoachCalendar")
-  let calendarEl = document.getElementById('coach_calendar');
-  console.log(calendarEl)
-  if (!calendarEl)
-
-    return
-
-  console.log("je vais instancier un coach calendar")
-
-  const calendar = new Calendar(calendarEl, {
+const createCoachCalendar = () => {
+  coachCalendar = new Calendar(coachCalendarEl, {
     timeZone: 'Europe/Paris',
     plugins: [dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin],
     hiddenDays: [0],
@@ -40,49 +27,38 @@ const initCoachCalendar = () => {
     eventDurationEditable: true,
     initialView: 'dayGridMonth',
     selectable: true,
-
-
-
-    select: (selectionInfo) => {
-      // console.log("JE SUIS LA2021-12-02", selectionInfo);
-      // console.log(selectionInfo.start);
-      // console.log(selectionInfo.end);
-      console.log(selectionInfo.start);
-      console.log(selectionInfo.end);
-      const currentDate = selectionInfo.start.toISOString().substring(0, 10);
-      const currentStartTime = selectionInfo.start.toISOString().substring(11, 16);
-      const currentEndTime = selectionInfo.end.toISOString().substring(11, 16);
-      console.log(currentStartTime, currentEndTime)
-      document.getElementById('debut_time').value = currentStartTime;
-      document.getElementById('ending_time').value = currentEndTime;
-      console.log(currentDate)
-      document.getElementById('date').value = currentDate
-      $('#exampleModal').modal('show')
-
-      // calendar.addEvent({
-      //   title: "à remplir",
-      //   start: selectionInfo.start,
-      //   end: selectionInfo.end
-      // })
-
-    },
     headerToolbar: {
       left: 'prev,next today',
       center: 'title',
       right: 'dayGridMonth,timeGridWeek,listWeek'
     },
-    events: [
-      { // this object will be "parsed" into an Event Object
-        title: 'Yoga', // a property!
-        start: '2021-11-25', // a property!
-        end: '2021-11-26' // a property! ** see important note below about 'end' **
-      }
-    ]
-
+    events: coachEvents,
+    eventClick: eventCoachClick
   });
 
-  calendar.render()
+  coachCalendar.render()
+}
 
+const initDragAndDrop = () => {
+  const containerEl = document.getElementById('external-events');
+
+  new Draggable(containerEl, {
+    itemSelector: '.fc-event',
+    eventData: function (eventEl) {
+      return {
+        title: eventEl.innerText.toLowerCase()
+      };
+    }
+  });
+}
+
+const initCoachCalendar = () => {
+  coachCalendarEl = document.getElementById('coach_calendar');
+  if (coachCalendarEl) {
+    coachEvents = JSON.parse(coachCalendarEl.dataset.events);
+    createCoachCalendar()
+    initDragAndDrop()
+  }
 }
 
 
@@ -123,9 +99,10 @@ const addSlotToCalendar = () => {
       document.getElementById('ending_time').value = currentEndTime;
 
 
+      const number = prompt("Nombre de participants")
 
       calendar.addEvent({
-        title: "à remplir",
+        title: number,
         start: selectionInfo.start,
         end: selectionInfo.end
       })
@@ -143,5 +120,8 @@ const addSlotToCalendar = () => {
   });
   calendar.render();
 }
+
+
+
 
 export { initCoachCalendar, initClientCalendar }
