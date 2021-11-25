@@ -29,24 +29,18 @@ body {
   font-size: 16px;
   font-family: 'Merriweather Sans', sans-serif;
   margin: 0;
-
 }
 
-.footer_top{
-  margin: 10px;
-}
 // /* Toggle Styles */
 
 #viewport {
-  padding-left: 16%;
+  padding-left: 260px;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  padding-right: 2%;
-  position: relative;
+  padding-right: 14px;
 }
-
 
 #sidebar h1 {
 color: white;
@@ -60,8 +54,8 @@ padding-top:7px;
 
 #sidebar {
   position: absolute;
-  left: 45vh;
-  width: 45vh;
+  left: 250px;
+  width: 240px;
   height: 100%;
   top: 0;
   margin-left: -250px;
