@@ -54,6 +54,13 @@ miguel_client = User.create!(
   password: "password"
 )
 
+miguel_client = User.create!(
+  first_name: "Miguel",
+  last_name: "Sanchez",
+  email: "miguel@gmail.com",
+  password: "password"
+)
+
 puts "#{User.count} users were created"
 
 # ================

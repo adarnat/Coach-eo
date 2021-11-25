@@ -6,7 +6,7 @@ import listPlugin from '@fullcalendar/list';
 
 let coachEvents;
 let coachCalendar;
-let coachCalendarEl
+let coachCalendarEl;
 
 const eventCoachClick = (info) => {
   console.log("j'ai cliqué sur un event de coach calendar")
@@ -61,6 +61,9 @@ const initCoachCalendar = () => {
   }
 }
 
+// =============================================================================
+
+// =============================================================================
 
 const initClientCalendar = () => {
   console.log("je suis dans initClientCalendar")
@@ -89,8 +92,8 @@ const addSlotToCalendar = () => {
     events: events,
     select: (selectionInfo) => {
       // console.log("JE SUIS LA2021-12-02", selectionInfo);
-       console.log(selectionInfo.start);
-       console.log(selectionInfo.end);
+      console.log(selectionInfo.start);
+      console.log(selectionInfo.end);
       const currentDate = selectionInfo.start.toISOString().substring(0, 10);
       const currentStartTime = selectionInfo.start.toISOString().substring(11, 16);
       const currentEndTime = selectionInfo.end.toISOString().substring(11, 16);

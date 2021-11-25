@@ -40,8 +40,6 @@
 </div>
 
 
-<p>coucou</p>
-
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   Launch demo modal
@@ -64,7 +62,7 @@
         <form id="form1" action="" method="get" class="form-example">
           <div class="form-example">
             <label for="name">Choose a class: </label>
-         <div data-controller="hello>">
+        <div data-controller="hello>">
             <input type="text" name="name" id="name" required>
           </div>
         <div class="form-example">
@@ -90,7 +88,7 @@
         <hr>
         <h3>Vrai formulaire</h3>
 
-        <%= simple_form_for([@sport_class, @time_slot]) do |f| %>
+        <%= simple_form_for(@time_slot) do |f| %>
           <%= f.input :level %>
           <%= f.input :group_size %>
           <%= f.input :price %>
