@@ -20,4 +20,9 @@ class PagesController < ApplicationController
       }
     ]
   end
+
+  def count_client
+    current_user.sport_classes.time_slots.bookings.client_id.uniq().count
+  end
+
 end
