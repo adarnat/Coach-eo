@@ -96,7 +96,7 @@ jeanro_client = User.create!(
   first_name: "Jeanro",
   last_name: "Croissant",
   email: "jeanro@gmail.com",
-=======
+
 miguel_client = User.create!(
   first_name: "Miguel",
   last_name: "Sanchez",
