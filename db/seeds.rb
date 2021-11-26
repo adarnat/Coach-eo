@@ -177,12 +177,12 @@ crossfit_john = SportClass.create!(
 # Cours coach Victoire
 # ================
 
-ski_victoire = SportClass.create!(
-  category: "Ski",
-  name: "Ski de piste",
-  description: "Venez goûter la poudreuse tout schuss sur les pistes",
-  level: "Expert",
-  group_size: 5,
+fitness_victoire = SportClass.create!(
+  category: "Fitness",
+  name: "Gym suédoise",
+  description: "Venez bougez sur de la bonne musique",
+  level: "Intermédiaire",
+  group_size: 1,
   price: 50,
   duration: 120,
   address1: "4 rue des Capucins",
@@ -425,11 +425,11 @@ puts "#{TimeSlot.count} slots were created"
 # Créneaux Ski Victoire
 # ======================
 
-creneau_ski_victoire = TimeSlot.create!(
-  name: "Ski de piste ",
-  description: "Tout schuss sur les pistes",
-  level: "Expert",
-  group_size: 5,
+creneau_fitness_victoire = TimeSlot.create!(
+  name: "Gym Suédoise ",
+  description: "Cardio sur du bon son",
+  level: "Intermédiaire",
+  group_size: 1,
   price: 50,
   address1: "4 rue des Capucins",
   address2: "",
@@ -437,7 +437,7 @@ creneau_ski_victoire = TimeSlot.create!(
   town: "Lyon",
   start_at: DateTime.strptime("01/12/2021 15:00", "%d/%m/%Y %H:%M"),
   end_at: DateTime.strptime("01/12/2021 16:00", "%d/%m/%Y %H:%M"),
-  sport_class: ski_victoire
+  sport_class: fitness_victoire
 )
 
 # ===========================
@@ -452,7 +452,8 @@ TimeSlot.all.each do |timeslot|
     if client.present?
       Booking.create!(
         time_slot: timeslot,
-        client: client
+        client: client,
+        payment_received: rand(100) < 80
       )
       clients.delete(client)
     end
