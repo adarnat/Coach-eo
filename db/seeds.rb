@@ -62,14 +62,12 @@ miguel_client = User.create!(
   password: "password"
 )
 
-
 dinah_client = User.create!(
   first_name: "Dinah",
   last_name: "Miaou",
   email: "dinah@gmail.com",
   password: "password"
 )
-
 
 holly_client = User.create!(
   first_name: "Holly",
@@ -104,8 +102,6 @@ miguel_client = User.create!(
   email: "miguel@gmail.com",
   password: "password"
 )
-
-
 
 puts "#{User.count} users were created"
 
@@ -217,7 +213,7 @@ creneau_yoga_mike_1 = TimeSlot.create!(
   sport_class: yoga_mike
 )
 
-  creneau_yoga_mike_2 = TimeSlot.create!(
+creneau_yoga_mike_2 = TimeSlot.create!(
   name: "Air Yoga",
   description: "Yoga dans les rideaux pour un niveau intermédiaire",
   level: "Intermédiaire",
@@ -231,49 +227,6 @@ creneau_yoga_mike_1 = TimeSlot.create!(
   end_at: DateTime.strptime("24/11/2021 12:00", "%d/%m/%Y %H:%M"),
   sport_class: yoga_mike
 )
-  creneau_yoga_mike_3 = TimeSlot.create!(
-  name: "Pilates",
-  description: "Pilates sur reformer",
-  level: "Débutant",
-  group_size: 1,
-  price: 60,
-  address1: "4 rue des Capucins",
-  address2: "",
-  post_code: "69001",
-  town: "Lyon",
-  start_at: DateTime.strptime("25/11/2021 14:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("25/11/2021 15:00", "%d/%m/%Y %H:%M"),
-  sport_class: yoga_mike
-)
-  creneau_yoga_mike_4 = TimeSlot.create!(
-  name: "Air Yoga",
-  description: "Yoga dans les rideaux pour un niveau intermédiaire",
-  level: "Intermédiaire",
-  group_size: 5,
-  price: 20,
-  address1: "4 rue des Capucins",
-  address2: "",
-  post_code: "69001",
-  town: "Lyon",
-  start_at: DateTime.strptime("25/11/2021 10:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("25/11/2021 12:00", "%d/%m/%Y %H:%M"),
-  sport_class: yoga_mike
-)
-  creneau_yoga_mike_5 = TimeSlot.create!(
-  name: "alta Yoga",
-  description: "Yoga sur tapis",
-  level: "Expert",
-  group_size: 7,
-  price: 20,
-  address1: "4 rue des Capucins",
-  address2: "",
-  post_code: "69001",
-  town: "Lyon",
-  start_at: DateTime.strptime("25/11/2021 9:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("25/11/2021 10:00", "%d/%m/%Y %H:%M"),
-  sport_class: yoga_mike
-)
-
 creneau_yoga_mike_3 = TimeSlot.create!(
   name: "Pilates",
   description: "Pilates sur reformer",
@@ -288,7 +241,8 @@ creneau_yoga_mike_3 = TimeSlot.create!(
   end_at: DateTime.strptime("25/11/2021 15:00", "%d/%m/%Y %H:%M"),
   sport_class: yoga_mike
 )
-  creneau_yoga_mike_4 = TimeSlot.create!(
+
+creneau_yoga_mike_4 = TimeSlot.create!(
   name: "Air Yoga",
   description: "Yoga dans les rideaux pour un niveau intermédiaire",
   level: "Intermédiaire",
@@ -303,8 +257,53 @@ creneau_yoga_mike_3 = TimeSlot.create!(
   sport_class: yoga_mike
 )
 
-  creneau_yoga_mike_5 = TimeSlot.create!(
-  name: "alta Yoga",
+creneau_yoga_mike_5 = TimeSlot.create!(
+  name: "Alta Yoga",
+  description: "Yoga sur tapis",
+  level: "Expert",
+  group_size: 7,
+  price: 20,
+  address1: "4 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("25/11/2021 9:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("25/11/2021 10:00", "%d/%m/%Y %H:%M"),
+  sport_class: yoga_mike
+)
+
+creneau_yoga_mike_6 = TimeSlot.create!(
+  name: "Pilates",
+  description: "Pilates sur reformer",
+  level: "Débutant",
+  group_size: 1,
+  price: 60,
+  address1: "4 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("25/11/2021 14:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("25/11/2021 15:00", "%d/%m/%Y %H:%M"),
+  sport_class: yoga_mike
+)
+
+creneau_yoga_mike_7 = TimeSlot.create!(
+  name: "Air Yoga",
+  description: "Yoga dans les rideaux pour un niveau intermédiaire",
+  level: "Intermédiaire",
+  group_size: 5,
+  price: 20,
+  address1: "4 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("25/11/2021 10:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("25/11/2021 12:00", "%d/%m/%Y %H:%M"),
+  sport_class: yoga_mike
+)
+
+creneau_yoga_mike_8 = TimeSlot.create!(
+  name: "Alta Yoga",
   description: "Yoga sur tapis",
   level: "Expert",
   group_size: 7,
@@ -337,7 +336,7 @@ creneau_meditation_mike_1 = TimeSlot.create!(
   sport_class: meditation_mike
 )
 
-creneau_meditation_mike_1 = TimeSlot.create!(
+creneau_meditation_mike_2 = TimeSlot.create!(
   name: "Méditation en plein air",
   description: "Venez vous ressourcer au milieu de la nature, accompagné du chant des oiseaux. Tout le monde il est beau, tout le monde il est gentil",
   level: "Tous niveaux",
@@ -425,6 +424,7 @@ puts "#{TimeSlot.count} slots were created"
 # ======================
 # Créneaux Ski Victoire
 # ======================
+
 creneau_ski_victoire = TimeSlot.create!(
   name: "Ski de piste ",
   description: "Tout schuss sur les pistes",
