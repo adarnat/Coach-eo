@@ -20,7 +20,7 @@
             </div>
             <div class="details">
               <p class="card-text"><%= sport_class.group_size %><i class="fas fa-user-friends"></i></i></p>
-              <p class="card-center"><%= sport_class.price %> €</p>
+              <p class="card-center"><%= sport_class.price.to_i %> €</p>
               <p class="card-text"><%= sport_class.duration %> min</p>
 <%# ////////// %>
             </div>
@@ -34,3 +34,5 @@
     <% end %>
   </div>
 </div>
+
+<% console if Rails.env.development? %>
