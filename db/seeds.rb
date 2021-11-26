@@ -167,9 +167,9 @@ crossfit_john = SportClass.create!(
   coach: john_coach
 )
 
-# ================
+# ====================
 # Cours coach Victoire
-# ================
+# ====================
 
 fitness_victoire = SportClass.create!(
   category: "Fitness",
@@ -182,6 +182,36 @@ fitness_victoire = SportClass.create!(
   address1: "4 rue des Capucins",
   address2: "",
   post_code: "69001",
+  town: "Lyon",
+  coach: victoire_coach
+)
+
+pilates_victoire = SportClass.create!(
+  category: "Pilates",
+  name: "Cours de pilate pour débutants",
+  description: "Initiation au pilate",
+  level: "Débutant",
+  group_size: 10,
+  price: 20,
+  duration: 60,
+  address1: "15 rue de la Charité",
+  address2: "",
+  post_code: "69002",
+  town: "Lyon",
+  coach: victoire_coach
+)
+
+yoga_victoire = SportClass.create!(
+  category: "Yoga",
+  name: "Yoga classique",
+  description: "Venez vous détendre",
+  level: "Tous niveaux",
+  group_size: 5,
+  price: 30,
+  duration: 60,
+  address1: "8 Boulevard des Brotteaux",
+  address2: "",
+  post_code: "69006",
   town: "Lyon",
   coach: victoire_coach
 )
@@ -222,8 +252,8 @@ creneau_yoga_mike_2 = TimeSlot.create!(
   sport_class: yoga_mike
 )
 creneau_yoga_mike_3 = TimeSlot.create!(
-  name: "Pilates",
-  description: "Pilates sur reformer",
+  name: "Alta Yoga",
+  description: "Yogi Yogi",
   level: "Débutant",
   group_size: 1,
   price: 60,
@@ -231,8 +261,8 @@ creneau_yoga_mike_3 = TimeSlot.create!(
   address2: "",
   post_code: "69001",
   town: "Lyon",
-  start_at: DateTime.strptime("25/11/2021 14:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("25/11/2021 15:00", "%d/%m/%Y %H:%M"),
+  start_at: DateTime.strptime("26/11/2021 14:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("26/11/2021 15:00", "%d/%m/%Y %H:%M"),
   sport_class: yoga_mike
 )
 
@@ -246,68 +276,8 @@ creneau_yoga_mike_4 = TimeSlot.create!(
   address2: "",
   post_code: "69001",
   town: "Lyon",
-  start_at: DateTime.strptime("25/11/2021 10:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("25/11/2021 12:00", "%d/%m/%Y %H:%M"),
-  sport_class: yoga_mike
-)
-
-creneau_yoga_mike_5 = TimeSlot.create!(
-  name: "Alta Yoga",
-  description: "Yoga sur tapis",
-  level: "Expert",
-  group_size: 7,
-  price: 20,
-  address1: "4 rue des Capucins",
-  address2: "",
-  post_code: "69001",
-  town: "Lyon",
-  start_at: DateTime.strptime("25/11/2021 9:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("25/11/2021 10:00", "%d/%m/%Y %H:%M"),
-  sport_class: yoga_mike
-)
-
-creneau_yoga_mike_6 = TimeSlot.create!(
-  name: "Pilates",
-  description: "Pilates sur reformer",
-  level: "Débutant",
-  group_size: 1,
-  price: 60,
-  address1: "4 rue des Capucins",
-  address2: "",
-  post_code: "69001",
-  town: "Lyon",
-  start_at: DateTime.strptime("26/11/2021 14:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("26/11/2021 15:00", "%d/%m/%Y %H:%M"),
-  sport_class: yoga_mike
-)
-
-creneau_yoga_mike_7 = TimeSlot.create!(
-  name: "Air Yoga",
-  description: "Yoga dans les rideaux pour un niveau intermédiaire",
-  level: "Intermédiaire",
-  group_size: 5,
-  price: 20,
-  address1: "4 rue des Capucins",
-  address2: "",
-  post_code: "69001",
-  town: "Lyon",
   start_at: DateTime.strptime("26/11/2021 10:00", "%d/%m/%Y %H:%M"),
   end_at: DateTime.strptime("26/11/2021 12:00", "%d/%m/%Y %H:%M"),
-  sport_class: yoga_mike
-)
-
-creneau_yoga_mike_8 = TimeSlot.create!(
-  name: "Alta Yoga",
-  description: "Yoga sur tapis",
-  level: "Expert",
-  group_size: 7,
-  price: 20,
-  address1: "4 rue des Capucins",
-  address2: "",
-  post_code: "69001",
-  town: "Lyon",
-  start_at: DateTime.strptime("26/11/2021 9:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("26/11/2021 10:00", "%d/%m/%Y %H:%M"),
   sport_class: yoga_mike
 )
 
@@ -345,9 +315,9 @@ creneau_meditation_mike_2 = TimeSlot.create!(
   sport_class: meditation_mike
 )
 
-# ====================
+# =====================
 # Créneaux Pilates John
-# ====================
+# =====================
 
 creneau_pilates_john_1 = TimeSlot.create!(
   name: "Initiation au pilates",
@@ -413,34 +383,124 @@ creneau_crossfit_john_2 = TimeSlot.create!(
   sport_class: crossfit_john
 )
 
-puts "#{TimeSlot.count} slots were created"
+# =========================
+# Créneaux Fitness Victoire
+# =========================
 
-# ======================
-# Créneaux Ski Victoire
-# ======================
-
-creneau_fitness_victoire = TimeSlot.create!(
-  name: "Gym Suédoise ",
-  description: "Cardio sur du bon son",
+creneau_fitness_victoire_1 = TimeSlot.create!(
+  name: "Cours individuel de Fitness",
+  description: "Cours individuel personnalisé",
   level: "Intermédiaire",
   group_size: 1,
-  price: 50,
+  price: 60,
   address1: "4 rue des Capucins",
   address2: "",
   post_code: "69001",
   town: "Lyon",
   start_at: DateTime.strptime("01/12/2021 15:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("01/12/2021 16:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("01/12/2021 17:00", "%d/%m/%Y %H:%M"),
   sport_class: fitness_victoire
 )
 
+creneau_fitness_victoire_2 = TimeSlot.create!(
+  name: "Fitness en groupe",
+  description: "Fitness pour niveau intermédiaire",
+  level: "Intermédiaire",
+  group_size: 10,
+  price: 40,
+  address1: "4 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("25/11/2021 15:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("25/11/2021 16:30", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+creneau_fitness_victoire_3 = TimeSlot.create!(
+  name: "Fitness en groupe",
+  description: "Fitness pour niveau intermédiaire",
+  level: "Intermédiaire",
+  group_size: 10,
+  price: 40,
+  address1: "4 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("26/11/2021 15:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("26/11/2021 16:30", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+creneau_pilates_victoire_1 = TimeSlot.create!(
+  name: "Pilates",
+  description: "Initiation au pilate",
+  level: "Débutant",
+  group_size: 8,
+  price: 35,
+  address1: "4 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("25/11/2021 8:30", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("25/11/2021 10:30", "%d/%m/%Y %H:%M"),
+  sport_class: pilates_victoire
+)
+
+creneau_pilates_victoire_2 = TimeSlot.create!(
+  name: "Pilates",
+  description: "Initiation au pilate",
+  level: "Débutant",
+  group_size: 8,
+  price: 35,
+  address1: "4 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("26/11/2021 8:30", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("26/11/2021 10:30", "%d/%m/%Y %H:%M"),
+  sport_class: pilates_victoire
+)
+
+creneau_yoga_victoire = TimeSlot.create!(
+  name: "Yoga",
+  description: "Yoga intensif en petit groupe",
+  level: "Expert",
+  group_size: 3,
+  price: 50,
+  address1: "4 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("23/11/2021 15:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("23/11/2021 16:00", "%d/%m/%Y %H:%M"),
+  sport_class: yoga_victoire
+)
+
+creneau_yoga_victoire = TimeSlot.create!(
+  name: "Yoga",
+  description: "Yoga intensif en petit groupe",
+  level: "Expert",
+  group_size: 3,
+  price: 50,
+  address1: "4 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("23/11/2021 10:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("23/11/2021 11:00", "%d/%m/%Y %H:%M"),
+  sport_class: yoga_victoire
+)
+
+
+puts "#{TimeSlot.count} slots were created"
 # ===========================
 # Booking Créneau automatique
 # ===========================
 
 TimeSlot.all.each do |timeslot|
   clients = User.all.map { |user| user if user.is_client? }.compact
-  rand(0..timeslot.group_size).times do
+  rand((timeslot.group_size * 0.7).floor..timeslot.group_size).times do
     # clients = clients.map { |client| client if timeslot.any? }.compact
     client = clients.sample
     if client.present?

@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
     if current_user.present?
-      @time_slots = TimeSlot.includes(:sport_class).where(sport_classes: { coach_id: current_user.id }).where("start_at BETWEEN ? and ?", Date.current.beginning_of_day, Date.current.end_of_day)
+      @time_slots = TimeSlot.includes(:sport_class).where(sport_classes: { coach_id: current_user.id }).where("start_at BETWEEN ? and ?", Date.current.beginning_of_day, Date.current.end_of_day).sort_by{|ev| ev.start_at.strftime('%H:%M')}
     end
   end
 
@@ -23,21 +23,30 @@ class PagesController < ApplicationController
     )
 
     @sport_classes = current_user.sport_classes
-    @time_slots = current_user.time_slots
+    @coach_time_slots = current_user.time_slots
 
-    @yoga_events = [
+    @events = [
       {
         id: 44,
-        title: 'yoga',
-        start: '2021-11-25T08:00:00+01:00',
-        end: '2021-11-25T11:30:00+01:00'
+        title: 'air yoga',
+        start: '2021-11-25T08:00:00+00:00',
+        end: '2021-11-25T11:30:00+00:00'
       },
       {
         id: 45,
         title: 'yoga',
-        start: '2021-11-26T18:00:00+01:00',
-        end: '2021-11-26T20:30:00+01:00'
+        start: '2021-11-26T18:00:00+00:00',
+        end: '2021-11-26T20:30:00+00:00'
       }
     ]
+
+    @db_events = @coach_time_slots.map do |event|
+        {
+          id: event.id,
+          title: event.name,
+          start: event.start_at.strftime('%FT%T%:z'),
+          end: event.end_at.strftime('%FT%T%:z')
+        }
+      end
   end
 end

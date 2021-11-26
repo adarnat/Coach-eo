@@ -25,7 +25,7 @@ const createCoachCalendar = () => {
     navLinks: true,
     eventStartEditable: true,
     eventDurationEditable: true,
-    initialView: 'dayGridMonth',
+    initialView: 'timeGridWeek',
     selectable: true,
     headerToolbar: {
       left: 'prev,next today',
