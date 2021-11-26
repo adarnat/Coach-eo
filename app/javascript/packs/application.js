@@ -28,7 +28,7 @@ import "bootstrap";
 import "controllers"
 
 // Internal imports, e.g:
-// import { initCoachCalendar } from '../init_calendar';
+import { initCoachCalendar } from '../init_calendar';
 import { initClock } from '../init_clock';
 
 
@@ -37,7 +37,7 @@ import { initClock } from '../init_clock';
 
   console.log("je suis dans turbolinks:load")
 
-  // initCoachCalendar();
+  initCoachCalendar();
   initClock()
 
 });
