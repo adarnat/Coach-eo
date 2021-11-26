@@ -11,6 +11,8 @@ box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 font-family: 'Merriweather Sans', sans-serif;
 }
 
+
+
 .card-slot-top {
 display: flex;
 padding: 10px;
@@ -52,13 +54,6 @@ color: #CACBD6;
   font-family: 'Merriweather Sans', sans-serif;
 }
 
-// .width h6{
-//   margin-top: 10px;
-//   margin-bottom: 10px;
-//   width: 250px;
-//   font-family: 'Merriweather Sans', sans-serif;
-// }
-
 .card-slot-top .width{
   margin: 0;
 }
@@ -77,6 +72,7 @@ color: #CACBD6;
 .titre h1{
     margin: auto;
     margin-left: 15px;
+    font-family: 'Merriweather Sans', sans-serif;
 }
 
 .titre{
@@ -91,18 +87,17 @@ color: #CACBD6;
     background: #342e37d4;
     border-radius: 5px;
     display: inline-block;
-    margin: 2em 2em 2em;
-    padding: 0px 38px 20px;
+    margin: 2em 1em 1em;
+    padding: 0px 38px 5px;
 }
 
 .date {
   color:white;
   font-size:2em;
-  padding:10px 0;
 }
 .date #year {
   color:white;
-  font-size:1.8em;
+  font-size:1em;
 }
 
 .clock {
@@ -133,6 +128,14 @@ color: #CACBD6;
 }
 
 .clock .seconds {
-  height: 50%;
+  height: 48%;
   width: 0.1em;
+}
+
+.card-body-client {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    padding-bottom: 60px;
 }

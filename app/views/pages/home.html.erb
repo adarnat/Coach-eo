@@ -7,42 +7,85 @@
        <h1>Bienvenue <%=current_user.first_name %>!</h1>
 
 
-<div class="box">
-  <div class="clock">
-    <span class="seconds"></span>
-    <span class="hours"></span>
-    <span class="minutes"></span>
-  </div>
-  <div class="date">
-    <div id="daymonth"><%= l Date.today, format: '%d %B' %></div>
-    <div id="year"><%= l Date.today, format: '%Y' %></div>
-  </div>
-</div>
+      <div class="box">
+        <div class="clock">
+          <span class="seconds"></span>
+          <span class="hours"></span>
+          <span class="minutes"></span>
+        </div>
+        <div class="date">
+          <div id="daymonth"><%= l Date.today, format: '%d %B' %></div>
+          <div id="year"><%= l Date.today, format: '%Y' %></div>
+        </div>
+      </div>
     </div>
        <%# <div class="calendar">
        <i class="far fa-calendar"></i>
-       <h2 class="calendar-date">  <%= Date.today.strftime('%d.%m.%Y') %> </h2>
+       <h2 class="calendar-date">  <%= Date.today.strftime('%d.%m.%Y') %>
        <%# </div> %>
 
-  <div class="card-agenda">
-    <div class="card-features">
-    <div class="card-slot-top">
-    <h6>Horaire</h6>
-    <div class="width"><h6>Nom de la séance</h6></div>
-    <h6>Niveau</h6>
-    <h6>Durée</h6>
-    <h6>Capacité</h6>
-    </div>
-        <% @time_slots.each do |time_slot| %>
-          <div class="card-slot">
-            <div class="item-timeslot"><p><%= time_slot.start_at.strftime('%H:%M') %></p></div>
-            <div class="width overflow-auto "><p><%= time_slot.name %></p></div>
-            <div class="item-timeslot"><p><%= time_slot.level %></p></div>
-            <div class="item-timeslot"><p><%= time_slot.sport_class.duration %> min</p></div>
-            <div class="item-timeslot"><p><%= time_slot.group_size %><i class="fas fa-user-friends"></i></p></div>
-          </div>
+      <div class="card-agenda">
+        <div class="card-features">
+        <div class="card-slot-top">
+        <h6>Horaire</h6>
+        <div class="width"><h6>Nom de la séance</h6></div>
+        <h6>Niveau</h6>
+        <h6>Durée</h6>
+        <h6>Capacité</h6>
+        <h6>Réservations</h6>
+      </div>
+            <% @time_slots.each do |time_slot| %>
+              <div class="card-slot">
+                <div class="item-timeslot"><p><%= time_slot.start_at.strftime('%H:%M') %></p></div>
+                <div class="width overflow-auto "><p><%= time_slot.name %></p></div>
+                <div class="item-timeslot"><p><%= time_slot.level %></p></div>
+                <div class="item-timeslot"><p><%= time_slot.sport_class.duration %> min</p></div>
+                <div class="item-timeslot"><p><%= time_slot.group_size %><i class="fas fa-user-friends"></i></p></div>
+                <div class="item-timeslot"> <p><a class="btn btn-primary" data-toggle="collapse" href="#collapseExample-<%= time_slot.id %>" role="button" aria-expanded="false" aria-controls="collapseExample"> Réservations </a></p></div>
+              </div>
+                <div class="collapse" id="collapseExample-<%= time_slot.id %>">
+                  <div class="card card-body-client">
+                  <% time_slot.bookings.each  do |booking| %>
+                  <div class="card-slot">
+                    <div class="item-timeslot"><p> <%= booking.client.first_name%>  <%= booking.client.last_name%></p></div>
+                    <div class="item-timeslot"><p><%= booking.client.email %></p></div>
+                    <div class="item-timeslot"><p><%= time_slot.price %>€</p></div>
+                    <% if booking.payment_received %>
+                      <div class="item-timeslot"><p>Payé</p></div>
+                    <% else %>
+                      <div class="item-timeslot"><p>Impayé</p></div>
+                    <% end %>
+                  </div>
+                <% end %>
+                  </div>
+                </div>
+            <% end %>
+        </div>
+      </div>
         <% end %>
-    </div>
   </div>
-    <% end %>
+
+<%#
+<div  id="viewport">
+
+<main data-controller="toggle_booking">
+  <button data-action="click->details#toggle" data-toggle-target="details">
+    Réservation
+  </button>
+
+  <aside class="is-hidden" data-toggle-name="Détails">
+    <p>Here's "Sidebar 1".</p>
+  </aside>
+</main> %>
+
+
+<%# <div data-controller="toggle_booking" data-toggle-booking-target="details">
+  <button data-action="click->details#toggle" data-target="toggle_booking.details" type="button" class="btn">
+
+    Toggle me!
+  </button>
+
+  <p data-booking-target="item" class="hidden mt-4">Hey 👋</p>
+  <p data-booking-target="item" class="hidden mt-4">You can have multiple items</p>
+</div> %>
 </div>
