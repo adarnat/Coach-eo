@@ -59,7 +59,7 @@ const initCoachCalendar = () => {
     console.log(coachEvents)
     createCoachCalendar()
     initDragAndDrop()
-    coachCalendar.render()
+    // coachCalendar.render()
   }
 }
 
