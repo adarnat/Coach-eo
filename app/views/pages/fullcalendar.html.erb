@@ -12,16 +12,9 @@
 
 <div class="container">
   <h1>Calendrier coach</h1>
-  <div id="coach_calendar" style="width: 800px; height: 200px" data-calendar-id="22" data-events=<%= @yoga_events.to_json%>></div>
+  <div id="coach_calendar" style="width: 800px; height: 200px" data-calendar-id="22" data-events="<%= @db_events.to_json%>"></div>
 </div>
 
-
-
-
-<div class="container">
-  <h1>Calendrier Client</h1>
-  <div id="client_calendar" style="width: 800px; height: 200px" data-calendar-id="22" data-events=<%= @yoga_events.to_json%>></div>
-</div>
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
@@ -112,3 +105,6 @@
     </div>
   </div>
 </div>
+
+
+<% console if Rails.env.development? %>

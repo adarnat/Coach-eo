@@ -52,7 +52,7 @@ class SportClassesController < ApplicationController
   private
 
   def sport_class_params
-    params.require(:sport_class).permit(:name, :description, :category, :coach_id)
+    params.require(:sport_class).permit(:name, :description, :category, :coach_id, :level, :group_size, :price, :duration, :address1, :address2, :post_code, :town)
   end
 
 end

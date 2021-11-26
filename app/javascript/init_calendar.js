@@ -25,7 +25,7 @@ const createCoachCalendar = () => {
     navLinks: true,
     eventStartEditable: true,
     eventDurationEditable: true,
-    initialView: 'dayGridMonth',
+    initialView: 'timeGridWeek',
     selectable: true,
     headerToolbar: {
       left: 'prev,next today',
@@ -35,7 +35,6 @@ const createCoachCalendar = () => {
     events: coachEvents,
     eventClick: eventCoachClick
   });
-
   coachCalendar.render()
 }
 
@@ -53,9 +52,11 @@ const initDragAndDrop = () => {
 }
 
 const initCoachCalendar = () => {
+  console.log("je suis initCoachCalendar")
   coachCalendarEl = document.getElementById('coach_calendar');
   if (coachCalendarEl) {
     coachEvents = JSON.parse(coachCalendarEl.dataset.events);
+    console.log(coachEvents)
     createCoachCalendar()
     initDragAndDrop()
   }
