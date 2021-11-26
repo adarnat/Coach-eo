@@ -58,7 +58,7 @@ const initCoachCalendar = () => {
   if (coachCalendarEl) {
     coachEvents = JSON.parse(coachCalendarEl.dataset.events);
     console.log(coachEvents)
-    // createCoachCalendar()
+    createCoachCalendar()
     // initDragAndDrop()
   }
 }
