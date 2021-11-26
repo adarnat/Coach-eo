@@ -19,6 +19,7 @@ module COACHEO
 
 
     config.hosts << "cabd-86-75-230-26.ngrok.io"
+    config.hosts << "coach-eo.herokuapp.com"
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
