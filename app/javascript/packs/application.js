@@ -29,7 +29,7 @@ import "controllers"
 
 // Internal imports, e.g:
 // import { initCoachCalendar } from '../init_calendar';
-// import { initClock } from '../init_clock';
+import { initClock } from '../init_clock';
 
 
 -document.addEventListener('turbolinks:load', () => {
@@ -38,6 +38,6 @@ import "controllers"
   console.log("je suis dans turbolinks:load")
 
   // initCoachCalendar();
-  // initClock()
+  initClock()
 
 });
