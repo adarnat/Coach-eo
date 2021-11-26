@@ -26,7 +26,7 @@
     <% if current_user.present? %>
     <ul class="nsidebar">
       <li>
-       <i class="fas fa-home"></i> <%= link_to "Tableau de bord", root_path%>
+      <i class="fas fa-home"></i> <%= link_to "Tableau de bord", root_path%>
       </li>
       <li>
         <i class="fas fa-calendar-week"></i></i> <%= link_to "Agenda", fullcalendar_path %>
@@ -41,9 +41,7 @@
     </ul>
     <% end %>
   </div>
-</div>
-    <section> </section>
-     <%# <div class="footer_top"></div> %>
+    <%# <div class="footer_top"></div> %>
     <%= yield %>
 <%# <footer>
       <div class="text-center">

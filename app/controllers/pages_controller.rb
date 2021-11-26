@@ -8,6 +8,7 @@ class PagesController < ApplicationController
   end
 
   def fullcalendar
+    @time_slots = TimeSlot.all
     @sport_class = SportClass.last
     @time_slot = TimeSlot.new(
       level: @sport_class.level,
@@ -20,6 +21,9 @@ class PagesController < ApplicationController
       post_code: @sport_class.post_code,
       town: @sport_class.town
     )
+
+    @sport_classes = current_user.sport_classes
+    @time_slots = current_user.time_slots
 
     @yoga_events = [
       {
@@ -35,8 +39,7 @@ class PagesController < ApplicationController
         end: '2021-11-26T20:30:00+01:00'
       }
     ]
-
-
+    console
   end
 
 end
