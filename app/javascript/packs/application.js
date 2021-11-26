@@ -38,6 +38,5 @@ import { initClock } from '../init_clock';
   console.log("je suis dans turbolinks:load")
 
   initClock()
-  initCoachCalendar();
-
+  window.setTimeout(initCoachCalendar, 1000)
 });
