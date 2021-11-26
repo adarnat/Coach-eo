@@ -57,8 +57,9 @@ const initCoachCalendar = () => {
   coachCalendarEl = document.getElementById('coach_calendar');
   if (coachCalendarEl) {
     coachEvents = JSON.parse(coachCalendarEl.dataset.events);
-    createCoachCalendar()
-    initDragAndDrop()
+    console.log(coachEvents)
+    // createCoachCalendar()
+    // initDragAndDrop()
   }
 }
 
