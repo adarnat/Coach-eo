@@ -35,7 +35,8 @@ import { initClock } from '../init_clock';
 -document.addEventListener('turbolinks:load', () => {
     // Call your functions here, e.g:
 
-  initCoachCalendar();
-  initClock()
+  console.log("je suis dans turbolinks:load")
 
+  initClock()
+  initCoachCalendar()
 });
