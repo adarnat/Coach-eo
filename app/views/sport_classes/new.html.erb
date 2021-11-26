@@ -1,7 +1,7 @@
 <div id="viewport">
   <%= link_to '', sport_classes_path, class:"fas fa-arrow-circle-left" %>
   <div class="container_registration">
-  <h2>Séance de sport</h2>
+  <h2>Cours de sport</h2>
     <%= simple_form_for(@sport_class) do |f| %>
       <%= f.input :category , label: false, label: 'Catégorie', collection: SportClass::SPORT_CATEGORY%>
       <%= f.input :name,label: false, placeholder: 'Nom'  %>
@@ -20,7 +20,7 @@
       <%= f.input :group_size, label: 'Capacité maximale', collection: 1..30 %>
       <%= f.input :price,label: false, placeholder: 'Prix' %>
       <%= f.input :address1, label: false, placeholder: 'Adresse' %>
-      <%= f.input :address2, label: false, placeholder: 'Adresse bis' %>
+      <%= f.input :address2, label: false, placeholder: "Complément d'adresse " %>
       <div class="form-group1">
         <%= f.input :post_code, label: false, placeholder: 'Code postale' %>
         <%= f.input :town, label: false, placeholder: 'Ville' %>
