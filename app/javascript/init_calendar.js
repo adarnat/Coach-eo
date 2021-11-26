@@ -35,7 +35,7 @@ const createCoachCalendar = () => {
     events: coachEvents,
     eventClick: eventCoachClick
   });
-
+  coachCalendar.render()
 }
 
 const initDragAndDrop = () => {
@@ -58,8 +58,7 @@ const initCoachCalendar = () => {
     coachEvents = JSON.parse(coachCalendarEl.dataset.events);
     console.log(coachEvents)
     createCoachCalendar()
-    // initDragAndDrop()
-    coachCalendar.render()
+    initDragAndDrop()
   }
 }
 
