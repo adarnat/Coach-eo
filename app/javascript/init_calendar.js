@@ -3,6 +3,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin, {Draggable} from '@fullcalendar/interaction';
 import listPlugin from '@fullcalendar/list';
+import frLocale from '@fullcalendar/core/locales/fr';
 
 let coachEvents;
 let coachCalendar;
@@ -27,10 +28,17 @@ const createCoachCalendar = () => {
     eventDurationEditable: true,
     initialView: 'timeGridWeek',
     selectable: true,
+    businessHours: {
+    daysOfWeek: [1, 2, 3, 4, 5], // Monday - Thursday
+    startTime: '8:00', // a start time (10am in this example)
+    endTime: '19:00'},
+    locale: frLocale,
+    height: 700,
+    eventColor: '#FFB20F',
     headerToolbar: {
       left: 'prev,next today',
       center: 'title',
-      right: 'dayGridMonth,timeGridWeek,listWeek'
+      right: 'timeGridWeek,listWeek'
     },
     events: coachEvents,
     eventClick: eventCoachClick
@@ -50,6 +58,7 @@ const initDragAndDrop = () => {
     }
   });
 }
+
 
 const initCoachCalendar = () => {
   console.log("je suis initCoachCalendar")
