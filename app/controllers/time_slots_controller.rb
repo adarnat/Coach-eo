@@ -5,7 +5,6 @@ class TimeSlotsController < ApplicationController
     @time_slots = TimeSlot.all
     @time_slot = TimeSlot.new(
       level: @sport_class.level,
-      category: @sport_class.category,
       group_size: @sport_class.group_size,
       price: @sport_class.price,
       name: @sport_class.name,
@@ -19,6 +18,10 @@ class TimeSlotsController < ApplicationController
 
   def index
     @time_slots = TimeSlot.all
+  end
+
+    def new
+    @time_slot = TimeSlot.new
   end
 
   def create
@@ -38,7 +41,6 @@ class TimeSlotsController < ApplicationController
   def time_slot_params
     params.require(:time_slot).permit(
       :name,
-      :category,
       :description,
       :start_at,
       :end_at,
