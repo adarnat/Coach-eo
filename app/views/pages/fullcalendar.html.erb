@@ -9,7 +9,10 @@
   </p>
   <% @sport_classes.each do |sport_class| %>
     <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event' >
-      <div class='fc-event-main'><%= sport_class.name %></div>
+      <div class='fc-event-main'><h6><%= sport_class.name %></div></h6>
+       <div class='fc-event-main'>Niveau: <%= sport_class.level %></div>
+       <div class='fc-event-main'> <%= sport_class.group_size %>personne(s)</div>
+        <div class='fc-event-main'><%= sport_class.duration %> minutes</div>
     </div>
   <% end %>
 </div>
