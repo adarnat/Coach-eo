@@ -32,7 +32,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <%# <h5 class="modal-title" id="exampleModalLabel">Modal title</h5> %>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -64,40 +64,69 @@
           </div>
         </form> %>
 
+        <%# <hr>
         <hr>
         <hr>
-        <hr>
-        <hr>
+        <hr> %>
         <h3>Modifier le créneau</h3>
 
-        <%= simple_form_for(@time_slot) do |f| %>
-          <%= f.input :level %>
-          <%= f.input :group_size %>
-          <%= f.input :price %>
-          <%= f.input :start_at, html5: true %>
-          <%= f.input :end_at, html5: true %>
-          <%= f.input :name %>
-          <%= f.input :description %>
-          <%= f.input :address1 %>
-          <%= f.input :address2 %>
-          <%= f.input :post_code %>
-          <%= f.input :town %>
+        <%# <%= simple_form_for(@time_slot) do |f| %>
+          <%# <%= f.input :level %>
+          <%# <%= f.input :group_size %>
+          <%# <%= f.input :price %>
+          <%# <%= f.input :start_at, html5: true %>
+          <%# <%= f.input :end_at, html5: true %>
+          <%# <%= f.input :name %>
+          <%# <%= f.input :description %>
+          <%# <%= f.input :address1 %>
+          <%# <%= f.input :address2 %>
+          <%# <%= f.input :post_code %>
+          <%# <%= f.input :town %>
 
-          <%= f.submit %>
-      <% end %>
+          <%# <%= f.submit %>
+      <%# <% end %>
+
+ <%= simple_form_for(@time_slot) do |f| %>
+ <%# <%= f.input :category , label: 'Catégorie', collection: SportClass::SPORT_CATEGORY%>
+      <%= f.input :name,label: false, placeholder: 'Nom'  %>
+      <%= f.input :description, label: false, placeholder: 'Description' %>
+      <%= f.input :level,
+                  label: "Niveau",
+                  as: :radio_buttons,
+                  input_html: { class: "tag-selector" },
+                  item_wrapper_class: 'tag-item',
+                  collection: SportClass::LEVELS%>
+      <%= f.input :group_size,label: false, label: 'Type de groupe',
+                  as: :radio_buttons,
+                  input_html: { class: "tag-selector" },
+                  item_wrapper_class: 'tag-item',
+                  collection: ['Individuel', 'Collectif'] %>
+                   <%= f.input :start_at, html5: true %>
+           <%= f.input :end_at, html5: true %>
+      <%= f.input :group_size, label: 'Capacité maximale', collection: 1..30 %>
+      <%= f.input :price,label: false, placeholder: 'Prix' %>
+      <%= f.input :address1, label: false, placeholder: 'Adresse' %>
+      <%= f.input :address2, label: false, placeholder: "Complément d'adresse " %>
+      <div class="form-group1">
+        <%= f.input :post_code, label: false, placeholder: 'Code postale' %>
+        <%= f.input :town, label: false, placeholder: 'Ville' %>
+      </div>
+      <%= f.hidden_field :coach_id,  :value => current_user.id %>
+
+      <div class="button2">
+        <%= f.button :submit,label: false, placeholder: 'Enregistrer' %>
+      </div>
+ <% end %>
 
 
-
-
-
-
+<%#
 
         <hr>
         <hr>
         <hr>
         <hr>
         <hr>
-        <hr>
+        <hr> %>
 
 
 

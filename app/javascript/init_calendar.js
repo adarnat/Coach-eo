@@ -29,8 +29,8 @@ const createCoachCalendar = () => {
     initialView: 'timeGridWeek',
     selectable: true,
     businessHours: {
-    daysOfWeek: [1, 2, 3, 4, 5], // Monday - Thursday
-    startTime: '8:00', // a start time (10am in this example)
+    daysOfWeek: [1, 2, 3, 4, 5],
+    startTime: '8:00',
     endTime: '19:00'},
     locale: frLocale,
     height: 700,
@@ -40,6 +40,7 @@ const createCoachCalendar = () => {
       center: 'title',
       right: 'timeGridWeek,listWeek'
     },
+
     events: coachEvents,
     eventClick: eventCoachClick
   });
