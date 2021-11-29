@@ -24,7 +24,7 @@
                 <div class="item-timeslot"><p><%= time_slot.start_at.strftime('%H:%M') %> - <%= time_slot.end_at.strftime('%H:%M') %></p></div>
                 <div class="width overflow-auto "><p><%= time_slot.name %></p></div>
                 <div class="item-timeslot"><p><%= time_slot.level %></p></div>
-                <div class="item-timeslot"><p><%= time_slot.bookings.size%>/<%= time_slot.group_size %><i class="fas fa-user-friends"></i></p></div>
+                <div class="item-timeslot"><p><%= time_slot.bookings.size%>/<%= time_slot.group_size %><i class="fas fa-user-circle"></i></p></div>
               </div>
                 <div class="collapse" id="collapseExample-<%= time_slot.id %>">
                   <div class="card-body-client">
@@ -32,9 +32,9 @@
                   <div class="card-slot-details">
                     <div class="item-timeslot"><p> <%= booking.client.first_name%>  <%= booking.client.last_name%></p></div>
                     <% if booking.payment_received %>
-                      <div class="item-timeslot-details"><i class="fas fa-check-circle"></i></div>
+                      <div class="item-timeslot-details"><p class="payé">Payé</p></div>
                     <% else %>
-                      <div class="item-timeslot-details"><i class="fas fa-times-circle"></i><p class="impayé" class="width">€</p></div>
+                      <div class="item-timeslot-details"><p class="impayé">Impayé</p></div>
                     <% end %>
                   </div>
                 <% end %>

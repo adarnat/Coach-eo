@@ -4,19 +4,27 @@
     margin: auto;
     padding: 30px;
     border-radius: 10px;
-    margin-right: 4%;
-    margin-left: 40px;
-    background-color: #457b9d6b;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .card-features h4{
   font-family: 'Merriweather Sans', sans-serif;
+  padding-bottom: 20px;
+  color: #2C3E50;
 }
 .fa-check-circle:before {
     content: "\f058";
     color: #7ea06a;
-    font-size: 12em;
+    font-size: 2em;
+    margin: auto;
+}
+
+.fa-times-circle:before {
+    content: "\f057";
+    color: red;
+    font-size: 2em;
+    margin: auto;
 }
 
 .card-slot {
@@ -26,12 +34,16 @@
   justify-content: space-between;
   border-radius: 10px;
   background-color: white;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   font-family: 'Merriweather Sans', sans-serif;
 }
 
 .card-slot:hover {
-background-color: #2c3e508e;
+background-color: #2C3E50;
+color: white;
+}
+.card-slot:hover p{
+background-color: #2C3E50;
 color: white;
 }
 
@@ -63,13 +75,18 @@ color: white;
   margin-bottom: 10px;
   width: 150px;
   font-family: 'Merriweather Sans', sans-serif;
+  color: #2C3E50;
 }
 
+.item-timeslot-details{
+  margin: auto;
+  margin-right: 3px;
+}
 
 .item-timeslot-details p {
   margin-top: 10px;
   margin-bottom: 10px;
-  width: 180px;
+  width: 100px;
   font-family: 'Merriweather Sans', sans-serif;
 }
 .width{
@@ -82,6 +99,7 @@ color: white;
   margin:0;
   width: 250px;
   font-family: 'Merriweather Sans', sans-serif;
+  color: #2C3E50;
 }
 
 .card-slot-top .width{
@@ -93,10 +111,16 @@ color: white;
 }
 
 
-.card-slot .fa-user-friends:before {
+.card-slot .fa-user-circle:before {
   content: "\f500";
   padding-left: 10px;
-  color: black;
+  color: #2C3E50;
+}
+
+.fa-user-circle:after {
+  content: "\f500";
+  color: white;
+  padding-left: 10px;
 }
 
 .titre h1{
@@ -125,17 +149,15 @@ color: white;
   justify-content: space-between;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   font-family: 'Merriweather Sans', sans-serif;
-  background-color: white;
+  background-color: #2C3E50;
+  border-radius: 5px;
 }
-.card-slot-top-details {
-  display: flex;
-  padding: 10px;
-  margin: 10px;
-  justify-content: space-between;
-  font-family: 'Merriweather Sans', sans-serif;
-  background-color: #2c3e4f;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+
+.card-slot-details p {
+color: white;
 }
+
+
 .card-slot-top-details h6 {
   font-weight: bolder;
   width: 180px;
@@ -155,13 +177,18 @@ color: white;
 
 .payé{
   text-align: center;
-  color: grey;
+  color: green;
+  border: green 1px solid;
+  background-color: rgba(0, 128, 0, 0.563);
+  border-radius: 10px;
 }
 
 .impayé{
-  background-color: #d33e43;
   text-align: center;
-  color: white;
+  color: rgb(157, 0, 0);
+  border: rgb(157, 0, 0) 1px solid;
+  background-color: rgba(157, 0, 0, 0.508);
+  border-radius: 10px;
 }
 
 .btn-primary{
@@ -190,6 +217,7 @@ color: white;
 .date {
   color:white;
   font-size:2em;
+  text-align: center;
 }
 
 .date #2C3E50 {
