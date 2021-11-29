@@ -1,9 +1,9 @@
-<div id="viewport">
+<div id="container">
   <%= link_to '', sport_classes_path, class:"fas fa-arrow-circle-left" %>
   <div class="container_registration">
   <h2>Cours de sport</h2>
     <%= simple_form_for(@sport_class) do |f| %>
-      <%= f.input :category , label: false, label: 'Catégorie', collection: SportClass::SPORT_CATEGORY%>
+      <%= f.input :category , label: 'Catégorie', collection: SportClass::SPORT_CATEGORY%>
       <%= f.input :name,label: false, placeholder: 'Nom'  %>
       <%= f.input :description, label: false, placeholder: 'Description' %>
       <%= f.input :level,

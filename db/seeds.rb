@@ -95,12 +95,6 @@ jeanro_client = User.create!(
   last_name: "Croissant",
   email: "jeanro@gmail.com",
   password: "password"
-
-miguel_client = User.create!(
-  first_name: "Miguel",
-  last_name: "Sanchez",
-  email: "miguel@gmail.com",
-  password: "password"
 )
 
 puts "#{User.count} users were created"
@@ -238,8 +232,8 @@ creneau_yoga_mike_1 = TimeSlot.create!(
   address2: "",
   post_code: "69001",
   town: "Lyon",
-  start_at: DateTime.strptime("20/11/2021 8:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("20/11/2021 9:30", "%d/%m/%Y %H:%M"),
+  start_at: DateTime.strptime("29/11/2021 8:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("29/11/2021 9:30", "%d/%m/%Y %H:%M"),
   sport_class: yoga_mike
 )
 
@@ -253,8 +247,8 @@ creneau_yoga_mike_2 = TimeSlot.create!(
   address2: "",
   post_code: "69001",
   town: "Lyon",
-  start_at: DateTime.strptime("24/11/2021 10:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("24/11/2021 12:00", "%d/%m/%Y %H:%M"),
+  start_at: DateTime.strptime("30/11/2021 10:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("30/11/2021 12:00", "%d/%m/%Y %H:%M"),
   sport_class: yoga_mike
 )
 creneau_yoga_mike_3 = TimeSlot.create!(
@@ -267,8 +261,8 @@ creneau_yoga_mike_3 = TimeSlot.create!(
   address2: "",
   post_code: "69001",
   town: "Lyon",
-  start_at: DateTime.strptime("26/11/2021 14:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("26/11/2021 15:00", "%d/%m/%Y %H:%M"),
+  start_at: DateTime.strptime("29/11/2021 14:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("29/11/2021 15:00", "%d/%m/%Y %H:%M"),
   sport_class: yoga_mike
 )
 
@@ -282,8 +276,8 @@ creneau_yoga_mike_4 = TimeSlot.create!(
   address2: "",
   post_code: "69001",
   town: "Lyon",
-  start_at: DateTime.strptime("26/11/2021 10:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("26/11/2021 12:00", "%d/%m/%Y %H:%M"),
+  start_at: DateTime.strptime("01/12/2021 16:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("01/12/2021 18:00", "%d/%m/%Y %H:%M"),
   sport_class: yoga_mike
 )
 
@@ -301,8 +295,8 @@ creneau_meditation_mike_1 = TimeSlot.create!(
   address2: "",
   post_code: "69001",
   town: "Lyon",
-  start_at: DateTime.strptime("23/11/2021 14:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("23/11/2021 16:00", "%d/%m/%Y %H:%M"),
+  start_at: DateTime.strptime("29/11/2021 16:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("29/11/2021 18:00", "%d/%m/%Y %H:%M"),
   sport_class: meditation_mike
 )
 
@@ -403,8 +397,8 @@ creneau_fitness_victoire_1 = TimeSlot.create!(
   address2: "",
   post_code: "69001",
   town: "Lyon",
-  start_at: DateTime.strptime("01/12/2021 15:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("01/12/2021 17:00", "%d/%m/%Y %H:%M"),
+  start_at: DateTime.strptime("29/11/2021 09:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("29/11/2021 11:00", "%d/%m/%Y %H:%M"),
   sport_class: fitness_victoire
 )
 
@@ -418,8 +412,8 @@ creneau_fitness_victoire_2 = TimeSlot.create!(
   address2: "",
   post_code: "69001",
   town: "Lyon",
-  start_at: DateTime.strptime("25/11/2021 15:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("25/11/2021 16:30", "%d/%m/%Y %H:%M"),
+  start_at: DateTime.strptime("30/11/2021 13:30", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("30/11/2021 15:00", "%d/%m/%Y %H:%M"),
   sport_class: fitness_victoire
 )
 
@@ -433,8 +427,8 @@ creneau_fitness_victoire_3 = TimeSlot.create!(
   address2: "",
   post_code: "69001",
   town: "Lyon",
-  start_at: DateTime.strptime("26/11/2021 15:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("26/11/2021 16:30", "%d/%m/%Y %H:%M"),
+  start_at: DateTime.strptime("01/12/2021 16:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("01/12/2021 17:30", "%d/%m/%Y %H:%M"),
   sport_class: fitness_victoire
 )
 
@@ -448,8 +442,8 @@ creneau_pilates_victoire_1 = TimeSlot.create!(
   address2: "",
   post_code: "69001",
   town: "Lyon",
-  start_at: DateTime.strptime("25/11/2021 8:30", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("25/11/2021 10:30", "%d/%m/%Y %H:%M"),
+  start_at: DateTime.strptime("29/11/2021 13:30", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("29/11/2021 14:30", "%d/%m/%Y %H:%M"),
   sport_class: pilates_victoire
 )
 
@@ -463,8 +457,8 @@ creneau_pilates_victoire_2 = TimeSlot.create!(
   address2: "",
   post_code: "69001",
   town: "Lyon",
-  start_at: DateTime.strptime("26/11/2021 8:30", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("26/11/2021 10:30", "%d/%m/%Y %H:%M"),
+  start_at: DateTime.strptime("30/11/2021 9:30", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("30/11/2021 11:30", "%d/%m/%Y %H:%M"),
   sport_class: pilates_victoire
 )
 
@@ -478,8 +472,8 @@ creneau_yoga_victoire = TimeSlot.create!(
   address2: "",
   post_code: "69001",
   town: "Lyon",
-  start_at: DateTime.strptime("23/11/2021 15:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("23/11/2021 16:00", "%d/%m/%Y %H:%M"),
+  start_at: DateTime.strptime("01/12/2021 9:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("01/12/2021 10:00", "%d/%m/%Y %H:%M"),
   sport_class: yoga_victoire
 )
 
@@ -493,8 +487,8 @@ creneau_yoga_victoire = TimeSlot.create!(
   address2: "",
   post_code: "69001",
   town: "Lyon",
-  start_at: DateTime.strptime("23/11/2021 10:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("23/11/2021 11:00", "%d/%m/%Y %H:%M"),
+  start_at: DateTime.strptime("29/11/2021 16:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("29/11/2021 17:00", "%d/%m/%Y %H:%M"),
   sport_class: yoga_victoire
 )
 

@@ -1,15 +1,99 @@
 #external-events {
-  position: fixed;
-  z-index: 2;
-  top: 120px;
-  left: 300px;
-  width: 150px;
-  padding: 0 10px;
-  border: 1px solid #ccc;
-  background: #eee;
+    position: fixed;
+    z-index: 2;
+    top: 19%;
+    left: 15.5%;
+    width: 12%;
+    height: 90%;
+    padding: 14px 10px;
+    /* border: 1px solid #ccc; */
+    background: #2C3E50;
+
+    /* margin: auto; */
 }
 
 #external-events .fc-event {
   cursor: move;
-  margin: 3px 0;
+  margin: 5px 0;
+  color: black;
+  padding: 2px;
+
+}
+
+#external-events p {
+  color: white;
+  padding: 2px;
+
+}
+
+.agenda {
+  padding-left: 30%;
+  padding-right: 4%;
+  height: 100px;
+}
+
+.fc-col-header-cell-cushion {
+  color: #FFB20F;
+}
+
+.fc-event-time{
+  background-color: #FFB20F;
+  padding: 1%;
+  font-size: 20px;
+}
+
+.fc-event-title-container{
+  background-color: #2C3E50;
+}
+
+
+
+
+.fc-daygrid-event {
+    white-space: normal;
+    border-radius: 3px;
+    font-size: 1em;
+    font-size: var(--fc-small-font-size, 1em);
+}
+
+.fc-h-event {
+    display: block;
+    border: 1px solid #342e37;
+    border: 1px solid var(--fc-event-border-color, #342e37);
+   background-color: var(--fc-event-bg-color, #342e37);
+}
+
+
+// .fc-v-event {
+//      display: block;
+//      border: 1px solid white;
+//      border: 1px solid white;
+//      border: 1px solid var(--fc-event-border-color, white);
+//      background-color: white;
+//      background-color: white;
+//      background-color: var(--fc-event-bg-color, white);
+// }
+
+.fc-list-day-cushion a{
+  color: #FFB20F;
+}
+
+.fc .fc-timegrid-axis-frame {
+    overflow: hidden;
+    font-size: 84%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#coach_calendar {
+  padding-bottom: 1%;
+}
+
+
+
+.fc-toolbar-title {
+    font-size: 2.50em;
+    margin: 0;
+    font-family: 'Merriweather Sans', sans-serif;
 }

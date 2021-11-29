@@ -1,38 +1,69 @@
 // Specific CSS for your home-page
-
-.card-slot {
-// border-bottom: solid, #CACBD6;
-// border-top: solid 1px #CACBD6;
-display: flex;
-padding: 10px;
-margin: 10px;
-justify-content: space-between;
-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-font-family: 'Merriweather Sans', sans-serif;
+.card-features{
+  width: 85%;
+  margin: auto;
+  margin-right: 4%;
 }
 
+.card-slot {
+  // border-bottom: solid, #CACBD6;
+  // border-top: solid 1px #CACBD6;
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+  justify-content: space-between;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  font-family: 'Merriweather Sans', sans-serif;
+}
+.card-slot-details {
+  // border-bottom: solid, #CACBD6;
+  // border-top: solid 1px #CACBD6;
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+  justify-content: space-between;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  font-family: 'Merriweather Sans', sans-serif;
+  background-color: white;
+}
+.card-slot-top-details {
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+  justify-content: space-between;
+  font-family: 'Merriweather Sans', sans-serif;
+  background-color: white;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+.card-slot-top-details h6 {
+  font-weight: bolder;
+  width: 180px;
+  color: black;
+  font-size: 18px;
+  margin-top: 10px;
+}
 
 
 .card-slot-top {
-display: flex;
-padding: 10px;
-margin: 10px;
-justify-content: space-between;
-font-family: 'Merriweather Sans', sans-serif;
-background-color: #FFB20F;
-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+  justify-content: space-between;
+  font-family: 'Merriweather Sans', sans-serif;
+  background-color: #FFB20F;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .card-slot-top h6{
-font-weight: bolder;
-width: 150px;
-color: white;
-font-size: 18px;
-margin-top: 10px;
+  font-weight: bolder;
+  width: 150px;
+  color: white;
+  font-size: 18px;
+  margin-top: 10px;
 }
 
 .card-slot h6 {
-color: #CACBD6;
+  color: #cacbd6;
 }
 
 .item-timeslot p {
@@ -41,7 +72,12 @@ color: #CACBD6;
   width: 150px;
   font-family: 'Merriweather Sans', sans-serif;
 }
-
+.item-timeslot-details p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 180px;
+  font-family: 'Merriweather Sans', sans-serif;
+}
 .width{
   margin-top: 10px;
   margin-bottom: 10px;
@@ -73,6 +109,7 @@ color: #CACBD6;
     margin: auto;
     margin-left: 15px;
     font-family: 'Merriweather Sans', sans-serif;
+        margin-bottom: 3%;
 }
 
 .titre{
@@ -80,6 +117,10 @@ color: #CACBD6;
   justify-content: space-between;
   margin-bottom: 30px;
   margin-top: 30px;
+    width: 85%;
+    margin: auto;
+    margin-right: 4%;
+
 }
 
 
@@ -137,5 +178,27 @@ color: #CACBD6;
     display: flex;
     flex-direction: column;
     text-decoration: none;
-    padding-bottom: 60px;
+    background-color: #342e3738;
+    border-radius: 10px;
+}
+
+.payé{
+  background-color: #7ea16b;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+}
+
+.impayé{
+  background-color: #d33e43;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+}
+
+.btn-primary{
+  background-color: #FFB20F;
+  color: white;
+  border-radius: 5px;
+  border: none;
 }

@@ -20,6 +20,10 @@ class TimeSlotsController < ApplicationController
     @time_slots = TimeSlot.all
   end
 
+    def new
+    @time_slot = TimeSlot.new
+  end
+
   def create
     @time_slot = TimeSlot.new(time_slot_params)
     render json: @time_slot.to_json

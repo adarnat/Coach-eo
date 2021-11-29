@@ -31,12 +31,13 @@ body {
   margin: 0;
   position: relative;
   min-height: 100vh;
+  background-color: white;
 }
 
 // /* Toggle Styles */
 
-#viewport {
-  padding-left: 260px;
+#container {
+  padding-left: 8%;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -56,8 +57,8 @@ padding-top:7px;
 
 #sidebar {
   position: absolute;
-  left: 250px;
-  width: 240px;
+  left:250px;
+  width:230px;
   // height: 1500px;
   top: 0;
   bottom: 0;

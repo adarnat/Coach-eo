@@ -1,5 +1,5 @@
 
-<div  id="viewport">
+<div  id="container">
     <div class="titre">
       <% if current_user.nil? %>
         <p>Merci de vous connecter à votre espace coach</p>
@@ -24,36 +24,40 @@
        <h2 class="calendar-date">  <%= Date.today.strftime('%d.%m.%Y') %>
        <%# </div> %>
 
-      <div class="card-agenda">
-        <div class="card-features">
+
+      <div class="card-features">
         <div class="card-slot-top">
         <h6>Horaire</h6>
         <div class="width"><h6>Nom de la séance</h6></div>
         <h6>Niveau</h6>
-        <h6>Durée</h6>
         <h6>Capacité</h6>
         <h6>Réservations</h6>
       </div>
             <% @time_slots.each do |time_slot| %>
               <div class="card-slot">
-                <div class="item-timeslot"><p><%= time_slot.start_at.strftime('%H:%M') %></p></div>
+                <div class="item-timeslot"><p><%= time_slot.start_at.strftime('%H:%M') %> - <%= time_slot.end_at.strftime('%H:%M') %></p></div>
                 <div class="width overflow-auto "><p><%= time_slot.name %></p></div>
                 <div class="item-timeslot"><p><%= time_slot.level %></p></div>
-                <div class="item-timeslot"><p><%= time_slot.sport_class.duration %> min</p></div>
                 <div class="item-timeslot"><p><%= time_slot.group_size %><i class="fas fa-user-friends"></i></p></div>
                 <div class="item-timeslot"> <p><a class="btn btn-primary" data-toggle="collapse" href="#collapseExample-<%= time_slot.id %>" role="button" aria-expanded="false" aria-controls="collapseExample"> Réservations </a></p></div>
               </div>
                 <div class="collapse" id="collapseExample-<%= time_slot.id %>">
-                  <div class="card card-body-client">
+                  <div class="card-body-client">
+                          <div class="card-slot-top-details">
+                          <h6>Clients</h6>
+                          <h6>mails</h6>
+                          <h6>Prix/ personne</h6>
+                          <h6 class="width">Statut du paiement</h6>
+                        </div>
                   <% time_slot.bookings.each  do |booking| %>
-                  <div class="card-slot">
+                  <div class="card-slot-details">
                     <div class="item-timeslot"><p> <%= booking.client.first_name%>  <%= booking.client.last_name%></p></div>
                     <div class="item-timeslot"><p><%= booking.client.email %></p></div>
                     <div class="item-timeslot"><p><%= time_slot.price %>€</p></div>
                     <% if booking.payment_received %>
-                      <div class="item-timeslot"><p>Payé</p></div>
+                      <div class="item-timeslot-details"><p class="payé">Payé</p></div>
                     <% else %>
-                      <div class="item-timeslot"><p>Impayé</p></div>
+                      <div class="item-timeslot-details"><p class="impayé" class="width">Impayé</p></div>
                     <% end %>
                   </div>
                 <% end %>
@@ -66,7 +70,7 @@
   </div>
 
 <%#
-<div  id="viewport">
+<div  id="container">
 
 <main data-controller="toggle_booking">
   <button data-action="click->details#toggle" data-toggle-target="details">
