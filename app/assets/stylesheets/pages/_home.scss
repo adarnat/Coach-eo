@@ -1,46 +1,38 @@
 // Specific CSS for your home-page
-.card-features{
-  width: 100%;
-  margin: auto;
-  margin-right: 4%;
+.card-features {
+    width: 100%;
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    margin-right: 4%;
+    margin-left: 40px;
+    background-color: #457b9d6b;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.card-features h4{
+  font-family: 'Merriweather Sans', sans-serif;
+}
+.fa-check-circle:before {
+    content: "\f058";
+    color: #7ea06a;
+    font-size: 12em;
 }
 
 .card-slot {
-  // border-bottom: solid, #CACBD6;
-  // border-top: solid 1px #CACBD6;
   display: flex;
   padding: 10px;
-  margin: 10px;
+  margin-bottom: 10px;
   justify-content: space-between;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  font-family: 'Merriweather Sans', sans-serif;
-}
-.card-slot-details {
-  // border-bottom: solid, #CACBD6;
-  // border-top: solid 1px #CACBD6;
-  display: flex;
-  padding: 10px;
-  margin: 10px;
-  justify-content: space-between;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  font-family: 'Merriweather Sans', sans-serif;
+  border-radius: 10px;
   background-color: white;
-}
-.card-slot-top-details {
-  display: flex;
-  padding: 10px;
-  margin: 10px;
-  justify-content: space-between;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
   font-family: 'Merriweather Sans', sans-serif;
-  background-color: white;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
-.card-slot-top-details h6 {
-  font-weight: bolder;
-  width: 180px;
-  color: black;
-  font-size: 18px;
-  margin-top: 10px;
+
+.card-slot:hover {
+background-color: #2c3e508e;
+color: white;
 }
 
 
@@ -72,6 +64,8 @@
   width: 150px;
   font-family: 'Merriweather Sans', sans-serif;
 }
+
+
 .item-timeslot-details p {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -100,16 +94,17 @@
 
 
 .card-slot .fa-user-friends:before {
-    content: "\f500";
-    padding-left: 10px;
-    color: black;
+  content: "\f500";
+  padding-left: 10px;
+  color: black;
 }
 
 .titre h1{
-    margin: auto;
-    margin-left: 15px;
-    font-family: 'Merriweather Sans', sans-serif;
-        margin-bottom: 3%;
+  margin: auto;
+  margin-left: 15px;
+  font-family: 'Merriweather Sans', sans-serif;
+  margin-bottom: 3%;
+  color: #2C3E50;
 }
 
 .titre{
@@ -117,11 +112,71 @@
   justify-content: space-between;
   margin-bottom: 30px;
   margin-top: 30px;
-    width: 100%;
-    margin: auto;
-    margin-right: 4%;
+  width: 100%;
+  margin: auto;
+  margin-right: 4%;
 
 }
+
+.card-slot-details {
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+  justify-content: space-between;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  font-family: 'Merriweather Sans', sans-serif;
+  background-color: white;
+}
+.card-slot-top-details {
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+  justify-content: space-between;
+  font-family: 'Merriweather Sans', sans-serif;
+  background-color: #2c3e4f;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+.card-slot-top-details h6 {
+  font-weight: bolder;
+  width: 180px;
+  color: white;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.card-body-client {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-decoration: none;
+  margin: 10px;
+
+}
+
+.payé{
+  text-align: center;
+  color: grey;
+}
+
+.impayé{
+  background-color: #d33e43;
+  text-align: center;
+  color: white;
+}
+
+.btn-primary{
+  background-color: #FFB20F;
+  color: white;
+  border-radius: 5px;
+  border: none;
+}
+
+.flex{
+  display: flex;
+
+}
+
+// CLOCK //
 
 
 .box {
@@ -136,10 +191,13 @@
   color:white;
   font-size:2em;
 }
-.date #year {
+
+.date #2C3E50 {
   color:white;
   font-size:1em;
 }
+
+
 
 .clock {
   background-color:#FFB20F;
@@ -171,34 +229,4 @@
 .clock .seconds {
   height: 48%;
   width: 0.1em;
-}
-
-.card-body-client {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    background-color: #342e3738;
-    border-radius: 10px;
-}
-
-.payé{
-  background-color: #7ea16b;
-  border-radius: 5px;
-  text-align: center;
-  color: white;
-}
-
-.impayé{
-  background-color: #d33e43;
-  border-radius: 5px;
-  text-align: center;
-  color: white;
-}
-
-.btn-primary{
-  background-color: #FFB20F;
-  color: white;
-  border-radius: 5px;
-  border: none;
 }
