@@ -33,8 +33,8 @@ const createCoachCalendar = () => {
     startTime: '8:00',
     endTime: '19:00'},
     locale: frLocale,
-    height: 700,
-    eventColor: '#FFB20F',
+    height: 800,
+    eventColor: '#3688d8',
     headerToolbar: {
       left: 'prev,next today',
       center: 'title',
