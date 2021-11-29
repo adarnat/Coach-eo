@@ -1,15 +1,10 @@
+.second-container{
+  display: flex;
+}
 #external-events {
-    position: fixed;
-    z-index: 2;
-    top: 19%;
-    left: 15.5%;
-    width: 12%;
-    height: 90%;
-    padding: 14px 10px;
-    /* border: 1px solid #ccc; */
-    background: #2C3E50;
-
-    /* margin: auto; */
+  padding: 14px 10px;
+  background: #2C3E50;
+  margin-top: 64px;
 }
 
 #external-events .fc-event {
@@ -27,9 +22,10 @@
 }
 
 .agenda {
-  padding-left: 30%;
-  padding-right: 4%;
+  padding-left: 30px;
+  padding-right: 30px;
   height: 100px;
+  width: 100%;
 }
 
 .fc-col-header-cell-cushion {
@@ -58,9 +54,9 @@
 
 .fc-h-event {
     display: block;
-    border: 1px solid #342e37;
-    border: 1px solid var(--fc-event-border-color, #342e37);
-   background-color: var(--fc-event-bg-color, #342e37);
+    border: 1px solid #2C3E50;
+    border: 1px solid var(--fc-event-border-color, #2C3E50);
+   background-color: var(--fc-event-bg-color, #2C3E50);
 }
 
 

@@ -1,5 +1,4 @@
 
-<div  id="container">
     <div class="titre">
       <% if current_user.nil? %>
         <p>Merci de vous connecter à votre espace coach</p>
@@ -68,28 +67,3 @@
       </div>
         <% end %>
   </div>
-
-<%#
-<div  id="container">
-
-<main data-controller="toggle_booking">
-  <button data-action="click->details#toggle" data-toggle-target="details">
-    Réservation
-  </button>
-
-  <aside class="is-hidden" data-toggle-name="Détails">
-    <p>Here's "Sidebar 1".</p>
-  </aside>
-</main> %>
-
-
-<%# <div data-controller="toggle_booking" data-toggle-booking-target="details">
-  <button data-action="click->details#toggle" data-target="toggle_booking.details" type="button" class="btn">
-
-    Toggle me!
-  </button>
-
-  <p data-booking-target="item" class="hidden mt-4">Hey 👋</p>
-  <p data-booking-target="item" class="hidden mt-4">You can have multiple items</p>
-</div> %>
-</div>
