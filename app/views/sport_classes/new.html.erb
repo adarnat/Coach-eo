@@ -3,8 +3,10 @@
   <div class="container_registration">
   <h2>Cours de sport</h2>
     <%= simple_form_for(@sport_class) do |f| %>
-      <%= f.input :category , label: 'Catégorie', collection: SportClass::SPORT_CATEGORY%>
-      <%= f.input :name,label: false, placeholder: 'Nom'  %>
+    <div class="form-group1">
+      <%= f.input :category , :prompt => "Discipline",  label: false, collection: SportClass::SPORT_CATEGORY%>
+      <%= f.input :name,label: false, placeholder: 'Nom de la séance'  %>
+      </div>
       <%= f.input :description, label: false, placeholder: 'Description' %>
       <%= f.input :level,
                   label: "Niveau",
@@ -12,23 +14,24 @@
                   input_html: { class: "tag-selector" },
                   item_wrapper_class: 'tag-item',
                   collection: SportClass::LEVELS%>
+       <div class="form-group1">
       <%= f.input :group_size,label: false, label: 'Type de groupe',
                   as: :radio_buttons,
                   input_html: { class: "tag-selector" },
                   item_wrapper_class: 'tag-item',
                   collection: ['Individuel', 'Collectif'] %>
-      <%= f.input :group_size, label: 'Capacité maximale', collection: 1..30 %>
-      <%= f.input :price,label: false, placeholder: 'Prix' %>
+      <%= f.input :group_size,label: false, placeholder: "Nb de participants", value: '1', input_html: { type: 'number' }%>
+      </div>
+      <%= f.input :price, label: false, placeholder: 'Prix de la séance par personne                                                                                    €' %>
       <%= f.input :address1, label: false, placeholder: 'Adresse' %>
-      <%= f.input :address2, label: false, placeholder: "Complément d'adresse " %>
       <div class="form-group1">
-        <%= f.input :post_code, label: false, placeholder: 'Code postale' %>
+        <%= f.input :post_code, label: false, placeholder: 'Code postal' %>
         <%= f.input :town, label: false, placeholder: 'Ville' %>
       </div>
       <%= f.hidden_field :coach_id,  :value => current_user.id %>
 
       <div class="button2">
-        <%= f.button :submit,label: false, placeholder: 'Enregistrer' %>
+        <%= f.button :submit, value: "Enregistrer", label: 'Enregistrer' %>
       </div>
     <% end %>
 
