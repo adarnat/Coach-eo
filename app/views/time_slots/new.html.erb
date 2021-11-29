@@ -1,37 +1,3 @@
-<%# <div  id="container">
-    <div class="titre">
-<h1>Calendrier coach</h1>
-</div>
-</div> %>
-<div id='external-events'>
-  <p>
-    <strong>Vos cours</strong>
-  </p>
-  <% @sport_classes.each do |sport_class| %>
-    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event' >
-      <div class='fc-event-main'><h6><%= sport_class.name %></h6></div>
-       <div class='fc-event-main'><p><%= sport_class.level %></p></div>
-      <div class="details">
-       <div class='fc-event-main'> <i class="fas fa-user-friends"></i><%= sport_class.group_size%></div>
-        <div class='fc-event-main'></div>
-        <div class='fc-event-main'><%= sport_class.duration %> min</div>
-       </div>
-    </div>
-  <% end %>
-</div>
-
-
-<div class="agenda">
-  <div id="coach_calendar" style="width: 100%" data-calendar-id="22" data-events="<%= @db_events.to_json%>"></div>
-</div>
-
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
-
-
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -123,24 +89,3 @@
         <%= f.button :submit,label: false, placeholder: 'Enregistrer' %>
       </div>
  <% end %>
-
-
-<%#
-
-        <hr>
-        <hr>
-        <hr>
-        <hr>
-        <hr>
-        <hr> %>
-
-
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
