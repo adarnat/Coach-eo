@@ -1,0 +1,17 @@
+
+<div class="container">
+  <div class="cards-grid">
+    <% @clients.each do |client| %>
+      <%= link_to client_profile_path(client) do %>
+        <div class="card" >
+          <div class="card-title">
+            <h3 class="card-title"><%= client.first_name %> <%= client.last_name %></h3>
+          </div>
+          <div class="card-body">
+            <p class="card-text"><%= client.email %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
