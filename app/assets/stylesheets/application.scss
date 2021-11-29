@@ -35,14 +35,22 @@ body {
   flex-grow: 1;
 }
 
-#container {
-  padding-left: 8%;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  padding-right: 14px;
+.container{
+  margin:0;
+  margin-right:10px;
+      max-width: 100%;
+    min-width: 100%;
+
 }
+
+// #container {
+//   padding-left: 14px;
+//   -webkit-transition: all 0.5s ease;
+//   -moz-transition: all 0.5s ease;
+//   -o-transition: all 0.5s ease;
+//   transition: all 0.5s ease;
+//   padding-right: 14px;
+// }
 
 #sidebar h1 {
 color: white;
@@ -59,13 +67,13 @@ padding-top:7px;
   flex-shrink: 0;
   height: 100vh;
   overflow: auto;
-  background: #342e37;
+  background: #2C3E50;
   position: sticky;
   top: 0;
 }
 
 #sidebar header {
-  background-color: #342e37;
+  background-color: #2C3E50;
   font-size: 20px;
   line-height: 52px;
   text-align: center;
