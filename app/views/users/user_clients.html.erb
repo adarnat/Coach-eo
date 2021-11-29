@@ -6,7 +6,7 @@
     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
       <div class="our-team">
         <div class="picture">
-          <img class="img-fluid" src="https://picsum.photos/130/130?image=1027">
+          <img class="img-fluid" src="https://upload.wikimedia.org/wikipedia/commons/3/33/Mr._Bean_2011.jpg">
         </div>
         <div class="team-content">
          <% @clients.each do |client| %>
@@ -26,28 +26,21 @@
 
 
 
-<div class="container">
+
   <div class="row">
     <% @clients.each do |client| %>
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">
         <%= link_to client_profile_path(client) do %>
-          <div class="our-team">
+          <div class="mb-2 our-team">
             <div class="picture">
-              <img class="img-fluid" src="https://picsum.photos/130/130?image=1027">
+              <img class="img-fluid" src="https://www.decoparty.fr/wp-content/uploads/2018/04/rowan-atkinson-mr-bean-face-mask-product-image.jpg">
             </div>
             <div class="team-content">
               <h3 class="name"><%= client.first_name %> <%= client.last_name %></h3>
               <h4 class="title"><%= client.email %></h4>
             </div>
-            <ul class="social">
-              <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-facebook" aria-hidden="true"></a></li>
-              <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-twitter" aria-hidden="true"></a></li>
-              <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-google-plus" aria-hidden="true"></a></li>
-              <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-linkedin" aria-hidden="true"></a></li>
-            </ul>
           </div>
         <% end %>
       </div>
     <% end %>
   </div>
-</div>
