@@ -12,5 +12,8 @@ Rails.application.routes.draw do
     resources :sport_classes, only: [:show, :new, :create, :index]
   end
 
+  get "clients", to: "users#user_clients", as: "user_clients"
+  get "clients/:id", to: "users#client_profile", as: "client_profile"
+
   resources :sport_classes
 end
