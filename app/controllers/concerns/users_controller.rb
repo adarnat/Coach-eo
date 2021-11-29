@@ -13,10 +13,9 @@ class UsersController < ApplicationController
 
   end
 
-  def show
-    @client = Client.find(params[:id])
-    authorize @client
-    @booking = booking.new
-    @bookings = @client.bookings
+  def client_profile
+    @client = User.find(params[:id])
+    # @booking = booking.new
+    # @bookings = @client.bookings
   end
 end
