@@ -30,6 +30,7 @@ import "controllers"
 // Internal imports, e.g:
 import { initCoachCalendar } from '../init_calendar';
 import { initClock } from '../init_clock';
+import { launchAlert } from '../launch_alert'
 
 
 -document.addEventListener('turbolinks:load', () => {
@@ -39,4 +40,15 @@ import { initClock } from '../init_clock';
 
   initClock()
   initCoachCalendar()
+  launchAlert()
+
+
+
 });
+
+
+// initSweetalert('#sweet-alert-demo', {
+//   title: "A nice alert",
+//   text: "This is a great alert, isn't it?",
+//   icon: "success"
+// });

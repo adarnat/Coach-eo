@@ -1,7 +1,7 @@
 <div id="container">
   <%= link_to '', sport_classes_path, class:"fas fa-arrow-circle-left" %>
   <div class="container_registration">
-  <h2>Cours de sport</h2>
+  <h2>Séance de sport</h2>
     <%= simple_form_for(@sport_class) do |f| %>
     <div class="form-group1">
       <%= f.input :category , :prompt => "Discipline",  label: false, collection: SportClass::SPORT_CATEGORY%>

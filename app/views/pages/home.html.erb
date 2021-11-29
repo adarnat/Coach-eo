@@ -12,12 +12,6 @@
 
       <div class="card-features">
 <h4>Voici ton programme de la journée :</h4>
-        <%# <div class="card-slot-top">
-        <h6>Horaires</h6>
-        <div class="width"><h6>Séance</h6></div>
-        <h6>Niveau</h6>
-        <h6>Réservations</h6>
-      </div> %>
             <% @time_slots.each do |time_slot| %>
 
               <div class="card-slot" <a data-toggle="collapse" href="#collapseExample-<%= time_slot.id %>" role="button" aria-expanded="false" aria-controls="collapseExample"> </a>
@@ -31,10 +25,19 @@
                   <% time_slot.bookings.each  do |booking| %>
                   <div class="card-slot-details">
                     <div class="item-timeslot"><p> <%= booking.client.first_name%>  <%= booking.client.last_name%></p></div>
-                    <% if booking.payment_received %>
-                      <div class="item-timeslot-details"><p class="payé">Payé</p></div>
+                    <% if booking.payment_received? %>
+                      <div class="item-timeslot-details">
+
+                        <%= link_to "Payé", time_slot_booking_path(time_slot, booking, choice: false), method: :put, data: { confirm: "are you sure ?"}, class:"payé" %>
+                      </div>
+
                     <% else %>
-                      <div class="item-timeslot-details"><p class="impayé">Impayé</p></div>
+                     <div class="item-timeslot-details">
+
+                        <%= link_to "Impayé", time_slot_booking_path(time_slot, booking, choice: true), method: :put, data: { confirm: "are you sure ?"}, class:"impayé" %>
+                        <%# <%= link_to "Impayé", time_slot_booking_path(time_slot, booking, choice: true), method: :put, class:"impayé" %>
+                      </div>
+
                     <% end %>
                   </div>
                 <% end %>
@@ -58,3 +61,6 @@
   </div>
 
 </div>
+
+
+<button id="sweet-alert-demo" class="btn btn-primary">Click me!</button>

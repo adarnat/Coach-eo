@@ -1,35 +1,38 @@
 <div id="container">
-EDIT
-  <%= link_to 'Back', sport_classes_path %>
+
+  <%= link_to '', sport_classes_path, class:"fas fa-arrow-circle-left" %>
   <div class="container_registration">
   <h2>Cours de sport</h2>
-    <%= simple_form_for(@sport_class) do |f| %>
-    <%= f.input :name %>
-      <%= f.input :description %>
-      <%= f.input :category , collection: ['Aerobic', 'Alpinisme', 'Aquabike', 'Aquagym', 'Arts du cirque',
-    'Athlétisme', 'Aviation', 'Aviron', 'Badminton', 'Biathlon', 'Boxe', 'Boxe anglaise',
-    'Boxe chinoise', 'Boxe française', 'Boxe thaïlandaise', 'Canoë', 'Canoë-kayak',
-    'Canyoning', 'Corde à sauter', 'Course', 'Course à pied', 'Course d’orientation',
-    'Course de cote', 'Cross training', 'Cross-country', 'Crossfit', 'Cyclisme',
-    'Cyclisme sur route', 'Cyclo cross', 'Danse', 'Danse africaine', 'Danse classique',
-    'Danse contemporaine', 'Danse country', 'Danse indienne', 'Danse orientale',
-    'Danse rock', 'Enduro', 'Equitation', 'Escalade', 'Escrime', 'Fitness', 'Flag',
-    'Football', 'Footing', 'Golf', 'Gymnastique', 'Gymnastique artistique', 'Gymnastique rythmique',
-    'Haltérophilie', 'Handball', 'Handisport', 'Hip hop', 'Judo', 'Karaté', 'Karting',
-    'Kayak', 'Luge', 'Lutte', 'Marathon', 'Marche', 'Marche nordique', 'Marche sportive',
-    'Méditation', 'Musculation', 'Natation', 'Natation synchronisée', 'Paddle', 'Parachutisme',
-    'Paramoteur', 'Parapente', 'Parkour', 'Patinage', 'Patinage artistique', 'Patinage de vitesse',
-    'Pétanque', 'Pilates', 'Ping pong', 'Planche à voile', 'Plongée', 'Plongeon',
-    'Pole dance', 'Polo', 'Roller', 'Rugby', 'Salsa', 'Samba', 'Sambo', 'Saut à la perche',
-    'Saut en longueur', 'Sauvetage', 'Self défense', 'Ski', 'Ski alpin', 'Ski de fond',
-    'Ski nautique', 'Slackline', 'Snowboard', 'Snowkite', 'Stretching', 'Surf', 'Taekwondo',
-    'Tango', 'Tennis', 'Tennis de table', 'Tir', 'Tir à l’arc', 'Trail', 'Trampoline',
-    'Trapèze', 'Triathlon', 'Trottinette', 'ULM', 'Ultimate', 'Ultimate fresbee', 'Vélo',
-    'Voile', 'Volleyball', 'Voltige', 'VTT', 'Wakeboard', 'Waterpolo', 'Yoga', 'Zumba']%>
+        <%= simple_form_for(@sport_class) do |f| %>
+    <div class="form-group1">
+      <%= f.input :category , :prompt => "Discipline",  label: false, collection: SportClass::SPORT_CATEGORY%>
+      <%= f.input :name,label: false, placeholder: 'Nom de la séance'  %>
+      </div>
+      <%= f.input :description, label: false, placeholder: 'Description' %>
+      <%= f.input :level,
+                  label: "Niveau",
+                  as: :radio_buttons,
+                  input_html: { class: "tag-selector" },
+                  item_wrapper_class: 'tag-item',
+                  collection: SportClass::LEVELS%>
+       <div class="form-group1">
+      <%= f.input :group_size,label: false, label: 'Type de groupe',
+                  as: :radio_buttons,
+                  input_html: { class: "tag-selector" },
+                  item_wrapper_class: 'tag-item',
+                  collection: ['Individuel', 'Collectif'] %>
+      <%= f.input :group_size,label: false, placeholder: "Nb de participants", value: '1', input_html: { type: 'number' }%>
+      </div>
+      <%= f.input :price, label: false, placeholder: 'Prix de la séance par personne                                                                                    €' %>
+      <%= f.input :address1, label: false, placeholder: 'Adresse' %>
+      <div class="form-group1">
+        <%= f.input :post_code, label: false, placeholder: 'Code postal' %>
+        <%= f.input :town, label: false, placeholder: 'Ville' %>
+      </div>
       <%= f.hidden_field :coach_id,  :value => current_user.id %>
 
-      <div class="form-actions">
-        <%= f.button :submit %>
+    <div class="button2">
+        <%= f.button :submit, value: "Mettre à jour la séance", label: 'Enregistrer' %>
       </div>
     <% end %>
 

@@ -20,7 +20,7 @@
     <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event' >
       <div class='fc-event-main'><h6><%= sport_class.name %></h6></div>
        <div class='fc-event-main'><h5><%= sport_class.level %></h5></div>
-      <div class="details">
+      <div class="details1">
        <div class='fc-event-main'><%= sport_class.group_size%><i class="fas fa-user-friends"></i></div>
         <div class='fc-event-main'></div>
         <div class='fc-event-main'><%= sport_class.duration %> min</div>
@@ -112,7 +112,6 @@
       <%= f.input :group_size, label: 'Capacité maximale', collection: 1..30 %>
       <%= f.input :price,label: false, placeholder: 'Prix' %>
       <%= f.input :address1, label: false, placeholder: 'Adresse' %>
-      <%= f.input :address2, label: false, placeholder: "Complément d'adresse " %>
       <div class="form-group1">
         <%= f.input :post_code, label: false, placeholder: 'Code postale' %>
         <%= f.input :town, label: false, placeholder: 'Ville' %>

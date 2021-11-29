@@ -152,7 +152,7 @@ fr:
     select:
       prompt: Veuillez sélectionner
     submit:
-      create: Créer un(e) %{model}
+      create: Enregistrer
       submit: Enregistrer ce(tte) %{model}
       update: Modifier ce(tte) %{model}
   number:
