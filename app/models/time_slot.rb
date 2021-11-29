@@ -9,4 +9,15 @@ class TimeSlot < ApplicationRecord
   validates :price, presence: true
   validates :start_at, presence: true
   validates :end_at, presence: true
+
+  before_validation :set_end_at
+
+  private
+
+  def set_end_at
+    return if persisted?
+    return unless sport_class && start_at
+
+    self.end_at = start_at + sport_class.duration.minutes
+  end
 end
