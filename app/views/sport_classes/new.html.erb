@@ -8,6 +8,10 @@
       <%= f.input :name,label: false, placeholder: 'Nom de la séance'  %>
       </div>
       <%= f.input :description, label: false, placeholder: 'Description' %>
+          <div class="form-group2">
+      <%= f.input :duration, type:"time", label: false, collection:[0,15,30,45,60,75,90,120,150] %>
+          <p>Durée en minutes</p>
+      </div>
       <%= f.input :level,
                   label: "Niveau",
                   as: :radio_buttons,
@@ -20,7 +24,7 @@
                   input_html: { class: "tag-selector" },
                   item_wrapper_class: 'tag-item',
                   collection: ['Individuel', 'Collectif'] %>
-      <%= f.input :group_size,label: false, placeholder: "Nb de participants", value: '1', input_html: { type: 'number' }%>
+      <%= f.input :group_size,label: false, placeholder: "Nb de participants"%>
       </div>
       <%= f.input :price, label: false, placeholder: 'Prix de la séance par personne                                                                                    €' %>
       <%= f.input :address1, label: false, placeholder: 'Adresse' %>

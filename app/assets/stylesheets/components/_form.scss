@@ -90,11 +90,20 @@ padding: 0;
 .form-group1{
 display: flex;
 justify-content: space-between;
-
 }
 
-.form-group2{
-display: flex;
+.form-group2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px;
+}
+
+.form-group2 p{
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    font-size: 16px;
+    color: #6c757d;
+    margin-top: 11px;
 }
 
 label {

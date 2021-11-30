@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :time_slots, through: :sport_classes
   has_many :bookings, through: :time_slots # coach bookings
   has_many :clients, -> { distinct }, through: :bookings
+
   def is_coach?
     sport_classes.any?
   end
