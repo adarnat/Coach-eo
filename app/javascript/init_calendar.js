@@ -31,6 +31,7 @@ const createCoachCalendar = () => {
     eventDurationEditable: true,
     initialView: 'timeGridWeek',
     selectable: true,
+    eventOverlap: false,
     businessHours: {
       daysOfWeek: [1, 2, 3, 4, 5],
       startTime: '8:00',
@@ -58,14 +59,15 @@ const createCoachCalendar = () => {
     },
     eventClick: eventCoachClick,
     eventReceive: function(info) {
-      console.log("eventReceive: ", info)
       createTimeSlot(info);
     },
     eventDrop: function (info) {
       console.log("Info eventDrop", info);
-      console.log(info.event);
-
-
+      updateDraggedTimeSlot(info.event.id, info.event.startStr, info.event.endStr)
+    },
+    eventResize: function(info) {
+      console.log("Info eventResize", info)
+      updateDraggedTimeSlot(info.event.id, info.event.startStr, info.event.endStr)
     }
   });
   coachCalendar.render()
@@ -118,12 +120,11 @@ const initCoachCalendar = () => {
 
 const createTimeSlot = (info) => {
   const timeslotInfo = JSON.parse(info.draggedEl.dataset.sportclass)
-
   timeslotInfo.sport_class_id = timeslotInfo.id
   timeslotInfo.start_at = info.event.startStr
   delete timeslotInfo.id
 
-  const test = fetchWithToken("/time_slots", {
+  fetchWithToken("/time_slots", {
     method: "POST",
     headers: {
       "Accept": "application/json",
@@ -135,7 +136,22 @@ const createTimeSlot = (info) => {
   .then((data) => {
     info.event.setProp( "id", data.id )
   });
-  console.log(test)
+}
+
+const updateDraggedTimeSlot = (id, startDate, endDate) => {
+  console.log(JSON.stringify({ time_slot: { id: id, start_at: startDate, end_at: endDate } }))
+  fetchWithToken(`/time_slots/${id}`, {
+    method: "PUT",
+    headers: {
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ time_slot: { start_at: startDate, end_at: endDate } })
+  })
+  .then(response => response.json())
+  .then((data) => {
+    console.log(data)
+  });
 }
 
 export { initCoachCalendar }

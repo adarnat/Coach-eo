@@ -8,7 +8,7 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 45px;
 }
 
 
@@ -22,8 +22,20 @@
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: #457B9D;
-    font-size: 22px;
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: #457b9d;
+  text-align: center;
+  color: white;
+  font-weight: 700;
+  border-radius: 4px;
+  height: 40px;
+  margin-top: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.navbar-light .navbar-nav .nav-link:hover {
+  color: rgba(255, 255, 255, 0.672);
 }
 
 .navbar{
@@ -33,9 +45,10 @@
 }
 
 .nav-item h4 {
-    font-family: 'Merriweather Sans', sans-serif;
+  font-family: 'Merriweather Sans', sans-serif;
+  color: #457b9d;
     margin: auto;
-    color: #2C3E50;
     padding-right: 50px;
     font-size: 20px;
+
 }
