@@ -41,12 +41,13 @@ class PagesController < ApplicationController
     ]
 
     @db_events = @coach_time_slots.map do |event|
-        {
-          id: event.id,
-          title: event.name,
-          start: event.start_at.strftime('%FT%T%:z'),
-          end: event.end_at.strftime('%FT%T%:z')
-        }
-      end
+      {
+        id: event.id,
+        description: "#{event.group_size} - #{event.price} - #{event.level}",
+        title: event.name,
+        start: event.start_at.strftime('%FT%T%:z'),
+        end: event.end_at.strftime('%FT%T%:z')
+      }
+    end
   end
 end

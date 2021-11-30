@@ -25,14 +25,12 @@ class TimeSlotsController < ApplicationController
   end
 
   def create
-    @time_slot = TimeSlot.new(time_slot_params)
-    render json: @time_slot.to_json
-    ap current_user
-    ap
-    p params[:time_slot][:start_at]
-
-
-    ap TimeSlot.new(time_slot_params)
+    time_slot = TimeSlot.new(time_slot_params)
+    if time_slot.save!
+      render json: time_slot.to_json
+    else
+      render json: { success: false, errors: time_slot.errors.messages }, status: :unprocessable_entity
+    end
   end
 
 
@@ -43,14 +41,14 @@ class TimeSlotsController < ApplicationController
       :name,
       :description,
       :start_at,
-      :end_at,
       :level,
       :group_size,
       :price,
       :address1,
       :address2,
       :post_code,
-      :town
+      :town,
+      :sport_class_id
     )
   end
 end
