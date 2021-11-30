@@ -28,11 +28,11 @@
                     <% if booking.payment_received? %>
                       <div class="item-timeslot-details">
                         <%# <%= link_to "Payé", time_slot_booking_path(time_slot, booking, choice: false), method: :put, data: { confirm: "Êtes vous sûr(e) de passer le statut du paiement en impayé?"}, class:"payé" %>
-                        <%= link_to "Payé", time_slot_booking_path(time_slot, booking, choice: false), method: :put, data: { confirm: "Êtes vous sûr(e) de passer le statut du paiement en impayé?"}, class:"payé" %>
+                        <%= link_to "Payé", time_slot_booking_path(time_slot, booking, choice: false), method: :put, data: { confirm: "Confirmes-tu le changement de statut du paiement de #{booking.client.first_name} #{booking.client.last_name} en : impayé ? "}, class:"payé" %>
                       </div>
                     <% else %>
                      <div class="item-timeslot-details">
-                        <%= link_to "Impayé", time_slot_booking_path(time_slot, booking, choice: true), method: :put, data: { confirm: "Êtes vous sûr(e) de passer le statut du paiement en payé?"}, class:"impayé" %>
+                        <%= link_to "Impayé", time_slot_booking_path(time_slot, booking, choice: true), method: :put, data: { confirm: "Confirmes-tu le changement de statut du paiement de #{booking.client.first_name} #{booking.client.last_name} en : payé ?"}, class:"impayé" %>
                       </div>
 
                     <% end %>

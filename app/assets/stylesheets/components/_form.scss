@@ -87,14 +87,29 @@ padding: 0;
   color: white;
 }
 
+.emailtype::-webkit-input-placeholder {
+  color: #6c757d;
+  font-size: smaller;
+  font-style: italic;
+}
+
 .form-group1{
 display: flex;
 justify-content: space-between;
-
 }
 
-.form-group2{
-display: flex;
+.form-group2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px;
+}
+
+.form-group2 p{
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    font-size: 16px;
+    color: #6c757d;
+    margin-top: 11px;
 }
 
 label {
@@ -111,4 +126,40 @@ label {
     font-size: 16px;
     line-height: 1.5;
     color: #6c757d;
+}
+
+.form-registration1 {
+  background: white;
+  padding: 30px 30px;
+  border-radius: 3px;
+  box-shadow: #6c757d3d 1px 10px 20px;
+}
+
+h2 {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.form-actions-login {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #457b9d;
+  text-align: center;
+  color: white;
+  font-weight: 700;
+  border-radius: 4px;
+  padding-top: 3px;
+  height: 40px;
+}
+
+.btn-login {
+  color: white;
+  font-weight: 700;
+}
+
+.btn-login:hover {
+  color: rgba(255, 255, 255, 0.672);
 }
