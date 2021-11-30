@@ -4,10 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :sport_classes, foreign_key: "coach_id"
-  has_many :bookings, foreign_key: "client_id"
+  has_many :client_bookings, foreign_key: "client_id", class_name: 'Booking'
   has_many :time_slots, through: :sport_classes
-  has_many :bookings, through: :time_slots
-  has_many :clients, through: :bookings
+  has_many :bookings, through: :time_slots # coach bookings
+  has_many :clients, -> { distinct }, through: :bookings
 
   def is_coach?
     sport_classes.any?
