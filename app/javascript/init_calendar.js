@@ -70,7 +70,7 @@ const createCoachCalendar = () => {
   });
   coachCalendar.render()
 
-  window.calendar = coachCalendar
+  // window.calendar = coachCalendar
 }
 
 const initDragAndDrop = () => {
