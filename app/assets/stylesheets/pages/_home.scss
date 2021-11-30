@@ -56,6 +56,7 @@ color: white;
   font-family: 'Merriweather Sans', sans-serif;
   background-color: #FFB20F;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  width: 300px;
 }
 
 .card-slot-top h6{
@@ -73,9 +74,16 @@ color: white;
 .item-timeslot p {
   margin-top: 10px;
   margin-bottom: 10px;
+  margin-right: 10px;
   width: 150px;
   font-family: 'Merriweather Sans', sans-serif;
   color: #2C3E50;
+}
+
+.item-timeslot-p p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: 'Merriweather Sans', sans-serif;
 }
 
 .item-timeslot-details{
@@ -121,7 +129,7 @@ color: white;
 
 .titre h1{
   margin: auto;
-  margin-left: 15px;
+  margin-left: 35px;
   font-family: 'Merriweather Sans', sans-serif;
   margin-bottom: 3%;
   color: #2C3E50;
@@ -149,7 +157,7 @@ color: white;
   border-radius: 5px;
 }
 
-.card-slot-details p {
+.card-slot-details a {
 color: white;
 }
 
@@ -265,50 +273,9 @@ color: black;
 }
 
 
-// TOGGLE ///
-
-.toggle {
-  position: absolute;
-  transform: scale(0);
-}
-
-.toggle + label {
-  position: relative;
-  display: inline-block;
-  padding-left: 40px;
-}
-
-.toggle + label::before {
-  content: '';
-  display: block;
-  position: absolute;
-  cursor: pointer;
-  width: 36px;
-  height: 20px;
-  top: 0;
-  left: 0;
-  background-color: #EAEAEA;
-  border-radius: 50rem;
-}
-
-.toggle:checked + label::before {
-  background-color: #1EDD88;
-}
-
-.toggle + label::after {
-  content: '';
-  display: block;
-  position: absolute;
-  cursor: pointer;
-  width: 16px;
-  height: 16px;
-  top: 2px;
-  left: 2px;
-  background-color: white;
+.img_home {
+  width: 40px;
   border-radius: 50%;
-  transition: left 0.2s ease;
-}
-
-.toggle:checked + label::after {
-  left: 18px;
+  margin-right: 17px;
+  border: #ffffff 1px solid;
 }

@@ -1,10 +1,6 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home]
-
   def home
-    if current_user.present?
-      @time_slots = TimeSlot.includes(:sport_class).where(sport_classes: { coach_id: current_user.id }).where("start_at BETWEEN ? and ?", Date.current.beginning_of_day, Date.current.end_of_day).sort_by{|ev| ev.start_at.strftime('%H:%M')}
-    end
+    @time_slots = TimeSlot.includes(:sport_class).where(sport_classes: { coach_id: current_user.id }).where("start_at BETWEEN ? and ?", Date.current.beginning_of_day, Date.current.end_of_day).sort_by{|ev| ev.start_at.strftime('%H:%M')}
   end
 
   def fullcalendar

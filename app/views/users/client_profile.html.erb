@@ -1,15 +1,23 @@
-<div class="grid-map1">
- <div class="card-user">
-                    <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" class="IMAGEPROFIL" alt="Admin" >
-                    <div class="user_info">
-                      <h1><%= @client.first_name %> <%= @client.last_name %></h1>
-                      <h6> <%= @client.email %></h6>
-                    </div>
- </div>
 
-<div class="bookings-history"> <% @bookings.each do |booking| %>
-  <h3><%= booking.time_slot.sport_class.name %></h3>
-   <h6><%= humanize(booking.time_slot.start_at)  %> , <%= humanize_hours(booking.time_slot.start_at)  %></h6>
-   <h6><%= humanize(booking.time_slot.end_at)  %> , <%= humanize_hours(booking.time_slot.end_at)  %></h6>
-<% end %>
- </div>
+  <div class="user_info">
+    <img src="<%= @client.avatar_url %>" class="img-client" alt="Admin" >
+    <h1><%= @client.first_name %> <%= @client.last_name %></h1>
+    <h6> <%= @client.email %></h6>
+  </div>
+  <div class="details-top">
+    <h4>Voici les cours auxquels a participé <%= @client.first_name %> : </h4>
+  </div>
+    <div class="bookings-history">
+        <% @bookings.each do |booking| %>
+      <div class="details-client">
+          <h3><%= booking.time_slot.sport_class.name %></h3>
+        <h6><%= humanize(booking.time_slot.start_at) %></h6>
+        <h6> <%= humanize_hours(booking.time_slot.start_at)  %> - <%= humanize_hours(booking.time_slot.end_at)  %></h6>
+        <% if booking.payment_received? %>
+        <h6 class="payé1">Payé</h6>
+        <% else %>
+         <h6 class="impayé1"> impayé </h6>
+         <% end %>
+      </div>
+    <% end %>
+  </div>
