@@ -10,9 +10,9 @@ const launchAlert = () => {
     icon: "success"
   }, (value) => {
     if (value) {
-      // const link = document.querySelector('.update-link');
-      console.log(this)
-      // link.click();
+      const link = document.querySelector('.update-link');
+      console.log(link)
+      link.click();
     }
   });
 
