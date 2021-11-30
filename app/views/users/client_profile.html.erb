@@ -8,7 +8,7 @@
  </div>
 
 <div class="bookings-history"> <% @bookings.each do |booking| %>
-  <h3><%= booking.time_slot.sport_class.name %></h3>
+  <h4><%= booking.time_slot.sport_class.name %></h4>
    <h6><%= humanize(booking.time_slot.start_at)  %> , <%= humanize_hours(booking.time_slot.start_at)  %></h6>
    <h6><%= humanize(booking.time_slot.end_at)  %> , <%= humanize_hours(booking.time_slot.end_at)  %></h6>
 <% end %>
