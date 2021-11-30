@@ -106,3 +106,10 @@ a:link
 .mb-2, .my-2 {
     margin-bottom: 1.5rem !important;
 }
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 30px;
+    margin-left: 30px;
+}
