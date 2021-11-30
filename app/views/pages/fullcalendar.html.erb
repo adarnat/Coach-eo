@@ -13,12 +13,11 @@
 
 <div id='external-events'>
   <p>
-<img src="https://cdn-icons.flaticon.com/png/512/511/premium/511444.png?token=exp=1638193739~hmac=0b3db626e7487f136f89599852482823" alt="">
+    <img src="https://cdn-icons.flaticon.com/png/512/511/premium/511444.png?token=exp=1638193739~hmac=0b3db626e7487f136f89599852482823" alt="">
     <strong>Vos cours</strong>
   </p>
   <% @sport_classes.each do |sport_class| %>
     <div id="sport-class" data-sportclass="<%= sport_class.to_json %>" class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event' >
-
       <div class='fc-event-main'><h6><%= sport_class.name %></h6></div>
       <div class='fc-event-main'><h5><%= sport_class.level %></h5></div>
       <div class="details1">
@@ -28,6 +27,7 @@
       </div>
     </div>
   <% end %>
+  </div>
 </div>
 
 
@@ -99,8 +99,8 @@
           <%# <%= f.submit %>
       <%# <% end %>
 
- <%= simple_form_for(@time_slot) do |f| %>
- <%# <%= f.input :category , label: 'Catégorie', collection: SportClass::SPORT_CATEGORY%>
+<%= simple_form_for(@time_slot) do |f| %>
+<%# <%= f.input :category , label: 'Catégorie', collection: SportClass::SPORT_CATEGORY%>
       <%= f.input :name,label: false, placeholder: 'Nom'  %>
       <%= f.input :description, label: false, placeholder: 'Description' %>
       <%= f.input :level,
@@ -114,8 +114,8 @@
                   input_html: { class: "tag-selector" },
                   item_wrapper_class: 'tag-item',
                   collection: ['Individuel', 'Collectif'] %>
-                   <%= f.input :start_at, html5: true %>
-           <%= f.input :end_at, html5: true %>
+                  <%= f.input :start_at, html5: true %>
+          <%= f.input :end_at, html5: true %>
       <%= f.input :group_size, label: 'Capacité maximale', collection: 1..30 %>
       <%= f.input :price,label: false, placeholder: 'Prix' %>
       <%= f.input :address1, label: false, placeholder: 'Adresse' %>
@@ -128,7 +128,7 @@
       <div class="button2">
         <%= f.button :submit,label: false, placeholder: 'Enregistrer' %>
       </div>
- <% end %>
+<% end %>
 
 
 <%#
@@ -151,5 +151,3 @@
   </div>
 </div>
 </div>
-
-<% console %>
