@@ -1,60 +1,51 @@
 
-    <div class="titre">
-      <% if current_user.nil? %>
-        <p>Merci de vous connecter à votre espace coach</p>
-      <% else %>
-       <h1>Bienvenue <%=current_user.first_name %>!</h1>
-
-
-  </div>
+<div class="titre">
+    <h1>Bienvenue <%=current_user.first_name %>!</h1>
+</div>
 
 <div class="flex">
-
-      <div class="card-features">
-<h4>Voici ton programme de la journée :</h4>
-            <% @time_slots.each do |time_slot| %>
-
-              <div class="card-slot" <a data-toggle="collapse" href="#collapseExample-<%= time_slot.id %>" role="button" aria-expanded="false" aria-controls="collapseExample"> </a>
-                <div class="item-timeslot"><p><%= time_slot.start_at.strftime('%H:%M') %> - <%= time_slot.end_at.strftime('%H:%M') %></p></div>
-                <div class="width overflow-auto "><p><%= time_slot.name %></p></div>
-                <div class="item-timeslot"><p><%= time_slot.level %></p></div>
-                <div class="item-timeslot"><p><%= time_slot.bookings.size%>/<%= time_slot.group_size %><i class="fas fa-user-circle"></i></p></div>
-              </div>
-                <div class="collapse" id="collapseExample-<%= time_slot.id %>">
-                  <div class="card-body-client">
-                  <% time_slot.bookings.each  do |booking| %>
-                  <div class="card-slot-details">
-                    <div class="item-timeslot"><p> <%= booking.client.first_name%>  <%= booking.client.last_name%></p></div>
-                    <% if booking.payment_received? %>
-                      <div class="item-timeslot-details">
-                        <%# <%= link_to "Payé", time_slot_booking_path(time_slot, booking, choice: false), method: :put, data: { confirm: "Êtes vous sûr(e) de passer le statut du paiement en impayé?"}, class:"payé" %>
-                        <%= link_to "Payé", time_slot_booking_path(time_slot, booking, choice: false), method: :put, data: { confirm: "Confirmes-tu le changement de statut du paiement de #{booking.client.first_name} #{booking.client.last_name} en : impayé ? "}, class:"payé" %>
-                      </div>
-                    <% else %>
-                     <div class="item-timeslot-details">
-                        <%= link_to "Impayé", time_slot_booking_path(time_slot, booking, choice: true), method: :put, data: { confirm: "Confirmes-tu le changement de statut du paiement de #{booking.client.first_name} #{booking.client.last_name} en : payé ?"}, class:"impayé" %>
-                      </div>
-
-                    <% end %>
-                  </div>
+  <div class="card-features">
+    <h4>Voici ton programme de la journée :</h4>
+    <% @time_slots.each do |time_slot| %>
+      <div class="card-slot" data-toggle="collapse" href="#collapseExample-<%= time_slot.id %>" role="button" aria-expanded="false" aria-controls="collapseExample"> </a>
+        <div class="item-timeslot"><p><%= time_slot.start_at.strftime('%H:%M') %> - <%= time_slot.end_at.strftime('%H:%M') %></p></div>
+        <div class="width overflow-auto "><p><%= time_slot.name %></p></div>
+        <div class="item-timeslot"><p><%= time_slot.level %></p></div>
+        <div class="item-timeslot"><p><%= time_slot.bookings.size%>/<%= time_slot.group_size %><i class="fas fa-user-circle"></i></p></div>
+      </div>
+      <div class="collapse" id="collapseExample-<%= time_slot.id %>">
+        <div class="card-body-client">
+          <% time_slot.bookings.each  do |booking| %>
+            <div class="card-slot-details">
+              <div class="item-timeslot-p">
+                <%= link_to client_profile_path(booking.client) do %>
+                  <img class="img_home" src="<%= booking.client.avatar_url %>">
+                  <%= booking.client.first_name%>  <%= booking.client.last_name%>
                 <% end %>
-                  </div>
+              </div>
+              <% if booking.payment_received? %>
+                <div class="item-timeslot-details">
+                  <%= link_to "Payé", time_slot_booking_path(time_slot, booking, choice: false), method: :put, data: { confirm: "Êtes vous sûr(e) de passer le statut du paiement en impayé?"}, class:"payé" %>
                 </div>
-            <% end %>
-        </div>
-              <div class="box">
-        <div class="clock">
-          <span class="seconds"></span>
-          <span class="hours"></span>
-          <span class="minutes"></span>
-        </div>
-        <div class="date">
-          <div id="daymonth"><%= l Date.today, format: '%d %B' %></div>
+              <% else %>
+                <div class="item-timeslot-details">
+                  <%= link_to "Impayé", time_slot_booking_path(time_slot, booking, choice: true), method: :put, data: { confirm: "Êtes vous sûr(e) de passer le statut du paiement en payé?"}, class:"impayé" %>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
         </div>
       </div>
-
-      </div>
-        <% end %>
+    <% end %>
   </div>
-
+  <div class="box">
+    <div class="clock">
+      <span class="seconds"></span>
+      <span class="hours"></span>
+      <span class="minutes"></span>
+    </div>
+    <div class="date">
+      <div id="daymonth"><%= l Date.today, format: '%d %B' %></div>
+    </div>
+  </div>
 </div>

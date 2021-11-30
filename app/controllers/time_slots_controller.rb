@@ -33,6 +33,15 @@ class TimeSlotsController < ApplicationController
     end
   end
 
+  def update
+    @time_slot = TimeSlot.find(params[:id])
+
+    @time_slot.update(time_slot_params)
+
+
+    raise
+  end
+
 
   private
 
@@ -41,6 +50,7 @@ class TimeSlotsController < ApplicationController
       :name,
       :description,
       :start_at,
+      :end_at,
       :level,
       :group_size,
       :price,

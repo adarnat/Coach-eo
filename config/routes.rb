@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get "fullcalendar", to: "pages#fullcalendar"
   get "calendar", to: "time_slots#calendar"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :time_slots, only: [:create, :show, :index, :destroy] do
+  resources :time_slots, only: [:show, :index, :create, :update, :destroy] do
     resources :bookings, only: [:new, :create, :show, :update]
   end
 

@@ -1,6 +1,7 @@
 module ApplicationHelper
+
   def humanize(date)
-    date.strftime('%d-%m-%Y')
+    l(date, format: '%A %d %B %Y')
   end
 
   def humanize_hours(date)
