@@ -12,7 +12,6 @@ class User < ApplicationRecord
   def is_coach?
     sport_classes.any?
   end
-
   def is_client?
     !sport_classes.any?
   end
