@@ -12,12 +12,6 @@ let coachCalendarEl;
 const todaysDate = new Date;
 console.log(todaysDate);
 
-const eventCoachClick = (info) => {
-  console.log("j'ai cliqué sur un event de coach calendar")
-  console.log(info.event)
-  $("#exampleModal").modal('show')
-}
-
 const createCoachCalendar = () => {
   coachCalendar = new Calendar(coachCalendarEl, {
     timeZone: 'Europe/Paris',
@@ -60,13 +54,15 @@ const createCoachCalendar = () => {
         elt.children().addClass("past");
       }
     },
-    eventClick: eventCoachClick,
+    eventClick: function (info) {
+      eventCoachClick(info.event.id)
+    },
     eventReceive: function(info) {
       createTimeSlot(info);
     },
     eventDrop: function (info) {
       console.log("Info eventDrop", info);
-      updateDraggedTimeSlot(info.event.id, info.event.startStr, info.event.endStr)
+      updateDraggedorResizedTimeSlot(info.event.id, info.event.startStr, info.event.endStr)
     },
     eventResize: function(info) {
       console.log("Info eventResize", info)
@@ -94,6 +90,13 @@ const initDragAndDrop = () => {
     });
 }
 
+// const myMeth = async () => {
+//   const response = await fetch()
+//   const data = await response.json()
+//   return data
+//  }
+
+//  const data = await myMeth()
 
 const initCoachCalendar = () => {
   console.log("je suis initCoachCalendar")
@@ -134,11 +137,39 @@ const updateDraggedorResizedTimeSlot = (id, startDate, endDate) => {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({ time_slot: { start_at: startDate, end_at: endDate } })
+  }).catch(err => console.log(err))
+}
+
+const eventCoachClick = (id) => {
+  fetchWithToken(`/time_slots/${id}`, {
+    method: "GET",
+    headers: {
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    }
   })
-  .then(response => response.json())
-  .then((data) => {
-    console.log(data)
-  });
+    .then(response => response.json())
+    .then((data) => {
+      console.log(data)
+      // delete data.created_at
+      // Object.keys(data).forEach( function(key) {
+      //   document.getElementById(`time_slot_${data[key]}`).value = data[key]
+      // })
+      // data.forEach((attr, value) => console.log(attr, value))
+      document.getElementById("time_slot_name").value = data.name;
+      document.getElementById("time_slot_description").value = data.description;
+      document.getElementById(`time_slot_level_${data.level.trim().toLowerCase().replace(' ', '_')}`).checked = true;
+      if (data.group_size == 1) {
+        document.getElementById("time_slot_group_size_individuel").checked = true;
+      }
+      else {
+        document.getElementById("time_slot_group_size_collectif").checked = true;
+      }
+      document.getElementById("time_slot_group_size").value = data.group_size;
+
+    })
+
+  $("#exampleModal").modal('show')
 }
 
 export { initCoachCalendar }
