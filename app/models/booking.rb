@@ -11,6 +11,6 @@ class Booking < ApplicationRecord
   end
 
   def time_slot_price
-    time_slot.price
+    time_slot.sport_class.price
   end
 end

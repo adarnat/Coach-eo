@@ -48,4 +48,15 @@
       </div>
     <% end %>
   </div>
+  <div class="stat-paiements">
+    <div class="paiement-card-total">
+    <h6>Somme des cours vendus</h6>
+      <h4><%= @ca %>€</h4>
+    </div>
+    <div class="paiement-card-impayés">
+    <h6>En attente de paiement</h6>
+    <h4> <%=@unpaid_ca %>€</h4>
+    <%= @unpaid_client %>
+    </div>
+  </div>
 </div>

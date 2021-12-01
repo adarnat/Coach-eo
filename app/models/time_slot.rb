@@ -12,9 +12,7 @@ class TimeSlot < ApplicationRecord
 
   before_validation :set_end_at
 
-  def price
-    sport_class.price
-  end
+
 
   private
 
