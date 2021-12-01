@@ -29,6 +29,9 @@ const createCoachCalendar = () => {
     navLinks: true,
     eventStartEditable: true,
     eventDurationEditable: true,
+    eventResizableFromStart:true,
+    allDaySlot: false,
+    slotDuration: '00:15:00',
     initialView: 'timeGridWeek',
     selectable: true,
     eventOverlap: false,
@@ -43,7 +46,7 @@ const createCoachCalendar = () => {
     headerToolbar: {
       left: 'prev,next today',
       center: 'title',
-      right: 'timeGridWeek,listWeek'
+      right: 'timeGridWeek,dayGridMonth,listWeek'
     },
     events: coachEvents,
     eventConstraint: {
@@ -67,7 +70,7 @@ const createCoachCalendar = () => {
     },
     eventResize: function(info) {
       console.log("Info eventResize", info)
-      updateDraggedTimeSlot(info.event.id, info.event.startStr, info.event.endStr)
+      updateDraggedorResizedTimeSlot(info.event.id, info.event.startStr, info.event.endStr)
     }
   });
   coachCalendar.render()
@@ -77,21 +80,6 @@ const createCoachCalendar = () => {
 
 const initDragAndDrop = () => {
   const containerEl = document.getElementById('external-events');
-
-  // new Draggable(containerEl, {
-  //   itemSelector: '.fc-event',
-  //   eventData: function (eventEl) {
-  //     console.log('Event Element')
-  //     console.log(eventEl)
-  //     return {
-  //       id: eventEl.dataset.id,
-  //       title: eventEl.innerText
-  //     };
-  //   }
-  // });
-
-
-// JSON.parse(document.getElementById('sport-class').dataset.sportclass
 
   new Draggable(containerEl, {
     itemSelector: '.fc-event',
@@ -138,8 +126,7 @@ const createTimeSlot = (info) => {
   });
 }
 
-const updateDraggedTimeSlot = (id, startDate, endDate) => {
-  console.log(JSON.stringify({ time_slot: { id: id, start_at: startDate, end_at: endDate } }))
+const updateDraggedorResizedTimeSlot = (id, startDate, endDate) => {
   fetchWithToken(`/time_slots/${id}`, {
     method: "PUT",
     headers: {

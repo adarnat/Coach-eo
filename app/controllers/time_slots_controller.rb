@@ -35,11 +35,7 @@ class TimeSlotsController < ApplicationController
 
   def update
     @time_slot = TimeSlot.find(params[:id])
-
     @time_slot.update(time_slot_params)
-
-
-    raise
   end
 
 
