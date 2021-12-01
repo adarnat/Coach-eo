@@ -17,12 +17,22 @@
   <div class="card-features">
     <h4>Voici ton programme de la journée :</h4>
     <% @time_slots.each do |time_slot| %>
-      <div class="card-slot" data-toggle="collapse" href="#collapseExample-<%= time_slot.id %>" role="button" aria-expanded="false" aria-controls="collapseExample"> </a>
-        <div class="item-timeslot"><p><%= time_slot.start_at.strftime('%H:%M') %> - <%= time_slot.end_at.strftime('%H:%M') %></p></div>
-        <div class="width overflow-auto "><p><%= time_slot.name %></p></div>
-        <div class="item-timeslot"><p><%= time_slot.level %></p></div>
-        <div class="item-timeslot"><p><%= time_slot.bookings.size%>/<%= time_slot.group_size %><i class="fas fa-user-circle"></i></p></div>
-      </div>
+      <% if time_slot.start_at.strftime('%H:%M') > Time.now %>
+        <div class="card-slot" data-toggle="collapse" href="#collapseExample-<%= time_slot.id %>" role="button" aria-expanded="false" aria-controls="collapseExample"> </a>
+          <div class="item-timeslot"><p><%= time_slot.start_at.strftime('%H:%M') %> - <%= time_slot.end_at.strftime('%H:%M') %></p></div>
+          <div class="width overflow-auto "><p><%= time_slot.name %></p></div>
+          <div class="item-timeslot"><p><%= time_slot.level %></p></div>
+          <div class="item-timeslot"><p><%= time_slot.bookings.size%>/<%= time_slot.group_size %><i class="fas fa-user-friends"></i></p></div>
+        </div>
+      <% else %>
+        <div class="card-slot-ended" data-toggle="collapse" href="#collapseExample-<%= time_slot.id %>" role="button" aria-expanded="false" aria-controls="collapseExample"> </a>
+          <div class="item-timeslot"><p><%= time_slot.start_at.strftime('%H:%M') %> - <%= time_slot.end_at.strftime('%H:%M') %></p></div>
+          <div class="width overflow-auto "><p><%= time_slot.name %></p></div>
+          <div class="item-timeslot"><p><%= time_slot.level %></p></div>
+          <div class="item-timeslot"><p><%= time_slot.bookings.size%>/<%= time_slot.group_size %><i class="fas fa-user-friends"></i></p></div>
+        </div>
+      <% end %>
+
       <div class="collapse" id="collapseExample-<%= time_slot.id %>">
         <div class="card-body-client">
           <% time_slot.bookings.each  do |booking| %>

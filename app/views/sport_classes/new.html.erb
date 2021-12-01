@@ -18,15 +18,15 @@
                   input_html: { class: "tag-selector" },
                   item_wrapper_class: 'tag-item',
                   collection: SportClass::LEVELS%>
-       <div class="form-group1">
-      <%= f.input :group_size,label: false, label: 'Type de groupe',
+       <div class="form-group1" id="toggleType">
+      <%= f.input :group_size,label: false, label: 'Type de cours',
                   as: :radio_buttons,
                   input_html: { class: "tag-selector" },
                   item_wrapper_class: 'tag-item',
                   collection: ['Individuel', 'Collectif'] %>
-      <%= f.input :group_size,label: false, placeholder: "Nb de participants"%>
       </div>
-      <%= f.input :price, label: false, placeholder: 'Prix du cours par personne                                                                                    €' %>
+      <%= f.input :group_size,label: false, placeholder: "Nb de participants", as: :hidden,  input_html: { value: 1 } %>
+      <%= f.input :price, label: false, placeholder: 'Prix du cours par personne                                                                                   €' %>
       <%= f.input :address1, label: false, placeholder: 'Adresse' %>
       <div class="form-group1">
         <%= f.input :post_code, label: false, placeholder: 'Code postal' %>
