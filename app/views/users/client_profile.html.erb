@@ -51,12 +51,13 @@
         <div class="item-timeslot-details-show">
           <h5><%= booking.time_slot.sport_class.price.round(0) %> €</h5>
           <%= link_to "Payé", booking_path(booking, choice: false, redirect: "client"), method: :put, data: { confirm: "Êtes vous sûr(e) de passer le statut du paiement en impayé?"}, class:"payé" %>
-        </div>
       <% else %>
+
         <div class="item-timeslot-details-show">
           <h5><%= booking.time_slot.sport_class.price.round(0) %> €</h5>
+
           <%= link_to "Impayé", booking_path(booking, choice: true, redirect: "client"), method: :put, data: { confirm: "Êtes vous sûr(e) de passer le statut du paiement en payé?"}, class:"impayé" %>
-        </div>
+
       <% end %>
     </div>
   <% end %>
