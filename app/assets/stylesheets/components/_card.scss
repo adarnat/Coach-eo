@@ -44,7 +44,7 @@
 }
 
 .card-title{
-  color: #FFB20F;
+  color: #2C3E50;
   text-align: center;
   padding:5px;
   margin: 0;
@@ -107,6 +107,10 @@ a{
   content: "\f1f8";
   color:#2C3E50;
 }
+
+.fa-user-friends{
+  color:#2C3E50;
+}
 .fa-trash:hover{
   content: "\f1f8";
   color:#FFB20F;
@@ -126,7 +130,7 @@ a{
 .card-center{
   border-left: solid white;
   border-right: solid white;
-  width: 100px;
+  width: 100px;;
 }
 
 
@@ -142,6 +146,7 @@ a{
 .card-center-show2{
   border-right: solid white;
   width: 300px;
+  background-color: #006992;
 }
 
 .details-show p{
@@ -182,4 +187,8 @@ a{
 
 strong{
   font-weight: bold;
+}
+
+#durée {
+  background-color: #006992;;
 }
