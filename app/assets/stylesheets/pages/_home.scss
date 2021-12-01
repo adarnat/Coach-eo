@@ -38,6 +38,17 @@
   font-family: 'Merriweather Sans', sans-serif;
 }
 
+.card-slot-ended {
+  display: flex;
+  padding: 10px;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  border-radius: 10px;
+  background-color: rgba(196, 189, 189, 0.494);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
 .card-slot:hover {
   background-color: #2C3E50;
   color: white;
@@ -115,17 +126,15 @@
 }
 
 
-.card-slot .fa-user-circle:before {
-  content: "\f500";
-  padding-left: 10px;
+.card-slot i {
   color: #2C3E50;
 }
 
-.fa-user-circle:after {
-  content: "\f500";
+.card-slot:hover i {
   color: white;
-  padding-left: 10px;
 }
+
+
 
 .titre h1{
   margin: auto;
