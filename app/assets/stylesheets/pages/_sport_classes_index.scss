@@ -55,7 +55,7 @@
 .top_barre{
   display: flex;
   justify-content: space-between;
-  padding-bottom: 4em;
+  padding-bottom: 2em;
   align-items: center;
   max-width:100%;
   margin: 10px;
@@ -158,11 +158,12 @@
   }
 }
 
-.h2 .catalogue {
-  font-size: 30px;
-  font-weight: bold;
-  text-align: center;
-  font-color: #2C3E50;
+.catalogue {
+    margin: auto;
+    margin-bottom: 35px;
+    font-family: 'Merriweather Sans', sans-serif;
+    text-align: center;
+    color: #2C3E50;
 }
 
 #level {
