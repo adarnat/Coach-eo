@@ -178,3 +178,40 @@
   text-align: center;
   color: #2C3E50;
 }
+
+.fa-envelope {
+  color: #2C3E50;
+  margin-right: 9px;
+}
+
+.fa-phone {
+  color: #2C3E50;
+  margin-right: 9px;
+}
+
+.birth-date {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.birth-date h6 {
+  color: #FFB20F;
+  font-size: larger;
+}
+
+.fa-birthday-cake {
+  color: #FFB20F;
+  margin-right: 9px;
+  font-size: larger;
+}
+
+.details-info-client {
+  display: flex;
+  flex-direction: column;
+  margin-left: 27px;
+  margin-top: 11px;
+  align-items: flex-start;
+}
