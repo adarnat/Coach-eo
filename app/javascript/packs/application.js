@@ -31,6 +31,7 @@ import "controllers"
 import { initCoachCalendar } from '../init_calendar';
 import { initClock } from '../init_clock';
 import { launchAlert } from '../launch_alert'
+import { initToggle } from '../toggle'
 
 
 -document.addEventListener('turbolinks:load', () => {
@@ -41,6 +42,7 @@ import { launchAlert } from '../launch_alert'
   initClock()
   initCoachCalendar()
   launchAlert()
+  initToggle()
 
 
 
