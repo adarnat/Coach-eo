@@ -1,4 +1,4 @@
-  <div class="user_info">
+<div class="user_info">
     <img src="<%= @client.avatar_url %>" class="img-client" alt="Admin" >
     <h1><%= @client.first_name %> <%= @client.last_name %></h1>
     <h6> <%= @client.email %></h6>
@@ -12,10 +12,19 @@
           <h3><%= booking.time_slot.sport_class.name %></h3>
         <h6><%= humanize(booking.time_slot.start_at) %></h6>
         <h6> <%= humanize_hours(booking.time_slot.start_at)  %> - <%= humanize_hours(booking.time_slot.end_at)  %></h6>
+
         <% if booking.payment_received? %>
-        <h6 class="payé1">Payé</h6>
+                <div class="item-timeslot-details">
+                  <%= link_to "Payé", booking_path(booking, choice: false, redirect: "client"), method: :put, data: { confirm: "Êtes vous sûr(e) de passer le statut du paiement en impayé?"}, class:"payé" %>
+                </div>
+              <% else %>
+                <div class="item-timeslot-details">
+                  <%= link_to "Impayé", booking_path(booking, choice: true, redirect: "client"), method: :put, data: { confirm: "Êtes vous sûr(e) de passer le statut du paiement en payé?"}, class:"impayé" %>
+                </div>
+              <% end %>
+        <%# <h6 class="payé1">Payé</h6>
         <% else %>
-         <h6 class="impayé1"> impayé </h6>
+         <%# <h6 class="impayé1">Impayé</h6>
          <% end %>
       </div>
     <% end %>

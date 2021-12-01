@@ -43,7 +43,7 @@ const createCoachCalendar = () => {
     headerToolbar: {
       left: 'prev,next today',
       center: 'title',
-      right: 'timeGridWeek,listWeek'
+      right: 'timeGridWeek,listWeek,dayGridMonth'
     },
     events: coachEvents,
     eventConstraint: {

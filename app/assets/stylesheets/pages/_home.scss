@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 .card-features {
-    width: 100%;
+    width: 70%;
     margin: auto;
     padding: 30px;
     border-radius: 10px;
@@ -9,9 +9,9 @@
 }
 
 .card-features h4{
-  font-family: 'Merriweather Sans', sans-serif;
-  padding-bottom: 20px;
-  color: #2C3E50;
+    font-family: 'Merriweather Sans', sans-serif;
+    padding-bottom: 20px;
+    color: #2C3E50;
 }
 .fa-check-circle:before {
     content: "\f058";
@@ -39,12 +39,12 @@
 }
 
 .card-slot:hover {
-background-color: #2C3E50;
-color: white;
+  background-color: #2C3E50;
+  color: white;
 }
 .card-slot:hover p{
-background-color: #2C3E50;
-color: white;
+  background-color: #2C3E50;
+  color: white;
 }
 
 
@@ -153,7 +153,7 @@ color: white;
   justify-content: space-between;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   font-family: 'Merriweather Sans', sans-serif;
-  background-color: #2C3E50;
+  background-color: #4e6e8f;
   border-radius: 5px;
 }
 
@@ -198,8 +198,8 @@ color: white;
 }
 
 a:hover{
-text-decoration: none;
-color: black;
+  text-decoration: none;
+  color: black;
 }
 
 .btn-primary{
