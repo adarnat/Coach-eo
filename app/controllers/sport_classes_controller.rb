@@ -3,7 +3,7 @@ class SportClassesController < ApplicationController
 # skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-  @sport_classes = current_user.sport_classes
+  @sport_classes = current_user.sport_classes.order(category: :asc)
   end
 
   def show

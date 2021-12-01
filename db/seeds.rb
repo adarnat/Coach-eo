@@ -45,6 +45,8 @@ alex_client = User.create!(
   first_name: "Alex",
   last_name: "Larbalet",
   email: "alex@gmail.com",
+  telephone: "0654789439",
+  birth_date: "21/09/1992",
   password: "password",
   avatar_url: "https://media-exp1.licdn.com/dms/image/C4E03AQHiidN7aozEYg/profile-displayphoto-shrink_800_800/0/1607246202881?e=1643846400&v=beta&t=pWBxZpd1RyLBN95LVJ8k_SRh-dkapJIP87bPSegRtkk"
 )
@@ -53,6 +55,8 @@ henri_client = User.create!(
   first_name: "Henri",
   last_name: "IV",
   email: "henri@gmail.com",
+  telephone: "0654712922",
+  birth_date: "25/07/1987",
   password: "password",
   avatar_url: "https://media-exp1.licdn.com/dms/image/C4D03AQEp1wwPqSJanA/profile-displayphoto-shrink_800_800/0/1627912225585?e=1643846400&v=beta&t=IP9O8RpXhpZZs4NdFBCzewSkXO96Tdqm9izYCSSf_Xo"
 )
@@ -61,6 +65,8 @@ miguel_client = User.create!(
   first_name: "Miguel",
   last_name: "Sanchez",
   email: "miguel@gmail.com",
+  telephone: "0605284294",
+  birth_date: "12/02/1972",
   password: "password",
   avatar_url: "https://media-exp1.licdn.com/dms/image/C4D03AQG2lE0E-Fw0uA/profile-displayphoto-shrink_800_800/0/1517276105494?e=1643846400&v=beta&t=ZiZ_lrs29-IPzw-EgG7tKNhChjhpMs7FrfySG8oTsKw"
 )
@@ -69,6 +75,8 @@ dinah_client = User.create!(
   first_name: "Dinah",
   last_name: "Miaou",
   email: "dinah@gmail.com",
+  telephone: "0614973696",
+  birth_date: "11/11/1998",
   password: "password",
   avatar_url: "https://media-exp1.licdn.com/dms/image/C5603AQGdYw0ic74EMw/profile-displayphoto-shrink_800_800/0/1597388485505?e=1643846400&v=beta&t=57GXTuWOnkcCFGljVG6JZFNc4yppM3wSbOhr6I_AKnQ"
 )
@@ -77,6 +85,8 @@ holly_client = User.create!(
   first_name: "Holly",
   last_name: "Bellemare",
   email: "holly@gmail.com",
+  telephone: "0619539427",
+  birth_date: "06/08/1992",
   password: "password",
   avatar_url: "https://media-exp1.licdn.com/dms/image/C4E03AQHv2heiteY-AQ/profile-displayphoto-shrink_800_800/0/1624365353574?e=1643846400&v=beta&t=B4tYrT0jV9k5gqTYPIsZA1KvquJdluNuEzvyrMOLjtQ"
 )
@@ -85,6 +95,8 @@ arthur_client = User.create!(
   first_name: "Arthur",
   last_name: "Laforêt",
   email: "arthur@gmail.com",
+  telephone: "0618397318",
+  birth_date: "14/06/1956",
   password: "password",
   avatar_url: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1634544990/d03g2y8psdzvpnudflhn.jpg"
 )
@@ -93,6 +105,8 @@ cecile_client = User.create!(
   first_name: "Cécile",
   last_name: "Chevalier",
   email: "cecile@gmail.com",
+  telephone: "0695297467",
+  birth_date: "23/04/1990",
   password: "password",
   avatar_url: "https://media-exp1.licdn.com/dms/image/C4E03AQEktqbJjaQYUA/profile-displayphoto-shrink_400_400/0/1635953208819?e=1643846400&v=beta&t=tHiJhbhPXUETPsDep0a2uCb7L561qxzlUGlgBLrDBIc"
 )
@@ -101,6 +115,8 @@ jeanro_client = User.create!(
   first_name: "Jeanro",
   last_name: "Croissant",
   email: "jeanro@gmail.com",
+  telephone: "0639751974",
+  birth_date: "18/12/1994",
   password: "password",
   avatar_url:"https://avatars.githubusercontent.com/u/26276590?v=4"
 )
@@ -196,8 +212,8 @@ fitness_victoire = SportClass.create!(
 
 pilates_victoire = SportClass.create!(
   category: "Pilates",
-  name: "Cours de pilate pour débutants",
-  description: "Initiation au pilate",
+  name: "Cours de pilates pour débutants",
+  description: "Initiation au pilates",
   level: "Débutant",
   group_size: 10,
   price: 20,
@@ -442,7 +458,7 @@ creneau_fitness_victoire_3 = TimeSlot.create!(
 
 creneau_pilates_victoire_1 = TimeSlot.create!(
   name: "Pilates",
-  description: "Initiation au pilate",
+  description: "Initiation au pilates",
   level: "Débutant",
   group_size: 8,
   price: 35,
@@ -457,7 +473,7 @@ creneau_pilates_victoire_1 = TimeSlot.create!(
 
 creneau_pilates_victoire_2 = TimeSlot.create!(
   name: "Pilates",
-  description: "Initiation au pilate",
+  description: "Initiation au pilates",
   level: "Débutant",
   group_size: 8,
   price: 35,

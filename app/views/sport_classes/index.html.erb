@@ -7,28 +7,29 @@
 
 
 
-  <div class="cards-grid">
+  <div class="cards-grid" >
     <% @sport_classes.each do |sport_class| %>
-      <div class="card">
+      <div class="card-index">
           <div class="card-corps">
-          <%= link_to sport_class_path(sport_class) do %>
-              <h4 class="card-title"><%= sport_class.category %></h4>
-            <div class="card-body">
-            <h6 class="card-text"> <%= sport_class.name %></h6>
-            <p class="card-text"><%= sport_class.level %></p>
-              <p class="card-description overflow-auto">Description: <%= sport_class.description %></p>
+            <div  class="blank-background" id="blank">
+              <%= link_to sport_class_path(sport_class) do %>
+              <h4 class="card-title-index"><%= sport_class.category %></h4>
+            <div class="card-body-index">
+            <h6 class="card-text" id="sport_class_name"> <%= sport_class.name %></h6>
+            <p class="card-text" id="level"><em><%= sport_class.level %></em></p>
             </div>
-            <div class="details">
-              <p class="card-text"><%= sport_class.group_size %><i class="fas fa-user-friends"></i></i></p>
-              <p class="card-center"><%= sport_class.price.to_i %> €</p>
-              <p class="card-text"><%= sport_class.duration %> min</p>
-<%# ////////// %>
+            </div>
+            <div class="infos">
+              <div> <p><i class="fas fa-user-friends"></i><%= sport_class.group_size %></p></div>
+              <div><p><i class="fas fa-clock"></i> <%= sport_class.duration %></p></div>
+              <div> <p><i class="fas fa-euro-sign"></i><%= sport_class.price.to_i %></p></div>
             </div>
           </div>
         <% end %>
+
             <div class="button">
+             <%= link_to "", edit_sport_class_path(sport_class), class: "fas fa-pen" %>
               <%= link_to "", sport_class, method: :delete, data: { confirm: "Are you sure?" }, class: "fas fa-trash" %>
-              <%= link_to "", edit_sport_class_path(sport_class), class: "fas fa-pen" %>
             </div>
       </div>
     <% end %>

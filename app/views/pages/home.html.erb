@@ -2,8 +2,8 @@
 <div class="titre">
     <h1>Bienvenue <%=current_user.first_name %>!</h1>
   <div class="box">
-    <div class="clock">
       <span class="seconds"></span>
+    <div class="clock">
       <span class="hours"></span>
       <span class="minutes"></span>
     </div>
@@ -17,12 +17,22 @@
   <div class="card-features">
     <h4>Voici ton programme de la journée :</h4>
     <% @time_slots.each do |time_slot| %>
-      <div class="card-slot" data-toggle="collapse" href="#collapseExample-<%= time_slot.id %>" role="button" aria-expanded="false" aria-controls="collapseExample"> </a>
-        <div class="item-timeslot"><p><%= time_slot.start_at.strftime('%H:%M') %> - <%= time_slot.end_at.strftime('%H:%M') %></p></div>
-        <div class="width overflow-auto "><p><%= time_slot.name %></p></div>
-        <div class="item-timeslot"><p><%= time_slot.level %></p></div>
-        <div class="item-timeslot"><p><%= time_slot.bookings.size%>/<%= time_slot.group_size %><i class="fas fa-user-circle"></i></p></div>
-      </div>
+      <% if time_slot.start_at.strftime('%H:%M') > Time.now %>
+        <div class="card-slot" data-toggle="collapse" href="#collapseExample-<%= time_slot.id %>" role="button" aria-expanded="false" aria-controls="collapseExample"> </a>
+          <div class="item-timeslot"><p><%= time_slot.start_at.strftime('%H:%M') %> - <%= time_slot.end_at.strftime('%H:%M') %></p></div>
+          <div class="width overflow-auto "><p><%= time_slot.name %></p></div>
+          <div class="item-timeslot"><p><%= time_slot.level %></p></div>
+          <div class="item-timeslot"><p><%= time_slot.bookings.size%>/<%= time_slot.group_size %><i class="fas fa-user-friends"></i></p></div>
+        </div>
+      <% else %>
+        <div class="card-slot-ended" data-toggle="collapse" href="#collapseExample-<%= time_slot.id %>" role="button" aria-expanded="false" aria-controls="collapseExample"> </a>
+          <div class="item-timeslot"><p><%= time_slot.start_at.strftime('%H:%M') %> - <%= time_slot.end_at.strftime('%H:%M') %></p></div>
+          <div class="width overflow-auto "><p><%= time_slot.name %></p></div>
+          <div class="item-timeslot"><p><%= time_slot.level %></p></div>
+          <div class="item-timeslot"><p><%= time_slot.bookings.size%>/<%= time_slot.group_size %><i class="fas fa-user-friends"></i></p></div>
+        </div>
+      <% end %>
+
       <div class="collapse" id="collapseExample-<%= time_slot.id %>">
         <div class="card-body-client">
           <% time_slot.bookings.each  do |booking| %>
@@ -48,4 +58,21 @@
       </div>
     <% end %>
   </div>
+  <div class="align-paiement">
+      <div class="paiement-card-total">
+        <h6>Somme des cours vendus</h6>
+        <h4><%= @ca %>€</h4>
+      </div>
+      <div class="paiement-card-impayés-home">
+  <div  data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"> </a>
+        <h6>En attente de paiement</h6>
+        <h4> <%= @unpaid_ca %>€</h4>
+      </div>
+    <div class="collapse unpaid" id="collapseExample">
+    <% @unpaid_client.each do |c| %>
+      <%= link_to client_profile_path(c) do %> <%= "#{c.first_name} #{c.last_name}"%> <% end %>
+    <% end %>
+    </div>
+  </div>
 </div>
+    <div>
