@@ -1,6 +1,16 @@
 
 <div class="titre">
     <h1>Bienvenue <%=current_user.first_name %>!</h1>
+  <div class="box">
+    <div class="clock">
+      <span class="seconds"></span>
+      <span class="hours"></span>
+      <span class="minutes"></span>
+    </div>
+    <div class="date">
+      <div id="daymonth"><%= l Date.today, format: '%d %B' %></div>
+    </div>
+  </div>
 </div>
 
 <div class="flex">
@@ -25,11 +35,11 @@
               </div>
               <% if booking.payment_received? %>
                 <div class="item-timeslot-details">
-                  <%= link_to "Payé", time_slot_booking_path(time_slot, booking, choice: false), method: :put, data: { confirm: "Êtes vous sûr(e) de passer le statut du paiement en impayé?"}, class:"payé" %>
+                  <%= link_to "Payé",booking_path(booking, choice: false), method: :put, data: { confirm: "Êtes vous sûr(e) de passer le statut du paiement en impayé?"}, class:"payé" %>
                 </div>
               <% else %>
                 <div class="item-timeslot-details">
-                  <%= link_to "Impayé", time_slot_booking_path(time_slot, booking, choice: true), method: :put, data: { confirm: "Êtes vous sûr(e) de passer le statut du paiement en payé?"}, class:"impayé" %>
+                  <%= link_to "Impayé",booking_path(booking, choice: true), method: :put, data: { confirm: "Êtes vous sûr(e) de passer le statut du paiement en payé?"}, class:"impayé" %>
                 </div>
               <% end %>
             </div>
@@ -37,15 +47,5 @@
         </div>
       </div>
     <% end %>
-  </div>
-  <div class="box">
-    <div class="clock">
-      <span class="seconds"></span>
-      <span class="hours"></span>
-      <span class="minutes"></span>
-    </div>
-    <div class="date">
-      <div id="daymonth"><%= l Date.today, format: '%d %B' %></div>
-    </div>
   </div>
 </div>
