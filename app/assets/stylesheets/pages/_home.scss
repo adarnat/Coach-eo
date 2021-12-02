@@ -13,19 +13,6 @@
     padding-bottom: 20px;
     color: #2C3E50;
 }
-.fa-check-circle:before {
-    content: "\f058";
-    color: #7ea06a;
-    font-size: 2em;
-    margin: auto;
-}
-
-.fa-times-circle:before {
-    content: "\f057";
-    color: red;
-    font-size: 2em;
-    margin: auto;
-}
 
 .card-slot {
   display: flex;
@@ -57,7 +44,6 @@
   background-color: #2C3E50;
   color: white;
 }
-
 
 .card-slot-top {
   display: flex;
@@ -125,7 +111,6 @@
   margin: 0;
 }
 
-
 .card-slot i {
   color: #2C3E50;
 }
@@ -134,14 +119,13 @@
   color: white;
 }
 
-
-
 .titre h1{
   margin: auto;
   margin-left: 35px;
   font-family: 'Merriweather Sans', sans-serif;
   margin-bottom: 3%;
   color: #2C3E50;
+  margin-top: 6%;
 }
 
 .titre{
@@ -152,6 +136,7 @@
   width: 100%;
   margin: auto;
   margin-right: 4%;
+
 
 }
 
@@ -220,10 +205,11 @@ a:hover{
 
 .flex{
   display: flex;
+   min-width: 100%;
 
 }
 
-// CLOCK //
+// CLOCK ///////////////////////////////
 
 
 .box {
@@ -246,8 +232,6 @@ a:hover{
   color:white;
   font-size:1em;
 }
-
-
 
 .clock {
   background-color:#FFB20F;
@@ -282,6 +266,8 @@ a:hover{
 }
 
 
+////////////@at-root
+
 .img_home {
   width: 40px;
   border-radius: 50%;
@@ -308,7 +294,7 @@ a:hover{
     color: #2C3E50;
     background-color: white;
     border-radius: 5px;
-    &:hover{
+      &:hover{
       background-color: #4e6e8f;
       color: white;
     }
@@ -348,4 +334,8 @@ a:hover{
   font-size: 40px;
   font-family: 'Merriweather Sans', sans-serif;
   text-align: center;
+}
+
+.card-features i{
+  color: #2C3E50
 }
