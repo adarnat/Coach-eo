@@ -109,5 +109,3 @@ class TimeSlotsController < ApplicationController
     )
   end
 end
-
-console
