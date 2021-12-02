@@ -80,7 +80,7 @@
   margin: 10px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1800px) {
   .cards-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -167,7 +167,6 @@ margin-left: 37px;
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 380px;
   word-wrap: break-word;
   background-color: #2C3E50;
   background-clip: border-box;
