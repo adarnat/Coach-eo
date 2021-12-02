@@ -135,7 +135,7 @@ yoga_mike = SportClass.create!(
   group_size: 10,
   price: 20,
   duration: 120,
-  address1: "4 rue des Capucins",
+  address1: "20 rue des Capucins",
   address2: "",
   post_code: "69001",
   town: "Lyon",
@@ -150,7 +150,7 @@ meditation_mike = SportClass.create!(
   group_size: 5,
   price: 30,
   duration: 60,
-  address1: "4 rue des Capucins",
+  address1: "20 rue des Capucins",
   address2: "",
   post_code: "69001",
   town: "Lyon",
@@ -169,7 +169,7 @@ pilates_john = SportClass.create!(
   group_size: 3,
   price: 20,
   duration: 90,
-  address1: "4 rue des Capucins",
+  address1: "20 rue des Capucins",
   address2: "",
   post_code: "69001",
   town: "Lyon",
@@ -184,7 +184,7 @@ crossfit_john = SportClass.create!(
   group_size: 1,
   price: 20,
   duration: 120,
-  address1: "4 rue des Capucins",
+  address1: "20 rue des Capucins",
   address2: "",
   post_code: "69001",
   town: "Lyon",
@@ -198,12 +198,12 @@ crossfit_john = SportClass.create!(
 fitness_victoire = SportClass.create!(
   category: "Fitness",
   name: "Gym suédoise",
-  description: "Venez bougez sur de la bonne musique",
+  description: "Venez bouger sur de la bonne musique",
   level: "Intermédiaire",
   group_size: 1,
   price: 50,
   duration: 120,
-  address1: "4 rue des Capucins",
+  address1: "20 rue des Capucins",
   address2: "",
   post_code: "69001",
   town: "Lyon",
@@ -252,7 +252,7 @@ creneau_yoga_mike_1 = TimeSlot.create!(
   level: "Intermédiaire",
   group_size: 5,
   price: 20,
-  address1: "4 rue des Capucins",
+  address1: "20 rue des Capucins",
   address2: "",
   post_code: "69001",
   town: "Lyon",
@@ -267,7 +267,7 @@ creneau_yoga_mike_2 = TimeSlot.create!(
   level: "Intermédiaire",
   group_size: 5,
   price: 20,
-  address1: "4 rue des Capucins",
+  address1: "20 rue des Capucins",
   address2: "",
   post_code: "69001",
   town: "Lyon",
@@ -281,7 +281,7 @@ creneau_yoga_mike_3 = TimeSlot.create!(
   level: "Débutant",
   group_size: 1,
   price: 60,
-  address1: "4 rue des Capucins",
+  address1: "20 rue des Capucins",
   address2: "",
   post_code: "69001",
   town: "Lyon",
@@ -296,7 +296,7 @@ creneau_yoga_mike_4 = TimeSlot.create!(
   level: "Intermédiaire",
   group_size: 5,
   price: 20,
-  address1: "4 rue des Capucins",
+  address1: "20 rue des Capucins",
   address2: "",
   post_code: "69001",
   town: "Lyon",
@@ -315,7 +315,7 @@ creneau_meditation_mike_1 = TimeSlot.create!(
   level: "Tous niveaux",
   group_size: 10,
   price: 20,
-  address1: "4 rue des Capucins",
+  address1: "20 rue des Capucins",
   address2: "",
   post_code: "69001",
   town: "Lyon",
@@ -330,7 +330,7 @@ creneau_meditation_mike_2 = TimeSlot.create!(
   level: "Tous niveaux",
   group_size: 10,
   price: 20,
-  address1: "4 rue des Capucins",
+  address1: "20 rue des Capucins",
   address2: "",
   post_code: "69001",
   town: "Lyon",
@@ -349,7 +349,7 @@ creneau_pilates_john_1 = TimeSlot.create!(
   level: "Débutant",
   group_size: 3,
   price: 20,
-  address1: "4 rue des Capucins",
+  address1: "20 rue des Capucins",
   address2: "",
   post_code: "69001",
   town: "Lyon",
@@ -383,7 +383,7 @@ creneau_crossfit_john_1 = TimeSlot.create!(
   level: "Expert",
   group_size: 1,
   price: 50,
-  address1: "4 rue des Capucins",
+  address1: "20 rue des Capucins",
   address2: "",
   post_code: "69001",
   town: "Lyon",
@@ -398,7 +398,7 @@ creneau_crossfit_john_2 = TimeSlot.create!(
   level: "Débutant",
   group_size: 5,
   price: 40,
-  address1: "4 rue des Capucins",
+  address1: "20 rue des Capucins",
   address2: "",
   post_code: "69001",
   town: "Lyon",
@@ -417,7 +417,7 @@ creneau_fitness_victoire_1 = TimeSlot.create!(
   level: "Intermédiaire",
   group_size: 1,
   price: 60,
-  address1: "4 rue des Capucins",
+  address1: "20 rue des Capucins",
   address2: "",
   post_code: "69001",
   town: "Lyon",
@@ -432,7 +432,7 @@ creneau_fitness_victoire_2 = TimeSlot.create!(
   level: "Intermédiaire",
   group_size: 10,
   price: 40,
-  address1: "4 rue des Capucins",
+  address1: "20 rue des Capucins",
   address2: "",
   post_code: "69001",
   town: "Lyon",
@@ -447,12 +447,27 @@ creneau_fitness_victoire_3 = TimeSlot.create!(
   level: "Intermédiaire",
   group_size: 10,
   price: 40,
-  address1: "4 rue des Capucins",
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("03/12/2021 16:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("03/12/2021 17:30", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+creneau_fitness_victoire_4 = TimeSlot.create!(
+  name: "Fitness",
+  description: "Fitness intensif",
+  level: "Intermédiaire",
+  group_size: 10,
+  price: 50,
+  address1: "20 rue des Capucins",
   address2: "",
   post_code: "69001",
   town: "Lyon",
   start_at: DateTime.strptime("01/12/2021 16:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("01/12/2021 17:30", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("01/12/2021 17:00", "%d/%m/%Y %H:%M"),
   sport_class: fitness_victoire
 )
 
@@ -462,7 +477,7 @@ creneau_pilates_victoire_1 = TimeSlot.create!(
   level: "Débutant",
   group_size: 8,
   price: 35,
-  address1: "4 rue des Capucins",
+  address1: "20 rue des Capucins",
   address2: "",
   post_code: "69001",
   town: "Lyon",
@@ -477,7 +492,7 @@ creneau_pilates_victoire_2 = TimeSlot.create!(
   level: "Débutant",
   group_size: 8,
   price: 35,
-  address1: "4 rue des Capucins",
+  address1: "20 rue des Capucins",
   address2: "",
   post_code: "69001",
   town: "Lyon",
@@ -486,13 +501,43 @@ creneau_pilates_victoire_2 = TimeSlot.create!(
   sport_class: pilates_victoire
 )
 
-creneau_yoga_victoire = TimeSlot.create!(
+creneau_pilates_victoire_3 = TimeSlot.create!(
+  name: "Pilates intensif",
+  description: "Pilates intensif en petit groupe",
+  level: "Tous niveaux",
+  group_size: 4,
+  price: 40,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("03/12/2021 9:30", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("03/12/2021 11:30", "%d/%m/%Y %H:%M"),
+  sport_class: pilates_victoire
+)
+
+creneau_pilates_victoire_4 = TimeSlot.create!(
+  name: "Pilates intensif",
+  description: "Pilates intensif en petit groupe",
+  level: "Tous niveaux",
+  group_size: 4,
+  price: 40,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("06/12/2021 9:30", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("06/12/2021 11:30", "%d/%m/%Y %H:%M"),
+  sport_class: pilates_victoire
+)
+
+creneau_yoga_victoire_1 = TimeSlot.create!(
   name: "Yoga",
   description: "Yoga intensif en petit groupe",
   level: "Expert",
   group_size: 3,
   price: 50,
-  address1: "4 rue des Capucins",
+  address1: "20 rue des Capucins",
   address2: "",
   post_code: "69001",
   town: "Lyon",
@@ -501,13 +546,13 @@ creneau_yoga_victoire = TimeSlot.create!(
   sport_class: yoga_victoire
 )
 
-creneau_yoga_victoire = TimeSlot.create!(
+creneau_yoga_victoire_2 = TimeSlot.create!(
   name: "Yoga",
   description: "Yoga intensif en petit groupe",
   level: "Expert",
   group_size: 3,
   price: 50,
-  address1: "4 rue des Capucins",
+  address1: "20 rue des Capucins",
   address2: "",
   post_code: "69001",
   town: "Lyon",
@@ -516,8 +561,38 @@ creneau_yoga_victoire = TimeSlot.create!(
   sport_class: yoga_victoire
 )
 
+creneau_yoga_victoire_3 = TimeSlot.create!(
+  name: "Découverte Yoga",
+  description: "N'hésite pas à inviter tes amis. Petit prix pour session d'initiation",
+  level: "Débutant",
+  group_size: 30,
+  price: 15,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("03/12/2021 14:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("03/12/2021 15:00", "%d/%m/%Y %H:%M"),
+  sport_class: yoga_victoire
+)
+
+creneau_yoga_victoire_4 = TimeSlot.create!(
+  name: "Découverte Yoga",
+  description: "N'hésite pas à inviter tes amis. Petit prix pour session d'initiation",
+  level: "Débutant",
+  group_size: 30,
+  price: 15,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("10/12/2021 14:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("10/12/2021 15:00", "%d/%m/%Y %H:%M"),
+  sport_class: yoga_victoire
+)
 
 puts "#{TimeSlot.count} slots were created"
+
 # ===========================
 # Booking Créneau automatique
 # ===========================

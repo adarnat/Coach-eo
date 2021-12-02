@@ -4,7 +4,7 @@ class TimeSlotsController < ApplicationController
 
   def calendar
     # @time_slots = TimeSlot.all
-    @sport_class = SportClass.last
+    # @sport_class = SportClass.last
     # @time_slot = TimeSlot.new(
     #   level: @sport_class.level,
     #   group_size: @sport_class.group_size,
@@ -18,7 +18,7 @@ class TimeSlotsController < ApplicationController
     # )
 
 
-    @time_slot = TimeSlot.last
+    # @time_slot = TimeSlot.last
 
     @sport_classes = current_user.sport_classes
 
@@ -31,7 +31,8 @@ class TimeSlotsController < ApplicationController
         groupe_size: event.group_size,
         title: "#{event.name} - #{event.bookings.size}/#{event.group_size}",
         start: event.start_at.strftime('%FT%T%:z'),
-        end: event.end_at.strftime('%FT%T%:z')
+        end: event.end_at.strftime('%FT%T%:z'),
+        bookings_count: event.bookings.count
       }
     end
   end
@@ -50,7 +51,7 @@ class TimeSlotsController < ApplicationController
   end
 
   def edit
-    render json: {form: render_to_string(partial: "modal_body_edit", locals: { time_slot: @time_slot }, formats: [:html])}
+    render json: { form: render_to_string(partial: "modal_body_edit", locals: { time_slot: @time_slot }, formats: [:html]) }
   end
 
   def create
