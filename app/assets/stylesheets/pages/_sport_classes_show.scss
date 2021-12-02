@@ -10,7 +10,8 @@
     box-shadow:2px 4px 17px rgba(0, 0, 0, 0.2) ;
     border-radius: 2px;
     position: relative;
-    border-radius: 5px;
+    border-radius: 20px;
+
 
 }
 
@@ -28,4 +29,327 @@
     content: "\f0a8";
     text-decoration: none;
     color: #2C3E50;
+}
+.card-title {
+  color: #FFB20F;
+  text-align: center;
+  padding:5px;
+  margin: 0;
+  font-size: 20px;
+  padding-bottom: 20px;
+  font-weight: bold;
+}
+
+#sport_class_name {
+  font-weight: bold;
+  color: #2C3E50
+}
+
+.card-description-show {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.infos-show{
+  display: flex;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1em;
+  padding: 0.4em;
+  max-width: 100%;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+}
+// Import page-specific CSS files here.
+@import "home";
+
+
+
+
+// .container{
+//   width: 800px;
+// }
+
+.button{
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  color: #fff;
+}
+
+.button-poup {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  color: #fff;
+  padding-top: 10px;
+  padding-right: 5px;
+}
+
+.fa-pen:before {
+  font-size: small;
+}
+
+.fa-trash:before {
+  font-size: small;
+}
+
+.button1{
+  background-color:#FFB20F ;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 3px;
+    margin-top: -5px;
+}
+.button1:hover{
+  background-color:#2C3E50 ;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 3px;
+  text-decoration: none;
+}
+
+.fa-user-friends:before {
+    color: white;
+}
+
+.fa-clock:before {
+  color: white;
+  padding-left:20px;
+}
+
+.fa-euro-sign:before {
+  padding-left:20px;
+}
+
+.top_barre{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 4em;
+  align-items: center;
+  max-width:100%;
+  margin: 10px;
+}
+
+.top_barre h1{
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 2.5em;
+}
+
+.infos-show i{
+  padding-right: 5px;
+  color: white;
+}
+.fa-home:before {
+    content: "\f015";
+    padding-right: 10px;
+}
+
+.details p {
+    margin: auto;
+    padding: 5px;
+    font-weight: 400;
+    color: white;
+}
+
+.details .center {
+    border-left: solid;
+    border-right: solid;
+    padding-left: 1em;
+    padding-right: 1em;
+
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 2em;
+  padding: 0.4em;
+  max-width: 100%;
+  margin: 10px;
+}
+
+@media (max-width: 1200px) {
+  /* For a screen < 960px, this CSS will be read */
+  //   .container {
+  //   width: 700px;
+  // }
+  .cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  padding: 10px;
+  max-width: 100%;
+  }
+}
+
+@media (max-width: 960px) {
+  /* For a screen < 960px, this CSS will be read */
+  //   .container {
+  //   width: 700px;
+  // }
+  .cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  padding: 10px;
+  max-width: 100%;
+  }
+}
+
+
+
+@media (max-width: 720px) {
+  /* For a screen < 720px, this CSS will be read */
+  //   .container {
+  //   width: 500px;
+  // }
+  .cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  grid-gap: 20px;
+  padding: 10px;
+  max-width: 100%;
+  }
+}
+
+@media (max-width: 540px) {
+  /* For a screen < 540px, this CSS will be read */
+  //  .container {
+  //   width: 300px;
+  // }
+
+  .cards-grid {
+   display: grid;
+  grid-template-columns: 1fr ;
+  grid-gap: 20px;
+  padding: 10px;
+  max-width: 100%;
+  }
+}
+
+.h2 .catalogue {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  font-color: #2C3E50;
+}
+
+#level {
+  text-align: center;
+  font-size: small;
+}
+
+#poup {
+font-size: large;
+padding-left: 30px;
+color: white;
+}
+
+#poupi {
+font-size: large;
+padding-left: 30px;
+margin-left: 37px;
+}
+
+.infos-show {
+  background-color: #342e3717 ;
+}
+
+.infos p {
+  color: white;
+}
+
+.card-index {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    word-wrap: break-word;
+    background-color: #2C3E50;
+    background-clip: border-box;
+    border: none;
+    box-shadow:2px 4px 17px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    height: 100%;
+    padding-bottom: 10px;
+}
+.card-index:hover{
+  background-color: #342e3717;
+}
+
+.card-index button{
+  position: relative;
+}
+
+.card-index h6 {
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.card-body-index{
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  padding-bottom: 60px;
+}
+
+
+.card-title{
+  color: #FFB20F;
+  text-align: center;
+  padding:5px;
+  margin: 0;
+  font-size: 20px;
+  padding-bottom: 20px;
+  font-weight: bold;
+  padding-top: 15px;
+}
+
+.card-index a{
+  text-decoration: none;
+  color: #2C3E50;
+}
+
+.card-index a h6{
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.card-center-index{
+  border-left: solid white;
+  border-right: solid white;
+  width: 100px;;
+}
+
+
+#sport_class_name {
+   font-weight: bold;
+   padding-right: 10px;
+}
+
+.blank-background {
+  background-color: white;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.infos-show i:before
+{
+color: red;
+}
+
+.cards-grid-show {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2em;
+  padding: 0.4em;
+  max-width: 100%;
+  margin: 10px;
 }

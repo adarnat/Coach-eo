@@ -11,7 +11,7 @@
     <% @sport_classes.each do |sport_class| %>
       <div class="card-index">
           <div class="card-corps">
-            <div class="blank-background" id="blank">
+            <div class="white-background" id="blank">
           <%= link_to sport_class_path(sport_class) do %>
               <h4 class="card-title-index"><%= sport_class.category %></h4>
             <div class="card-body-index">
@@ -34,7 +34,7 @@
             </div>
           </div>
         <% end %>
-            <div class="button">
+            <div class="button-poup">
              <%= link_to "", edit_sport_class_path(sport_class), class: "fas fa-pen" %>
               <%= link_to "", sport_class, method: :delete, data: { confirm: "Are you sure?" }, class: "fas fa-trash" %>
             </div>

@@ -14,6 +14,16 @@
   right: 3px;
   color: #fff;
 }
+
+.button-poup {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  color: #fff;
+  padding-top: 10px;
+  padding-right: 5px;
+}
+
 .fa-pen:before {
   font-size: small;
 }
@@ -66,13 +76,17 @@
   font-size: 2.5em;
 }
 
-.fas{
+.infos i{
   padding-right: 5px;
   color: white;
 }
 .fa-home:before {
     content: "\f015";
     padding-right: 10px;
+}
+
+.fas {
+  color:white;
 }
 
 .details p {
@@ -244,6 +258,7 @@ margin-left: 37px;
   font-size: 20px;
   padding-bottom: 20px;
   font-weight: bold;
+  padding-top: 15px;
 }
 
 .card-index a{
@@ -267,9 +282,10 @@ margin-left: 37px;
 
 #sport_class_name {
    font-weight: bold;
+   padding-right: 10px;
 }
 
-.blank-background {
+.white-background {
   background-color: white;
   border-radius: 20px 20px 0px 0px;
 }
