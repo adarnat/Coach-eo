@@ -73,7 +73,7 @@
         <h4> <%= @unpaid_ca.round(0) %>€</h4>
       </div>
       <div class="collapse unpaid" id="collapseExample">
-        <% @unpaid_client.each do |c| %>
+        <% @unpaid_client.uniq.each do |c| %>
         <%= link_to client_profile_path(c) do %> <%= "#{c.first_name} #{c.last_name}"%> <% end %>
         <% end %>
       </div>
