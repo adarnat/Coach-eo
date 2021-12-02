@@ -72,28 +72,35 @@ const createCoachCalendar = () => {
       createTimeSlot(info);
     },
     eventDrop: function (info) {
-      console.log("Info eventDrop", info);
+      // console.log("Info eventDrop", info);
 
       updateDraggedorResizedTimeSlot(info.event.id, info.event.startStr, info.event.endStr)
     },
     eventResize: function(info) {
-      console.log("Info eventResize", info)
+      // console.log("Info eventResize", info)
       updateDraggedorResizedTimeSlot(info.event.id, info.event.startStr, info.event.endStr)
     },
     eventDragStop: function (info) {
       let trashEl = document.getElementById('calendarTrash');
-      console.log("Check:", info.event.id)
+      console.log("Check:", parseInt(info.event.title.match(/-\s(\d*)\//).pop(),10))
 
-      let x1 = trashEl.offsetLeft;
-      let x2 = trashEl.offsetLeft + trashEl.offsetWidth;
-      let y1 = trashEl.offsetTop;
-      let y2 = trashEl.offsetTop + trashEl.offsetHeight;
-
-      if (info.jsEvent.pageX >= x1 && info.jsEvent.pageX <= x2 &&
-        info.jsEvent.pageY >= y1 && info.jsEvent.pageY <= y2) {
-        info.event.remove();
-        deleteTimeSlot(info.event.id);
+      if (parseInt(info.event.title.match(/-\s(\d*)\//).pop(),10) > 0) {
+        alert("Cet évènement ne peut être supprimé car il y a déjà des réservations.")
       }
+      else {
+        let x1 = trashEl.offsetLeft;
+        let x2 = trashEl.offsetLeft + trashEl.offsetWidth;
+        let y1 = trashEl.offsetTop;
+        let y2 = trashEl.offsetTop + trashEl.offsetHeight;
+
+        if (info.jsEvent.pageX >= x1 && info.jsEvent.pageX <= x2 &&
+          info.jsEvent.pageY >= y1 && info.jsEvent.pageY <= y2) {
+          info.event.remove();
+          deleteTimeSlot(info.event.id);
+        }
+      }
+
+
     }
   });
   coachCalendar.render()
@@ -195,7 +202,6 @@ const eventCoachClick = (id) => {
       document.querySelector('.modal-body').innerHTML = data.form
       $("#exampleModal").modal('show')
 
-      console.log(document.querySelector('#time_slot_group_size option:checked').value)
       const individual_btn = document.getElementById("time_slot_group_size_individuel");
       const collective_btn = document.getElementById("time_slot_group_size_collectif");
       const capacity_div = document.querySelector(".form-group.select.required.time_slot_group_size");
