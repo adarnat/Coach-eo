@@ -67,6 +67,7 @@ padding-top:7px;
   background: #2C3E50;
   position: sticky;
   top: 0;
+  display: flex;
 }
 
 #sidebar header {
@@ -156,7 +157,7 @@ li{
   flex-direction: column;
   gap: 80px;
   text-align: center;
-  margin-top: 170px;
+  margin:auto;
 }
 
 .icone i {

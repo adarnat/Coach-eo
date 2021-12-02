@@ -104,7 +104,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    min-width: 100%;
+    width: 100%;
     word-wrap: break-word;
     background-color: #2C3E50;
     background-clip: border-box;
@@ -219,7 +219,7 @@ padding-top: 48px;
   font-size: 30px;
   font-weight: bold;
   text-align: center;
-  font-color: #2C3E50;
+  color: #2C3E50;
 }
 
 .infos p {
@@ -289,13 +289,20 @@ margin-left: 37px;
 
 #list-show {
     display: block;
-    list-style-type: disc;
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     padding: 0;
+    li{
+      display: inline;
+      margin-left: 2rem;
+      &:first-child{
+        margin-left: 0;
+      }
+    }
 }
+
 
 #white_font {
   color: white;
