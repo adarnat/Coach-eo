@@ -5,20 +5,23 @@
   <div>
     <p class="card-title"><%= @sport_class.category %></p>
     <div class="card-body">
-      <h3 class="card-text"><%= @sport_class.name %></h3>
-      <h6 class="card-description-show"><em> <%= @sport_class.description %> icci </em></h5>
+      <h3 class="card-text" id="sport_class_name_show"><%= @sport_class.name %></h3>
+      <h6 class="card-description-show"><em> <%= @sport_class.description %> </em></h5>
     </div>
   </div>
     <div class="infos-show">
-      <p><i class="fas fa-user-friends"></i><%= @sport_class.group_size %></p>
-      <p><i class="fas fa-clock"></i><%= @sport_class.duration %></p>
-      <p><i class="fas fa-euro-sign"></i><%= @sport_class.price.to_i %></p>
+    <ul id="list-show">
+     <li> <p id="white_font"><i class="fas fa-user-friends"></i><%= @sport_class.group_size %></p> </li>
+     <li> <p id="white_font"><i class="fas fa-clock"></i><%= @sport_class.duration %></p> </li>
+     <li> <p id="white_font"><i class="fas fa-euro-sign"></i><%= @sport_class.price.to_i %></p> </li>
+    </ul>
     </div>
+      <div class="button-show">
+        <%= link_to "", edit_sport_class_path(@sport_class), class: "fas fa-pen" %>
+        <%= link_to "", @sport_class, method: :delete, data: { confirm: "Are you sure?" }, class: "fas fa-trash" %>
+      </div>
   </div>
 
 
-  <div class="button">
-    <%= link_to "", edit_sport_class_path(@sport_class), class: "fas fa-pen" %>
-    <%= link_to "", @sport_class, method: :delete, data: { confirm: "Are you sure?" }, class: "fas fa-trash" %>
-  </div>
+
 </div>
