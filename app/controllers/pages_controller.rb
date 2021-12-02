@@ -4,7 +4,7 @@ class PagesController < ApplicationController
     @time_slots = TimeSlot.includes(:sport_class).where(sport_classes: { coach_id: current_user.id }).where("start_at BETWEEN ? and ?", Date.current.beginning_of_day, Date.current.end_of_day).sort_by{|ev| ev.start_at.strftime('%H:%M')}
     @ca = current_user.time_slots.map{|t| t.bookings.map{ |b| b.time_slot_price}.sum }.sum
     @unpaid_ca = current_user.time_slots.map{|t| t.bookings.filter{|b| !b.payment_received }.map{ |b| b.time_slot_price}.sum }.sum
-    @unpaid_client = current_user.time_slots.map{|t| t.bookings.filter{|b| !b.payment_received }.map{ |b| b.client.first_name}}
+    @unpaid_client = current_user.time_slots.map{|t| t.bookings.filter{|b| !b.payment_received }.map{ |b| b.client}}.flatten
 
   end
 

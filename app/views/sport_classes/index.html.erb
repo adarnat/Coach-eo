@@ -1,13 +1,10 @@
 
   <div class="top_barre">
-  <br>
-  <h2 class="catalogue">CATALOGUE DES COURS DE SPORT</h2>
+  <h1 class="catalogue">Catalogue des cours de sports</h1>
   <%= link_to 'Ajouter un cours de sport', new_sport_class_path, class: "button1" %>
   </div>
 
-
-
-  <div class="cards-grid">
+  <div class="cards-grid" >
     <% @sport_classes.each do |sport_class| %>
       <div class="card-index">
           <div class="card-corps">
@@ -20,17 +17,9 @@
             </div>
             </div>
             <div class="infos">
-              <%# <p class="card-text-index" id="poup"> %>
               <div> <p><i class="fas fa-user-friends"></i><%= sport_class.group_size %></p></div>
               <div><p><i class="fas fa-clock"></i> <%= sport_class.duration %></p></div>
               <div> <p><i class="fas fa-euro-sign"></i><%= sport_class.price.to_i %></p></div>
-            </div>
-
-
-            <div class="details">
-
-
-<%# ////////// %>
             </div>
           </div>
         <% end %>
@@ -41,6 +30,3 @@
       </div>
     <% end %>
   </div>
-
-
-<%# <% console if Rails.env.development? %>

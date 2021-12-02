@@ -8,8 +8,7 @@ class UsersController < ApplicationController
 
   def user_clients
     @user = current_user
-    @clients = current_user.clients
-
+    @clients = current_user.clients.order(last_name: :asc)
   end
 
   def client_profile

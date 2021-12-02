@@ -2,12 +2,6 @@
 @import "home";
 
 
-
-
-// .container{
-//   width: 800px;
-// }
-
 .button{
   position: absolute;
   top: 3px;
@@ -38,7 +32,7 @@
   padding: 10px;
   border-radius: 5px;
   margin: 3px;
-    margin-top: -5px;
+  margin-top: -5px;
 }
 .button1:hover{
   background-color:#2C3E50 ;
@@ -49,23 +43,14 @@
   text-decoration: none;
 }
 
-.fa-user-friends:before {
-    color: white;
-}
-
-.fa-clock:before {
+.info i{
   color: white;
-  padding-left:20px;
-}
-
-.fa-euro-sign:before {
-  padding-left:20px;
 }
 
 .top_barre{
   display: flex;
   justify-content: space-between;
-  padding-bottom: 4em;
+  padding-bottom: 2em;
   align-items: center;
   max-width:100%;
   margin: 10px;
@@ -80,27 +65,24 @@
   padding-right: 5px;
   color: white;
 }
-.fa-home:before {
-    content: "\f015";
-    padding-right: 10px;
-}
+
 
 .fas {
   color:white;
 }
 
 .details p {
-    margin: auto;
-    padding: 5px;
-    font-weight: 400;
-    color: white;
+  margin: auto;
+  padding: 5px;
+  font-weight: 400;
+  color: white;
 }
 
 .details .center {
-    border-left: solid;
-    border-right: solid;
-    padding-left: 1em;
-    padding-right: 1em;
+  border-left: solid;
+  border-right: solid;
+  padding-left: 1em;
+  padding-right: 1em;
 
 }
 
@@ -114,10 +96,6 @@
 }
 
 @media (max-width: 1200px) {
-  /* For a screen < 960px, this CSS will be read */
-  //   .container {
-  //   width: 700px;
-  // }
   .cards-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -128,10 +106,6 @@
 }
 
 @media (max-width: 960px) {
-  /* For a screen < 960px, this CSS will be read */
-  //   .container {
-  //   width: 700px;
-  // }
   .cards-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -144,10 +118,6 @@
 
 
 @media (max-width: 720px) {
-  /* For a screen < 720px, this CSS will be read */
-  //   .container {
-  //   width: 500px;
-  // }
   .cards-grid {
   display: grid;
   grid-template-columns: 1fr 1fr ;
@@ -158,13 +128,8 @@
 }
 
 @media (max-width: 540px) {
-  /* For a screen < 540px, this CSS will be read */
-  //  .container {
-  //   width: 300px;
-  // }
-
   .cards-grid {
-   display: grid;
+  display: grid;
   grid-template-columns: 1fr ;
   grid-gap: 20px;
   padding: 10px;
@@ -172,11 +137,12 @@
   }
 }
 
-.h2 .catalogue {
-  font-size: 30px;
-  font-weight: bold;
+.catalogue {
+  margin: auto;
+  margin-bottom: 35px;
+  font-family: 'Merriweather Sans', sans-serif;
   text-align: center;
-  font-color: #2C3E50;
+  color: #2C3E50;
 }
 
 #level {
@@ -213,18 +179,18 @@ margin-left: 37px;
 }
 
 .card-index {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 100%;
-    word-wrap: break-word;
-    background-color: #2C3E50;
-    background-clip: border-box;
-    border: none;
-    box-shadow:2px 4px 17px rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
-    height: 100%;
-    padding-bottom: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+  word-wrap: break-word;
+  background-color: #2C3E50;
+  background-clip: border-box;
+  border: none;
+  box-shadow:2px 4px 17px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  height: 100%;
+  padding-bottom: 10px;
 }
 .card-index:hover{
   background-color: #342e3717;

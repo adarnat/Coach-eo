@@ -3,7 +3,7 @@ class SportClassesController < ApplicationController
 # skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-  @sport_classes = current_user.sport_classes
+  @sport_classes = current_user.sport_classes.order(category: :asc)
   end
 
   def show
@@ -40,13 +40,12 @@ class SportClassesController < ApplicationController
 
   def destroy
     @sport_class = SportClass.find(params[:id])
-    # if @sport_class.booking.any?
-    #   flash[:alert] = "Ce cours a déjà été réservé et ne peut donc pas être supprimée"
-    # else
+    if @sport_class.time_slots.any?
+      flash[:alert] = "Ce cours a été réservé. Il ne peut donc pas être supprimé."
+    else
       @sport_class.destroy
-    # end
-
-    redirect_to sport_class_path
+    end
+      redirect_to sport_classes_path
   end
 
   private
