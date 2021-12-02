@@ -12,6 +12,11 @@
     border-radius: 10px;
     height: 100%;
 }
+.card-title-image img{
+  object-fit: cover;
+  max-height: 165px;
+  width: 380px;
+}
 
 .card:hover{
   background-color: #342e3717;
