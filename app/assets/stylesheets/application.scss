@@ -70,7 +70,7 @@ padding-top:7px;
 
 
 #sidebar {
-  width:130px;
+  width:5em;
   flex-shrink: 0;
   height: 100vh;
   overflow: auto;
@@ -164,12 +164,12 @@ li{
 .icone{
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 80px;
   text-align: center;
-      margin-top: 140px;
+      margin-top: 170px;
 }
 
 .icone i {
-  font-size: 60px;
+  font-size: 3em;
 
 }
