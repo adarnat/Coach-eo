@@ -48,7 +48,6 @@ body {
 
 }
 
-
 #sidebar h1 {
 color: white;
 font-weight: 700;
@@ -60,7 +59,7 @@ padding-top:7px;
 
 
 #sidebar {
-  width:5em;
+  width:7em;
   flex-shrink: 0;
   height: 100vh;
   overflow: auto;
@@ -156,9 +155,13 @@ li{
   flex-direction: column;
   gap: 80px;
   text-align: center;
-      margin-top: 170px;
+  margin-top: 170px;
 }
 
 .icone i {
   font-size: 3em;
+}
+
+.icone i:hover {
+  font-size: 2.5em;
 }
