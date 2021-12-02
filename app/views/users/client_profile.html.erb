@@ -3,9 +3,11 @@
     <div>
       <img src="<%= @client.avatar_url %>" class="img-client" alt="Admin" >
     </div>
-    <div class="info-client">
-      <h1><%= @client.first_name %> <%= @client.last_name %></h1>
 
+    <div class="info-client">
+      <div class="details-info-client">
+        <h1><%= @client.first_name %> <%= @client.last_name %></h1>
+      </div>
       <div class="birth-date">
           <i class="fas fa-birthday-cake"></i><h6><%=@client.birth_date %></h6>
         </div>
@@ -21,12 +23,12 @@
   </div>
 
   <div class="stat-paiements">
-    <div class="paiement-card-total">
-     <h6>Chiffre d'affaires réalisé avec ce client : </h6>
+    <div class="paiement-card-total-show">
+     <h6>Chiffre d'affaires réalisé avec ce client  </h6>
       <h4><%= @bookings.map {|b| b.time_slot_price }.sum.round(0) %>€</h4>
     </div>
-    <div class="paiement-card-impayés">
-   <h6>Montant restant à payer par ce client :</h6>
+    <div class="paiement-card-impayés-show">
+   <h6>Montant restant à payer par ce client </h6>
     <h4> <%=@bookings.filter{ |b| b.payment_received == false}.map {|b| b.time_slot_price }.sum.round(0) %>€</h4>
     </div>
   </div>
