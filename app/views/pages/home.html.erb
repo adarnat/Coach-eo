@@ -1,6 +1,6 @@
 
 <div class="titre">
-    <h1>Bienvenue <%=current_user.first_name %>!</h1>
+
   <div class="box">
       <span class="seconds"></span>
     <div class="clock">
@@ -11,6 +11,7 @@
       <div id="daymonth"><%= l Date.today, format: '%d %B' %></div>
     </div>
   </div>
+    <h1>Bienvenue <%= current_user.first_name %> </h1>
 </div>
 
 <div class="flex">
@@ -59,14 +60,17 @@
     <% end %>
   </div>
   <div class="align-paiement">
+  <div>
+  <h4>Suivi financier :</h4>
+  </div>
     <div class="paiement-card-total">
-      <h6>Somme des cours vendus</h6>
-      <h4><%= @ca %>€</h4>
+      <h6>Chiffre d'affaires réalisé</h6>
+      <h4><%= @ca.round(0) %>€</h4>
     </div>
     <div class="paiement-card-impayés-home">
       <div  data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"> </a>
-        <h6>En attente de paiement</h6>
-        <h4> <%= @unpaid_ca %>€</h4>
+        <h6>Solde des paiements à recevoir</h6>
+        <h4> <%= @unpaid_ca.round(0) %>€</h4>
       </div>
       <div class="collapse unpaid" id="collapseExample">
         <% @unpaid_client.each do |c| %>

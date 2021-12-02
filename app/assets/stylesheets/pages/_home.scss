@@ -206,6 +206,8 @@ a:hover{
 .flex{
   display: flex;
    min-width: 100%;
+       grid-gap: 100px;
+       text-align: center;
 
 }
 
@@ -276,10 +278,15 @@ a:hover{
 }
 
 .align-paiement {
-    display: flex;
-    margin-top: 89px;
+    margin-top: 29px;
     grid-gap: 10px;
-    height: 300px
+    height: 300px;
+    width: 400px;
+    h4{
+      font-family: 'Merriweather Sans', sans-serif;
+      padding-bottom: 20px;
+      color: #2C3E50;
+    }
 }
 
 .unpaid{
