@@ -4,7 +4,7 @@
   <h2>Cours de sport</h2>
     <%= simple_form_for(@sport_class) do |f| %>
     <div class="form-group1">
-      <%= f.input :category, :prompt => "Discipline",  label: false, collection: (SportClass::SPORT_CATEGORY).keys.map(&:to_s)%>
+      <%= f.input :category , :prompt => "Discipline",  label: false, collection: SportClass::SPORT_CATEGORY%>
       <%= f.input :name,label: false, placeholder: 'Nom du cours'  %>
       </div>
       <%= f.input :description, label: false, placeholder: 'Description' %>

@@ -212,7 +212,7 @@ fitness_victoire = SportClass.create!(
 
 pilates_victoire = SportClass.create!(
   category: "Pilates",
-  name: "Pilates sur reformer",
+  name: "Cours de pilates pour débutants",
   description: "Initiation au pilates",
   level: "Débutant",
   group_size: 10,
@@ -345,7 +345,7 @@ creneau_meditation_mike_2 = TimeSlot.create!(
 
 creneau_pilates_john_1 = TimeSlot.create!(
   name: "Initiation au pilates",
-  description: "Pilates sur reformer",
+  description: "Cours de découverte du pilates pour débutant",
   level: "Débutant",
   group_size: 3,
   price: 20,
@@ -421,8 +421,8 @@ creneau_fitness_victoire_1 = TimeSlot.create!(
   address2: "",
   post_code: "69001",
   town: "Lyon",
-  start_at: DateTime.strptime("02/12/2021 09:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("02/12/2021 11:00", "%d/%m/%Y %H:%M"),
+  start_at: DateTime.strptime("29/11/2021 09:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("29/11/2021 11:00", "%d/%m/%Y %H:%M"),
   sport_class: fitness_victoire
 )
 
@@ -466,8 +466,8 @@ creneau_pilates_victoire_1 = TimeSlot.create!(
   address2: "",
   post_code: "69001",
   town: "Lyon",
-  start_at: DateTime.strptime("02/12/2021 13:30", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("02/12/2021 14:30", "%d/%m/%Y %H:%M"),
+  start_at: DateTime.strptime("29/11/2021 13:30", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("29/11/2021 14:30", "%d/%m/%Y %H:%M"),
   sport_class: pilates_victoire
 )
 
@@ -511,8 +511,8 @@ creneau_yoga_victoire = TimeSlot.create!(
   address2: "",
   post_code: "69001",
   town: "Lyon",
-  start_at: DateTime.strptime("02/12/2021 16:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("02/12/2021 17:00", "%d/%m/%Y %H:%M"),
+  start_at: DateTime.strptime("29/11/2021 16:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("29/11/2021 17:00", "%d/%m/%Y %H:%M"),
   sport_class: yoga_victoire
 )
 
