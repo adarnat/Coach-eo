@@ -32,6 +32,7 @@ class TimeSlotsController < ApplicationController
         title: "#{event.name} - #{event.bookings.size}/#{event.group_size}",
         start: event.start_at.strftime('%FT%T%:z'),
         end: event.end_at.strftime('%FT%T%:z'),
+        editable: !event.bookings.count.positive?,
         bookings_count: event.bookings.count
       }
     end

@@ -82,12 +82,9 @@ const createCoachCalendar = () => {
     },
     eventDragStop: function (info) {
       let trashEl = document.getElementById('calendarTrash');
-      console.log("Check:", parseInt(info.event.title.match(/-\s(\d*)\//).pop(),10))
+      console.log("Check:", info.event.title.match(/-\s(\d*)\//))
 
-      if (parseInt(info.event.title.match(/-\s(\d*)\//).pop(),10) > 0) {
-        alert("Cet évènement ne peut être supprimé car il y a déjà des réservations.")
-      }
-      else {
+      if (info.event.title.match(/-\s(\d*)\//) === null || parseInt(info.event.title.match(/-\s(\d*)\//).pop(), 10) == 0) {
         let x1 = trashEl.offsetLeft;
         let x2 = trashEl.offsetLeft + trashEl.offsetWidth;
         let y1 = trashEl.offsetTop;
@@ -99,8 +96,9 @@ const createCoachCalendar = () => {
           deleteTimeSlot(info.event.id);
         }
       }
-
-
+      else {
+        alert("Cet évènement ne peut être modifié ou supprimé car il y a déjà des réservations.");
+      }
     }
   });
   coachCalendar.render()
