@@ -3,9 +3,7 @@
     width: 70%;
     margin: auto;
     padding: 30px;
-    border-radius: 10px;
-    margin-right: 10px;
-    margin-left: 10px;
+    border-radius: 5px;
 }
 
 .card-features h4{
@@ -19,7 +17,7 @@
   padding: 10px;
   margin-bottom: 10px;
   justify-content: space-between;
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: white;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   font-family: 'Merriweather Sans', sans-serif;
@@ -30,7 +28,7 @@
   padding: 10px;
   margin-bottom: 10px;
   justify-content: space-between;
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: rgba(196, 189, 189, 0.494);
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   font-family: 'Merriweather Sans', sans-serif;
@@ -120,24 +118,20 @@
 }
 
 .titre h1{
-  margin: auto;
-  margin-left: 35px;
   font-family: 'Merriweather Sans', sans-serif;
   margin-bottom: 3%;
   color: #2C3E50;
-  margin-top: 6%;
+  margin-top: 4%;
+  font-size: 67px;
+  width: 65%;
+  padding: 30px;
 }
 
-.titre{
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 30px;
-  margin-top: 30px;
-  width: 100%;
-  margin: auto;
-  margin-right: 4%;
-
-
+.titre {
+    display: flex;
+    min-width: 100%;
+    grid-gap: 100px;
+    text-align: center;
 }
 
 .card-slot-details {
@@ -176,18 +170,20 @@ color: white;
 .payé{
   text-align: center;
   color: #ffffff;
+      margin-right: 10px;
     /* border: green 1px solid; */
   background-color: green;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 5px 10px 5px 10px;
 }
 
 .impayé{
   text-align: center;
   color: white;
+      margin-right: 10px;
   // border: rgb(157, 0, 0) 1px solid;
   background-color: rgb(197, 2, 2);
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 5px 10px 5px 10px;
 }
 
@@ -206,8 +202,8 @@ a:hover{
 .flex{
   display: flex;
    min-width: 100%;
-       grid-gap: 100px;
-       text-align: center;
+  grid-gap: 100px;
+  text-align: center;
 
 }
 
@@ -218,8 +214,8 @@ a:hover{
     background: #2C3E50;
     border-radius: 5px;
     display: inline-block;
-    margin: 2em 1em 1em;
-    padding: 0px 38px 5px;
+    margin: 35px;
+    width: 300px;
     height: 180px;
 }
 
@@ -345,4 +341,53 @@ a:hover{
 
 .card-features i{
   color: #2C3E50
+}
+
+
+.paiement-card-total{
+  padding: 20px;
+  margin-bottom: 6%;
+  border-radius: 5px;
+  height: 45%;
+  text-align: center;
+  border: rgb(0, 128, 0) 1px solid;
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.1);
+}
+
+.paiement-card-total h6{
+  color: rgb(0, 128, 0);
+  font-weight: 800;
+  font-family: 'Merriweather Sans', sans-serif;
+  text-align: center;
+}
+.paiement-card-total h4{
+  color: rgb(0, 128, 0);
+  font-weight: 800;
+  font-size: 40px;
+  font-family: 'Merriweather Sans', sans-serif;
+  text-align: center;
+}
+
+.paiement-card-impayés{
+  padding: 20px;
+  margin-bottom: 10%;
+  height: 45%;
+  border-radius: 5px;
+  border: #FFB20F 1px solid;
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.paiement-card-impayés h6{
+  color: #FFB20F;
+  font-weight: 800;
+  font-family: 'Merriweather Sans', sans-serif;
+  text-align: center;
+}
+.paiement-card-impayés h4{
+  color: #FFB20F;
+  font-weight: 800;
+  font-size: 40px;
+  font-family: 'Merriweather Sans', sans-serif;
+  text-align: center;
 }

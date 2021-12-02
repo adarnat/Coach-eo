@@ -1,6 +1,7 @@
 
 <div class="titre">
 
+    <h1>Bienvenue <%= current_user.first_name %> </h1>
   <div class="box">
       <span class="seconds"></span>
     <div class="clock">
@@ -11,7 +12,6 @@
       <div id="daymonth"><%= l Date.today, format: '%d %B' %></div>
     </div>
   </div>
-    <h1>Bienvenue <%= current_user.first_name %> </h1>
 </div>
 
 <div class="flex">
