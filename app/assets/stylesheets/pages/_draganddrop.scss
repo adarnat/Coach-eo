@@ -4,7 +4,6 @@
 #external-events {
   padding: 14px 10px;
   border-radius: 5px;
-  margin-top: 64px;
 }
 
 #external-events .fc-event {
@@ -62,4 +61,20 @@ font-size: 14px;
 #external-events img{
   width: 30px;
   height: 30px;
+}
+
+#calendarTrash{
+  height: 150px;
+  background: #e9ecef;
+  display: flex;
+  border: 2px dashed #2c3e4f;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+
+}
+
+#calendarTrash i {
+  font-size: 32px;
+  color: #2c3e508a;
+  margin: auto;
 }
