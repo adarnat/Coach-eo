@@ -1,27 +1,28 @@
-
-<%= link_to '', sport_classes_path, class:"fas fa-arrow-circle-left" %>
-<div class="card-sport" >
-  <div class="cards-grid-show">
-  <div>
-    <p class="card-title"><%= @sport_class.category %></p>
-    <div class="card-body">
-      <h3 class="card-text" id="sport_class_name_show"><%= @sport_class.name %></h3>
-      <h6 class="card-description-show"><em> <%= @sport_class.description %> </em></h5>
-    </div>
-  </div>
-    <div class="infos-show">
-    <ul id="list-show">
-     <li> <p id="white_font"><i class="fas fa-user-friends"></i><%= @sport_class.group_size %></p> </li>
-     <li> <p id="white_font"><i class="fas fa-clock"></i><%= @sport_class.duration %></p> </li>
-     <li> <p id="white_font"><i class="fas fa-euro-sign"></i><%= @sport_class.price.to_i %></p> </li>
-    </ul>
-    </div>
-      <div class="button-show">
-        <%= link_to "", edit_sport_class_path(@sport_class), class: "fas fa-pen" %>
-        <%= link_to "", @sport_class, method: :delete, data: { confirm: "Are you sure?" }, class: "fas fa-trash" %>
+<div class="show-sport-class">
+  <%= link_to '', sport_classes_path, class:"fas fa-arrow-circle-left" %>
+  <div class="card-sport" >
+    <div class="cards-grid-show">
+    <div>
+      <p class="card-title"><%= @sport_class.category %></p>
+      <div class="card-body">
+        <h3 class="card-text" id="sport_class_name_show"><%= @sport_class.name %></h3>
+        <h6 class="card-description-show"><em> <%= @sport_class.description %> </em></h5>
       </div>
+    </div>
+      <div class="infos-show">
+      <ul id="list-show">
+      <li> <p id="white_font"><i class="fas fa-user-friends"></i><%= @sport_class.group_size %></p> </li>
+      <li> <p id="white_font"><i class="fas fa-clock"></i><%= @sport_class.duration %></p> </li>
+      <li> <p id="white_font"><i class="fas fa-euro-sign"></i><%= @sport_class.price.to_i %></p> </li>
+      </ul>
+      </div>
+        <div class="button-show">
+          <%= link_to "", edit_sport_class_path(@sport_class), class: "fas fa-pen" %>
+          <%= link_to "", @sport_class, method: :delete, data: { confirm: "Are you sure?" }, class: "fas fa-trash" %>
+        </div>
+    </div>
+
+
+
   </div>
-
-
-
 </div>
