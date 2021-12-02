@@ -1,0 +1,27 @@
+<h3>Modifier le créneau</h3>
+<%= simple_form_for(time_slot) do |f| %>
+<%# <%= f.input :category , label: 'Catégorie', collection: SportClass::SPORT_CATEGORY%>
+<%= f.input :name,label: "Cours" %>
+<%= f.input :description, label: "Description" %>
+<%= f.input :level,
+            label: "Niveau",
+            as: :radio_buttons,
+            input_html: { class: "tag-selector" },
+            item_wrapper_class: 'tag-item',
+            collection: SportClass::LEVELS%>
+<div class="form-group1" id="toggleType">
+  <%= f.input :group_size,label: false, label: 'Type de cours',
+              as: :radio_buttons,
+              input_html: { class: "tag-selector" },
+              item_wrapper_class: 'tag-item',
+              collection: ['Individuel', 'Collectif'] %>
+</div>
+<%= f.input :group_size, label: 'Capacité maximale', collection: 1..30 %>
+<%= f.input :price,label: "Prix" %>
+<%= f.input :address1, label: "Adresse" %>
+<div class="form-group1">
+  <%= f.input :post_code, label: "Code postal" %>
+  <%= f.input :town, label: "Ville" %>
+</div>
+  <%= f.submit nil,  placeholder: 'Enregistrer' %>
+<% end %>

@@ -1,4 +1,6 @@
 class TimeSlotsController < ApplicationController
+  before_action :set_time_slot, only: [:edit, :update]
+
 
   def calendar
     # @time_slots = TimeSlot.all
@@ -48,7 +50,7 @@ class TimeSlotsController < ApplicationController
   end
 
   def edit
-    raise
+    render json: {form: render_to_string(partial: "modal_body_edit", locals: { time_slot: @time_slot }, formats: [:html])}
   end
 
   def create
@@ -63,6 +65,8 @@ class TimeSlotsController < ApplicationController
   def update
     @time_slot = TimeSlot.find(params[:id])
     @time_slot.update(time_slot_params)
+    redirect_to calendar_path
+    # head 200
   end
 
   def destroy
@@ -76,6 +80,10 @@ class TimeSlotsController < ApplicationController
   end
 
   private
+
+  def set_time_slot
+    @time_slot = TimeSlot.find(params[:id])
+  end
 
   def time_slot_params
     params.require(:time_slot).permit(

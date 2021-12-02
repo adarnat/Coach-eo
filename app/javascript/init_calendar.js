@@ -47,12 +47,23 @@ const createCoachCalendar = () => {
       start: todaysDate,
       end: '2100-01-01'
     },
-    eventRender: function (calev, elt, view) {
-      // var ntoday = new Date();
-      if (calev.start._d.getTime() < todaysDate.getTime()) {
-        elt.addClass("past");
-        elt.children().addClass("past");
+    // eventRender: function (calev, elt, view) {
+    //   // var ntoday = new Date();
+    //   if (calev.start._d.getTime() < todaysDate.getTime()) {
+    //     elt.addClass("past");
+    //     elt.children().addClass("past");
+    //   }
+    // },
+    eventRender: function (event, element, view) {
+
+      if (view.name == 'listDay') {
+        element.find(".fc-list-item-time").append("<span class='closeon'>X</span>");
+      } else {
+        element.find(".fc-content").prepend("<span class='closeon'>X</span>");
       }
+      element.find(".closeon").on('click', function () {
+        $('#calendar').fullCalendar('removeEvents', event._id);
+      });
     },
     eventClick: function (info) {
       eventCoachClick(info.event.id)
@@ -67,6 +78,23 @@ const createCoachCalendar = () => {
     eventResize: function(info) {
       console.log("Info eventResize", info)
       updateDraggedorResizedTimeSlot(info.event.id, info.event.startStr, info.event.endStr)
+    },
+    eventDragStop: function (event, jsEvent) {
+      console.log("Drag stopped")
+
+      var trashEl = jQuery('#calendarTrash');
+      var ofs = trashEl.offset();
+
+      var x1 = ofs.left;
+      var x2 = ofs.left + trashEl.outerWidth(true);
+      var y1 = ofs.top;
+      var y2 = ofs.top + trashEl.outerHeight(true);
+
+      if (jsEvent.pageX >= x1 && jsEvent.pageX <= x2 &&
+        jsEvent.pageY >= y1 && jsEvent.pageY <= y2) {
+        alert('SIII');
+        $('#coach_calendar').fullCalendar('removeEvents', event.id);
+      }
     }
   });
   coachCalendar.render()
@@ -141,7 +169,7 @@ const updateDraggedorResizedTimeSlot = (id, startDate, endDate) => {
 }
 
 const eventCoachClick = (id) => {
-  fetchWithToken(`/time_slots/${id}`, {
+  fetchWithToken(`/time_slots/${id}/edit`, {
     method: "GET",
     headers: {
       "Accept": "application/json",
@@ -150,26 +178,62 @@ const eventCoachClick = (id) => {
   })
     .then(response => response.json())
     .then((data) => {
-      console.log(data)
+      // console.log(data.form)
+
+      document.querySelector('.modal-body').innerHTML = data.form
+      $("#exampleModal").modal('show')
+
+      console.log(document.querySelector('#time_slot_group_size option:checked').value)
+      const individual_btn = document.getElementById("time_slot_group_size_individuel");
+      const collective_btn = document.getElementById("time_slot_group_size_collectif");
+      const capacity_div = document.querySelector(".form-group.select.required.time_slot_group_size");
+      const capacity_value = document.querySelector('#time_slot_group_size option:checked');
+
+      if (capacity_value.value == 1) {
+        individual_btn.checked = true;
+        capacity_div.classList.add("d-none");
+      }
+      else {
+        collective_btn.checked = true;
+        capacity_div.classList.remove("d-none");
+      }
+      //
+      individual_btn.addEventListener('click', () =>{
+        capacity_div.classList.add("d-none");
+        capacity_value.value = 1;
+      } );
+      collective_btn.addEventListener('click', () => {
+        capacity_div.classList.remove("d-none");
+      } );
+
+
       // delete data.created_at
       // Object.keys(data).forEach( function(key) {
       //   document.getElementById(`time_slot_${data[key]}`).value = data[key]
       // })
       // data.forEach((attr, value) => console.log(attr, value))
-      document.getElementById("time_slot_name").value = data.name;
-      document.getElementById("time_slot_description").value = data.description;
-      document.getElementById(`time_slot_level_${data.level.trim().toLowerCase().replace(' ', '_')}`).checked = true;
-      if (data.group_size == 1) {
-        document.getElementById("time_slot_group_size_individuel").checked = true;
-      }
-      else {
-        document.getElementById("time_slot_group_size_collectif").checked = true;
-      }
-      document.getElementById("time_slot_group_size").value = data.group_size;
+      // document.getElementById("time_slot_name").value = data.name;
+      // document.getElementById("time_slot_description").value = data.description;
+      // document.getElementById(`time_slot_level_${data.level.trim().toLowerCase().replace(' ', '_')}`).checked = true;
+      // if (data.group_size == 1) {
+      //   document.getElementById("time_slot_group_size_individuel").checked = true;
+      //   document.querySelector(".form-group.select.required.time_slot_group_size").classList.add("d-none");
 
+      // }
+      // else {
+      //   document.getElementById("time_slot_group_size_collectif").checked = true;
+      //   document.querySelector(".form-group.select.required.time_slot_group_size").classList.remove("d-none");
+      // }
+      // document.getElementById("time_slot_group_size").value = data.group_size;
+      // document.getElementById("time_slot_price").value = data.price;
+      // document.getElementById("time_slot_address1").value = data.address1;
+      // document.getElementById("time_slot_post_code").value = data.post_code;
+      // document.getElementById("time_slot_town").value = data.town;
+
+      // document.getElementById("new_time_slot").action = `/time_slots/${data.id}`
+      // document.getElementById("new_time_slot").method = "put"
     })
 
-  $("#exampleModal").modal('show')
 }
 
 export { initCoachCalendar }

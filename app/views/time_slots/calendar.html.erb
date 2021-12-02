@@ -5,6 +5,7 @@
   </div>
 
   <div id='external-events'>
+    <div id="calendarTrash" style="width:100px; height:100px; background:red;"></div>
     <p>
       <%= image_tag("swipe.png") %>
       <strong>Vos cours</strong>
@@ -23,9 +24,7 @@
     </div>
   </div>
 
-  <div class="agenda">
-    <div id="coach_calendar" style="width: 100%" data-events="<%= @db_events.to_json%>"></div>
-  </div>
+
 
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -38,51 +37,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <h3>Modifier le créneau</h3>
-          <%# <form class="simple_form edit_time_slot" id="edit_time_slot_110" novalidate="novalidate" action="/time_slots/110" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="patch"><input type="hidden" name="authenticity_token" value="Qb2sbod6mysgeMRyVz7EV0SmaXqxPHbZLFDkCuS6Q7vKlhgZa+id4VbV55888jd+RFgqq9nS37xgejUKfgfG6Q==">
-            <div class="form-group string optional time_slot_name form-group-valid"><input class="form-control is-valid string optional" placeholder="Nom" type="text" value="Yoga classique" name="time_slot[name]" id="time_slot_name"></div>
-            <div class="form-group text optional time_slot_description form-group-valid"><textarea class="form-control is-valid text optional" placeholder="Description" name="time_slot[description]" id="time_slot_description">Venez vous détendre</textarea></div>
-            <fieldset class="form-group radio_buttons required time_slot_level form-group-valid"><legend class="col-form-label pt-0">Niveau <abbr title="required">*</abbr></legend><input type="hidden" name="time_slot[level]" value=""><div class="tag-item"><input class="form-check-input is-valid radio_buttons required tag-selector" type="radio" value="Débutant" name="time_slot[level]" id="time_slot_level_débutant"><label class="form-check-label collection_radio_buttons" for="time_slot_level_débutant">Débutant</label></div><div class="tag-item"><input class="form-check-input is-valid radio_buttons required tag-selector" type="radio" value="Intermédiaire" name="time_slot[level]" id="time_slot_level_intermédiaire"><label class="form-check-label collection_radio_buttons" for="time_slot_level_intermédiaire">Intermédiaire</label></div><div class="tag-item"><input class="form-check-input is-valid radio_buttons required tag-selector" type="radio" value="Expert" name="time_slot[level]" id="time_slot_level_expert"><label class="form-check-label collection_radio_buttons" for="time_slot_level_expert">Expert</label></div><div class="tag-item"><input class="form-check-input is-valid radio_buttons required tag-selector" type="radio" value="Tous niveaux" checked="checked" name="time_slot[level]" id="time_slot_level_tous_niveaux"><label class="form-check-label collection_radio_buttons" for="time_slot_level_tous_niveaux">Tous niveaux</label></div></fieldset>
-            <fieldset class="form-group radio_buttons required time_slot_group_size form-group-valid"><legend class="col-form-label pt-0">Type de groupe <abbr title="required">*</abbr></legend><input type="hidden" name="time_slot[group_size]" value=""><div class="tag-item"><input class="form-check-input is-valid radio_buttons required tag-selector" type="radio" value="Individuel" name="time_slot[group_size]" id="time_slot_group_size_individuel"><label class="form-check-label collection_radio_buttons" for="time_slot_group_size_individuel">Individuel</label></div><div class="tag-item"><input class="form-check-input is-valid radio_buttons required tag-selector" type="radio" value="Collectif" name="time_slot[group_size]" id="time_slot_group_size_collectif"><label class="form-check-label collection_radio_buttons" for="time_slot_group_size_collectif">Collectif</label></div></fieldset>
-            <div class="form-group select required time_slot_group_size form-group-valid"><label class="select required" for="time_slot_group_size">Capacité maximale <abbr title="required">*</abbr></label><select class="form-control is-valid select required" name="time_slot[group_size]" id="time_slot_group_size"><option value=""></option>
-            <div class="form-group float required time_slot_price form-group-valid"><input class="form-control is-valid numeric float required" placeholder="Prix" type="number" step="any" value="30.0" name="time_slot[price]" id="time_slot_price"></div>
-            <div class="form-group string optional time_slot_address1 form-group-valid"><input class="form-control is-valid string optional" placeholder="Adresse" type="text" value="8 Boulevard des Brotteaux" name="time_slot[address1]" id="time_slot_address1"></div>
-            <div class="form-group1">
-              <div class="form-group string optional time_slot_post_code form-group-valid"><input class="form-control is-valid string optional" placeholder="Code postal" type="text" value="69006" name="time_slot[post_code]" id="time_slot_post_code"></div>
-              <div class="form-group string optional time_slot_town form-group-valid"><input class="form-control is-valid string optional" placeholder="Ville" type="text" value="Lyon" name="time_slot[town]" id="time_slot_town"></div>
-            </div>
-            <input value="47" type="hidden" name="time_slot[coach_id]" id="time_slot_coach_id">
-            <div class="button2">
-              <input type="submit" name="commit" value="Modifier ce(tte) Time slot" label="false" placeholder="Enregistrer" class="btn" data-disable-with="Modifier ce(tte) Time slot">
-            </div>
-          </form> %>
-          <%= simple_form_for(TimeSlot.new) do |f| %>
-          <%# <%= f.input :category , label: 'Catégorie', collection: SportClass::SPORT_CATEGORY%>
-          <%= f.input :name,label: false, placeholder: 'Nom'  %>
-          <%= f.input :description, label: false, placeholder: 'Description' %>
-          <%= f.input :level,
-                      label: "Niveau",
-                      as: :radio_buttons,
-                      input_html: { class: "tag-selector" },
-                      item_wrapper_class: 'tag-item',
-                      collection: SportClass::LEVELS%>
-          <%= f.input :group_size,label: false, label: 'Type de groupe',
-                    as: :radio_buttons,
-                    input_html: { class: "tag-selector" },
-                    item_wrapper_class: 'tag-item',
-                    collection: ['Individuel', 'Collectif'] %>
-          <%= f.input :group_size, label: 'Capacité maximale', collection: 1..30 %>
-          <%= f.input :price,label: false, placeholder: 'Prix' %>
-          <%= f.input :address1, label: false, placeholder: 'Adresse' %>
-          <div class="form-group1">
-            <%= f.input :post_code, label: false, placeholder: 'Code postal' %>
-            <%= f.input :town, label: false, placeholder: 'Ville' %>
-          </div>
-          <%= f.hidden_field :coach_id,  :value => current_user.id %>
-          <div class="button2">
-            <%= f.button :submit,label: false, placeholder: 'Enregistrer' %>
-          </div>
-          <% end %>
+          <%#= render 'modal_body_edit', time_slot: TimeSlot.new %>
         </div>
       </div>
     </div>

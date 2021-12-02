@@ -43,11 +43,7 @@ import { initToggle } from '../toggle'
   initCoachCalendar()
   launchAlert()
   initToggle()
-
-
-
 });
-
 
 // initSweetalert('#sweet-alert-demo', {
 //   title: "A nice alert",
