@@ -36,53 +36,9 @@ font-size: 14px;
   width: 100%;
 }
 
-.fc-col-header-cell-cushion {
-  color: #2C3E50;
-}
-
 .fc-event-time{
-  background-color: #3688d8;
   padding: 1%;
   font-size: 20px;
-}
-
-.fc-event-title-container{
-  background-color: #3688d8;
-}
-.fc-timegrid-event-harness .fc-timegrid-event-harness-inset{
-  background-color: pink;
-}
-
-
-
-
-.fc-daygrid-event {
-    white-space: normal;
-    border-radius: 3px;
-    font-size: 1em;
-    font-size: var(--fc-small-font-size, 1em);
-}
-
-.fc-h-event {
-    display: block;
-    border: 1px solid #2C3E50;
-    border: 1px solid var(--fc-event-border-color, #2C3E50);
-   background-color: var(--fc-event-bg-color, #2C3E50);
-}
-
-
-// .fc-v-event {
-//      display: block;
-//      border: 1px solid white;
-//      border: 1px solid white;
-//      border: 1px solid var(--fc-event-border-color, white);
-//      background-color: white;
-//      background-color: white;
-//      background-color: var(--fc-event-bg-color, white);
-// }
-
-.fc-list-day-cushion a{
-  color: #2C3E50;
 }
 
 .fc .fc-timegrid-axis-frame {
@@ -96,8 +52,6 @@ font-size: 14px;
 #coach_calendar {
   padding-bottom: 1%;
 }
-
-
 
 .fc-toolbar-title {
     font-size: 2.50em;

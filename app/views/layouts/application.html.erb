@@ -9,35 +9,56 @@
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
   <body>
 
-
+<%#
     <div id="sidebar">
       <%= link_to root_path do %>
-        <h1>Coach'eo</h1>
+        <%# <h1>Coach'eo</h1>
       <% end %>
-      <% if current_user.present? %>
-      <ul class="nsidebar">
-        <li>
-        <i class="fas fa-home"></i> <%= link_to "Tableau de bord", root_path%>
-        </li>
-        <li>
-          <i class="fas fa-calendar-week"></i> <%= link_to "Agenda", calendar_path %>
-        </li>
-        <li>
-          <i class="fas fa-users"></i><%= link_to "Clients", user_clients_path  %>
-        </li>
-        <li>
-          <i class="fas fa-dumbbell"></i><%= link_to "Catalogue cours", sport_classes_path %>
-        </li>
-      </ul>
+      <%# <% if current_user.present? %>
+      <%# <ul class="nsidebar"> %>
+        <%# <li> %>
+        <%# <i class="fas fa-home"></i> <%= link_to "Tableau de bord", root_path%>
+        <%# </li> %>
+        <%# <li> %>
+          <%# <i class="fas fa-calendar-week"></i> <%= link_to "Agenda", fullcalendar_path %>
+        <%# </li> %>
+        <%# <li> %>
+          <%# <i class="fas fa-users"></i><%= link_to "Clients", user_clients_path  %>
+        <%# </li> %>
+        <%# <li> %>
+          <%# <i class="fas fa-dumbbell"></i><%= link_to "Catalogue cours", sport_classes_path %>
+        <%# </li> %>
+      <%# </ul> %>
+      <%# <% end %>
+    <%# </div> %>
+
+
+
+    <div id="sidebar">
+    <div>
+      <%= link_to root_path do %>
+        <%# <h1>Coach'eo</h1> %>
       <% end %>
     </div>
+    <div class="icone">
+      <% if current_user.present? %>
 
+        <%= link_to root_path do %> <i class="fas fa-home"></i> <%end%>
+        <%= link_to calendar_path do %> <i class="fas fa-calendar-week"></i> <%end%>
+        <%= link_to user_clients_path do %> <i class="fas fa-users"></i> <%end%>
+        <%= link_to sport_classes_path do%> <i class="fas fa-dumbbell"></i> <%end%>
+
+
+
+      <% end %>
+    </div>
+    </div>
     <div class="main-container">
       <%= render 'shared/navbar' %>
       <div class="container">

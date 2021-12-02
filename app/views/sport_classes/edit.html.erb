@@ -1,44 +1,43 @@
 <div id="container">
-
   <%= link_to '', sport_classes_path, class:"fas fa-arrow-circle-left" %>
-  <div class="container_registration">
-  <h2>Cours de sport</h2>
-        <%= simple_form_for(@sport_class) do |f| %>
-    <div class="form-group1">
-      <%= f.input :category , :prompt => "Discipline",  label: false, collection: SportClass::SPORT_CATEGORY%>
-      <%= f.input :name,label: false, placeholder: 'Intitulé'  %>
-      </div>
-      <%= f.input :description, label: false, placeholder: 'Description' %>
-                <div class="form-group2">
-      <%= f.input :duration, type:"time", label: false, collection:[0,15,30,45,60,75,90,120,150] %>
-          <p>Durée en minutes</p>
-      </div>
-      <%= f.input :level,
-                  label: "Niveau",
-                  as: :radio_buttons,
-                  input_html: { class: "tag-selector" },
-                  item_wrapper_class: 'tag-item',
-                  collection: SportClass::LEVELS%>
-      <div class="form-group1">
-      <%= f.input :group_size,label: false, label: 'Type de groupe',
-                  as: :radio_buttons,
-                  input_html: { class: "tag-selector" },
-                  item_wrapper_class: 'tag-item',
-                  collection: ['Individuel', 'Collectif'] %>
-      <%= f.input :group_size,label: false, placeholder: "Nb de participants", value: '1', input_html: { type: 'number' }%>
-      </div>
-      <%= f.input :price, label: false, placeholder: 'Prix du cours par personne                                                                                    €' %>
-      <%= f.input :address1, label: false, placeholder: 'Adresse' %>
-      <div class="form-group1">
-        <%= f.input :post_code, label: false, placeholder: 'Code postal' %>
-        <%= f.input :town, label: false, placeholder: 'Ville' %>
-      </div>
-      <%= f.hidden_field :coach_id,  :value => current_user.id %>
 
-    <div class="button2">
-        <%= f.button :submit, value: "Mettre à jour le cours", label: 'Enregistrer' %>
+  <div class="container_registration">
+    <h2>Cours de sport</h2>
+    <%= simple_form_for(@sport_class) do |f| %>
+      <div class="form-group1">
+        <%= f.input :category , :prompt => "Discipline",  label: false, collection: SportClass::SPORT_CATEGORY%>
+        <%= f.input :name,label: false, placeholder: 'Intitulé'  %>
+      </div>
+        <%= f.input :description, label: false, placeholder: 'Description' %>
+      <div class="form-group2">
+        <%= f.input :duration, type:"time", label: false, collection:[0,15,30,45,60,75,90,120,150] %>
+            <p>Durée en minutes</p>
+      </div>
+        <%= f.input :level,
+                    label: "Niveau",
+                    as: :radio_buttons,
+                    input_html: { class: "tag-selector" },
+                    item_wrapper_class: 'tag-item',
+                    collection: SportClass::LEVELS%>
+      <div class="form-group1">
+        <%= f.input :group_size,label: false, label: 'Type de groupe',
+                    as: :radio_buttons,
+                    input_html: { class: "tag-selector" },
+                    item_wrapper_class: 'tag-item',
+                    collection: ['Individuel', 'Collectif'] %>
+        <%= f.input :group_size,label: false, placeholder: "Nb de participants", value: '1', input_html: { type: 'number' }%>
+      </div>
+        <%= f.input :price, label: false, placeholder: 'Prix du cours par personne                                                                                    €' %>
+        <%= f.input :address1, label: false, placeholder: 'Adresse' %>
+      <div class="form-group1">
+          <%= f.input :post_code, label: false, placeholder: 'Code postal' %>
+          <%= f.input :town, label: false, placeholder: 'Ville' %>
+      </div>
+        <%= f.hidden_field :coach_id,  :value => current_user.id %>
+
+      <div class="button2">
+          <%= f.button :submit, value: "Mettre à jour le cours", label: 'Enregistrer' %>
       </div>
     <% end %>
-
   </div>
 </div>

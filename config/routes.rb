@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :time_slots, only: [:show, :index, :create, :update, :edit, :destroy] do
     resources :bookings, only: [:new, :create, :show]
+    put :update_times, on: :member
   end
 
   resources :bookings, only: [:update]

@@ -1,5 +1,5 @@
 class TimeSlotsController < ApplicationController
-  before_action :set_time_slot, only: [:edit, :update]
+  before_action :set_time_slot, only: [:edit, :update, :update_times]
 
 
   def calendar
@@ -67,6 +67,13 @@ class TimeSlotsController < ApplicationController
     @time_slot.update(time_slot_params)
     redirect_to calendar_path
     # head 200
+  end
+
+
+  def update_times
+    @time_slot = TimeSlot.find(params[:id])
+    @time_slot.update(time_slot_params)
+    head 200
   end
 
   def destroy

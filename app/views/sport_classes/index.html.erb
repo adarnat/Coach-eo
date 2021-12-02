@@ -1,24 +1,26 @@
 
   <div class="top_barre">
-  <br>
-  <h2 class="catalogue">CATALOGUE DES COURS DE SPORT</h2>
+  <h1 class="catalogue">Catalogue des cours de sport</h1>
   <%= link_to 'Ajouter un cours de sport', new_sport_class_path, class: "button1" %>
   </div>
-
-
 
   <div class="cards-grid" >
     <% @sport_classes.each do |sport_class| %>
       <div class="card-index">
           <div class="card-corps">
+
             <div  class="blank-background" id="blank">
               <%= link_to sport_class_path(sport_class) do %>
+
               <h4 class="card-title-index"><%= sport_class.category %></h4>
             <div class="card-body-index">
             <h6 class="card-text" id="sport_class_name"> <%= sport_class.name %></h6>
             <p class="card-text" id="level"><em><%= sport_class.level %></em></p>
             </div>
             </div>
+              <div class="card-title-image">
+              <%= image_tag((SportClass::SPORT_CATEGORY)[sport_class.category.to_sym])%>
+              </div>
             <div class="infos">
               <div> <p><i class="fas fa-user-friends"></i><%= sport_class.group_size %></p></div>
               <div><p><i class="fas fa-clock"></i> <%= sport_class.duration %></p></div>
@@ -27,13 +29,11 @@
           </div>
         <% end %>
 
-            <div class="button">
+            <div class="button-poup">
+
              <%= link_to "", edit_sport_class_path(sport_class), class: "fas fa-pen" %>
               <%= link_to "", sport_class, method: :delete, data: { confirm: "Are you sure?" }, class: "fas fa-trash" %>
             </div>
       </div>
     <% end %>
   </div>
-
-
-<%# <% console if Rails.env.development? %>

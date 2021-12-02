@@ -73,27 +73,26 @@ const createCoachCalendar = () => {
     },
     eventDrop: function (info) {
       console.log("Info eventDrop", info);
+
       updateDraggedorResizedTimeSlot(info.event.id, info.event.startStr, info.event.endStr)
     },
     eventResize: function(info) {
       console.log("Info eventResize", info)
       updateDraggedorResizedTimeSlot(info.event.id, info.event.startStr, info.event.endStr)
     },
-    eventDragStop: function (event, jsEvent) {
-      console.log("Drag stopped")
+    eventDragStop: function (info) {
+      let trashEl = document.getElementById('calendarTrash');
+      console.log("Check:", info.event.id)
 
-      var trashEl = jQuery('#calendarTrash');
-      var ofs = trashEl.offset();
+      let x1 = trashEl.offsetLeft;
+      let x2 = trashEl.offsetLeft + trashEl.offsetWidth;
+      let y1 = trashEl.offsetTop;
+      let y2 = trashEl.offsetTop + trashEl.offsetHeight;
 
-      var x1 = ofs.left;
-      var x2 = ofs.left + trashEl.outerWidth(true);
-      var y1 = ofs.top;
-      var y2 = ofs.top + trashEl.outerHeight(true);
-
-      if (jsEvent.pageX >= x1 && jsEvent.pageX <= x2 &&
-        jsEvent.pageY >= y1 && jsEvent.pageY <= y2) {
-        alert('SIII');
-        $('#coach_calendar').fullCalendar('removeEvents', event.id);
+      if (info.jsEvent.pageX >= x1 && info.jsEvent.pageX <= x2 &&
+        info.jsEvent.pageY >= y1 && info.jsEvent.pageY <= y2) {
+        info.event.remove();
+        deleteTimeSlot(info.event.id);
       }
     }
   });
@@ -158,13 +157,26 @@ const createTimeSlot = (info) => {
 }
 
 const updateDraggedorResizedTimeSlot = (id, startDate, endDate) => {
-  fetchWithToken(`/time_slots/${id}`, {
+  console.log(id)
+
+  console.log("je suis là")
+  fetchWithToken(`/time_slots/${id}/update_times`, {
     method: "PUT",
     headers: {
       "Accept": "application/json",
       "Content-Type": "application/json"
     },
     body: JSON.stringify({ time_slot: { start_at: startDate, end_at: endDate } })
+  }).catch(err => console.log(err))
+}
+
+const deleteTimeSlot = (id) => {
+  fetchWithToken(`/time_slots/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    }
   }).catch(err => console.log(err))
 }
 

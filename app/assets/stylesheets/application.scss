@@ -23,6 +23,8 @@
 @import "pages/client_show";
 // @import "pages/client_show";
 
+
+
 body {
   overflow-x: scroll;
   font-size: 16px;
@@ -42,19 +44,9 @@ body {
 .container{
   margin:0;
   margin-right:10px;
-      max-width: 100%;
-    min-width: 100%;
+  min-width: 100%;
 
 }
-
-// #container {
-//   padding-left: 14px;
-//   -webkit-transition: all 0.5s ease;
-//   -moz-transition: all 0.5s ease;
-//   -o-transition: all 0.5s ease;
-//   transition: all 0.5s ease;
-//   padding-right: 14px;
-// }
 
 #sidebar h1 {
 color: white;
@@ -67,7 +59,7 @@ padding-top:7px;
 
 
 #sidebar {
-  width:230px;
+  width:7em;
   flex-shrink: 0;
   height: 100vh;
   overflow: auto;
@@ -132,27 +124,44 @@ li{
   align-items: center
 }
 
-.fa-home:before {
-    content: "\f015";
-    padding-right: 0;
-    padding-left: 30px;
-}
+// .fa-home:before {
+//     content: "\f015";
+//     padding-right: 0;
+//     padding-left: 30px;
+// }
 
-.fa-calendar-week:before{
-    padding-right: 0;
-    padding-left: 30px;
-}
+// .fa-calendar-week:before{
+//     padding-right: 0;
+//     padding-left: 30px;
+// }
 
-.fa-users:before{
-    padding-right: 0;
-    padding-left: 30px;
-}
+// .fa-users:before{
+//     padding-right: 0;
+//     padding-left: 30px;
+// }
 
-.fa-dumbbell:before{
-    padding-right: 0;
-    padding-left: 30px;
-}
+// .fa-dumbbell:before{
+//     padding-right: 0;
+//     padding-left: 30px;
+// }
 
 .past div.fc-time, .past div.fc-title {
   text-decoration: line-through;
+}
+
+
+.icone{
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  text-align: center;
+  margin-top: 170px;
+}
+
+.icone i {
+  font-size: 2em;
+}
+
+.icone i:hover {
+  font-size: 2.2em;
 }
