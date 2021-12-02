@@ -25,7 +25,6 @@
 
 
 
-
 body {
   overflow-x: scroll;
   font-size: 16px;
@@ -45,19 +44,10 @@ body {
 .container{
   margin:0;
   margin-right:10px;
-  max-width: 100%;
   min-width: 100%;
 
 }
 
-// #container {
-//   padding-left: 14px;
-//   -webkit-transition: all 0.5s ease;
-//   -moz-transition: all 0.5s ease;
-//   -o-transition: all 0.5s ease;
-//   transition: all 0.5s ease;
-//   padding-right: 14px;
-// }
 
 #sidebar h1 {
 color: white;
@@ -171,5 +161,4 @@ li{
 
 .icone i {
   font-size: 3em;
-
 }
