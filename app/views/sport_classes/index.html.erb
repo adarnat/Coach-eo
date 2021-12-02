@@ -18,6 +18,9 @@
             <p class="card-text" id="level"><em><%= sport_class.level %></em></p>
             </div>
             </div>
+              <div class="card-title-image">
+              <%= image_tag((SportClass::SPORT_CATEGORY)[sport_class.category.to_sym])%>
+              </div>
             <div class="infos">
               <div> <p><i class="fas fa-user-friends"></i><%= sport_class.group_size %></p></div>
               <div><p><i class="fas fa-clock"></i> <%= sport_class.duration %></p></div>

@@ -9,6 +9,12 @@
   color: #fff;
 }
 
+.card-index .button a{
+  color: #214f7ac9;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
 .button1{
   background-color:#FFB20F ;
   color: #fff;
@@ -148,7 +154,7 @@ margin-left: 37px;
   grid-gap: 1em;
   padding: 0.4em;
   max-width: 100%;
-  margin-top: 20px;
+  margin-top: 10px;
   justify-content: center;
   align-items: center;
 }
@@ -161,14 +167,14 @@ margin-left: 37px;
   position: relative;
   display: flex;
   flex-direction: column;
-  min-width: 100%;
+  width: 380px;
   word-wrap: break-word;
   background-color: #2C3E50;
   background-clip: border-box;
   border: none;
   box-shadow:2px 4px 17px rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
-  height: 100%;
+  border-radius: 6px;
+  height: 96%;
   padding-bottom: 10px;
 }
 .card-index:hover{
@@ -187,7 +193,7 @@ margin-left: 37px;
 }
 
 .card-body-index{
-  height: 100px;
+  height: 73px;
   display: flex;
   flex-direction: column;
   text-decoration: none;
@@ -200,8 +206,8 @@ margin-left: 37px;
   text-align: center;
   padding:5px;
   margin: 0;
+  padding-top: 10px;
   font-size: 20px;
-  padding-bottom: 20px;
   font-weight: bold;
 }
 
@@ -230,5 +236,5 @@ margin-left: 37px;
 
 .blank-background {
   background-color: white;
-  border-radius: 20px 20px 0px 0px;
+  border-radius: 6px 6px 0px 0px;
 }
