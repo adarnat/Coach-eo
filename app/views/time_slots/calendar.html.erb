@@ -1,5 +1,45 @@
-<div class="container">
-  <h1>Calendrier coach</h1>
+<div class="second-container">
 
-<div id="coach_calendar" style="width: 800px; height: 800px" data-calendar-id="22" data-events=<%= @time_slots.to_json%>>
+  <div class="agenda">
+    <div id="coach_calendar" style="width: 100%; height: 800px" data-events="<%= @db_events.to_json%>"></div>
+  </div>
+
+  <div id='external-events'>
+    <div id="calendarTrash" style="width:100px; height:100px; background:red;"></div>
+    <p>
+      <%= image_tag("swipe.png") %>
+      <strong>Vos cours</strong>
+    </p>
+    <% @sport_classes.each do |sport_class| %>
+      <div id="sport-class" data-sportclass="<%= sport_class.to_json %>" class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+        <div class='fc-event-main'><h6><%= sport_class.name %></h6></div>
+        <div class='fc-event-main'><h5><%= sport_class.level %></h5></div>
+        <div class="details1">
+          <div class='fc-event-main'><%= sport_class.group_size%><i class="fas fa-user-friends"></i></div>
+          <div class='fc-event-main'></div>
+          <div class='fc-event-main' id='sport_class_duration'><%= sport_class.duration %> min</div>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <%# <h5 class="modal-title" id="exampleModalLabel">Modal title</h5> %>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%#= render 'modal_body_edit', time_slot: TimeSlot.new %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

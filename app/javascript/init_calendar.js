@@ -12,12 +12,6 @@ let coachCalendarEl;
 const todaysDate = new Date;
 console.log(todaysDate);
 
-const eventCoachClick = (info) => {
-  console.log("j'ai cliqué sur un event de coach calendar")
-  console.log(info.event)
-  $("#exampleModal").modal('show')
-}
-
 const createCoachCalendar = () => {
   coachCalendar = new Calendar(coachCalendarEl, {
     timeZone: 'Europe/Paris',
@@ -29,6 +23,9 @@ const createCoachCalendar = () => {
     navLinks: true,
     eventStartEditable: true,
     eventDurationEditable: true,
+    eventResizableFromStart:true,
+    allDaySlot: false,
+    slotDuration: '00:15:00',
     initialView: 'timeGridWeek',
     selectable: true,
     eventOverlap: false,
@@ -43,31 +40,60 @@ const createCoachCalendar = () => {
     headerToolbar: {
       left: 'prev,next today',
       center: 'title',
-      right: 'timeGridWeek,listWeek,dayGridMonth'
+      right: 'timeGridWeek,dayGridMonth,listWeek'
     },
     events: coachEvents,
     eventConstraint: {
       start: todaysDate,
       end: '2100-01-01'
     },
-    eventRender: function (calev, elt, view) {
-      // var ntoday = new Date();
-      if (calev.start._d.getTime() < todaysDate.getTime()) {
-        elt.addClass("past");
-        elt.children().addClass("past");
+    // eventRender: function (calev, elt, view) {
+    //   // var ntoday = new Date();
+    //   if (calev.start._d.getTime() < todaysDate.getTime()) {
+    //     elt.addClass("past");
+    //     elt.children().addClass("past");
+    //   }
+    // },
+    eventRender: function (event, element, view) {
+
+      if (view.name == 'listDay') {
+        element.find(".fc-list-item-time").append("<span class='closeon'>X</span>");
+      } else {
+        element.find(".fc-content").prepend("<span class='closeon'>X</span>");
       }
+      element.find(".closeon").on('click', function () {
+        $('#calendar').fullCalendar('removeEvents', event._id);
+      });
     },
-    eventClick: eventCoachClick,
+    eventClick: function (info) {
+      eventCoachClick(info.event.id)
+    },
     eventReceive: function(info) {
       createTimeSlot(info);
     },
     eventDrop: function (info) {
       console.log("Info eventDrop", info);
-      updateDraggedTimeSlot(info.event.id, info.event.startStr, info.event.endStr)
+
+      updateDraggedorResizedTimeSlot(info.event.id, info.event.startStr, info.event.endStr)
     },
     eventResize: function(info) {
       console.log("Info eventResize", info)
-      updateDraggedTimeSlot(info.event.id, info.event.startStr, info.event.endStr)
+      updateDraggedorResizedTimeSlot(info.event.id, info.event.startStr, info.event.endStr)
+    },
+    eventDragStop: function (info) {
+      let trashEl = document.getElementById('calendarTrash');
+      console.log("Check:", info.event.id)
+
+      let x1 = trashEl.offsetLeft;
+      let x2 = trashEl.offsetLeft + trashEl.offsetWidth;
+      let y1 = trashEl.offsetTop;
+      let y2 = trashEl.offsetTop + trashEl.offsetHeight;
+
+      if (info.jsEvent.pageX >= x1 && info.jsEvent.pageX <= x2 &&
+        info.jsEvent.pageY >= y1 && info.jsEvent.pageY <= y2) {
+        info.event.remove();
+        deleteTimeSlot(info.event.id);
+      }
     }
   });
   coachCalendar.render()
@@ -77,21 +103,6 @@ const createCoachCalendar = () => {
 
 const initDragAndDrop = () => {
   const containerEl = document.getElementById('external-events');
-
-  // new Draggable(containerEl, {
-  //   itemSelector: '.fc-event',
-  //   eventData: function (eventEl) {
-  //     console.log('Event Element')
-  //     console.log(eventEl)
-  //     return {
-  //       id: eventEl.dataset.id,
-  //       title: eventEl.innerText
-  //     };
-  //   }
-  // });
-
-
-// JSON.parse(document.getElementById('sport-class').dataset.sportclass
 
   new Draggable(containerEl, {
     itemSelector: '.fc-event',
@@ -106,6 +117,13 @@ const initDragAndDrop = () => {
     });
 }
 
+// const myMeth = async () => {
+//   const response = await fetch()
+//   const data = await response.json()
+//   return data
+//  }
+
+//  const data = await myMeth()
 
 const initCoachCalendar = () => {
   console.log("je suis initCoachCalendar")
@@ -138,20 +156,96 @@ const createTimeSlot = (info) => {
   });
 }
 
-const updateDraggedTimeSlot = (id, startDate, endDate) => {
-  console.log(JSON.stringify({ time_slot: { id: id, start_at: startDate, end_at: endDate } }))
-  fetchWithToken(`/time_slots/${id}`, {
+const updateDraggedorResizedTimeSlot = (id, startDate, endDate) => {
+  console.log(id)
+
+  console.log("je suis là")
+  fetchWithToken(`/time_slots/${id}/update_times`, {
     method: "PUT",
     headers: {
       "Accept": "application/json",
       "Content-Type": "application/json"
     },
     body: JSON.stringify({ time_slot: { start_at: startDate, end_at: endDate } })
+  }).catch(err => console.log(err))
+}
+
+const deleteTimeSlot = (id) => {
+  fetchWithToken(`/time_slots/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    }
+  }).catch(err => console.log(err))
+}
+
+const eventCoachClick = (id) => {
+  fetchWithToken(`/time_slots/${id}/edit`, {
+    method: "GET",
+    headers: {
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    }
   })
-  .then(response => response.json())
-  .then((data) => {
-    console.log(data)
-  });
+    .then(response => response.json())
+    .then((data) => {
+      // console.log(data.form)
+
+      document.querySelector('.modal-body').innerHTML = data.form
+      $("#exampleModal").modal('show')
+
+      console.log(document.querySelector('#time_slot_group_size option:checked').value)
+      const individual_btn = document.getElementById("time_slot_group_size_individuel");
+      const collective_btn = document.getElementById("time_slot_group_size_collectif");
+      const capacity_div = document.querySelector(".form-group.select.required.time_slot_group_size");
+      const capacity_value = document.querySelector('#time_slot_group_size option:checked');
+
+      if (capacity_value.value == 1) {
+        individual_btn.checked = true;
+        capacity_div.classList.add("d-none");
+      }
+      else {
+        collective_btn.checked = true;
+        capacity_div.classList.remove("d-none");
+      }
+      //
+      individual_btn.addEventListener('click', () =>{
+        capacity_div.classList.add("d-none");
+        capacity_value.value = 1;
+      } );
+      collective_btn.addEventListener('click', () => {
+        capacity_div.classList.remove("d-none");
+      } );
+
+
+      // delete data.created_at
+      // Object.keys(data).forEach( function(key) {
+      //   document.getElementById(`time_slot_${data[key]}`).value = data[key]
+      // })
+      // data.forEach((attr, value) => console.log(attr, value))
+      // document.getElementById("time_slot_name").value = data.name;
+      // document.getElementById("time_slot_description").value = data.description;
+      // document.getElementById(`time_slot_level_${data.level.trim().toLowerCase().replace(' ', '_')}`).checked = true;
+      // if (data.group_size == 1) {
+      //   document.getElementById("time_slot_group_size_individuel").checked = true;
+      //   document.querySelector(".form-group.select.required.time_slot_group_size").classList.add("d-none");
+
+      // }
+      // else {
+      //   document.getElementById("time_slot_group_size_collectif").checked = true;
+      //   document.querySelector(".form-group.select.required.time_slot_group_size").classList.remove("d-none");
+      // }
+      // document.getElementById("time_slot_group_size").value = data.group_size;
+      // document.getElementById("time_slot_price").value = data.price;
+      // document.getElementById("time_slot_address1").value = data.address1;
+      // document.getElementById("time_slot_post_code").value = data.post_code;
+      // document.getElementById("time_slot_town").value = data.town;
+
+      // document.getElementById("new_time_slot").action = `/time_slots/${data.id}`
+      // document.getElementById("new_time_slot").method = "put"
+    })
+
 }
 
 export { initCoachCalendar }

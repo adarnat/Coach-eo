@@ -71,6 +71,8 @@ ActiveRecord::Schema.define(version: 2021_12_01_133534) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "first_name"
     t.string "last_name"
+    t.string "phone"
+    t.text "comment"
     t.string "avatar_url"
     t.string "telephone"
     t.string "birth_date"

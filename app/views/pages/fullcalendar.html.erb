@@ -4,151 +4,74 @@
 
 <div class="second-container">
 
-
-
-
-<div class="agenda">
-  <div id="coach_calendar" style="width: 100%; height: 800px" data-events="<%= @db_events.to_json%>"></div>
-</div>
-
-<div id='external-events'>
-  <p>
-<%= image_tag("swipe.png") %>
-
-    <strong>Vos cours</strong>
-  </p>
-  <% @sport_classes.each do |sport_class| %>
-    <div id="sport-class" data-sportclass="<%= sport_class.to_json %>" class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event' >
-      <div class='fc-event-main'><h6><%= sport_class.name %></h6></div>
-      <div class='fc-event-main'><h5><%= sport_class.level %></h5></div>
-      <div class="details1">
-        <div class='fc-event-main'><%= sport_class.group_size%><i class="fas fa-user-friends"></i></div>
-        <div class='fc-event-main'></div>
-        <div class='fc-event-main' id='sport_class_duration'><%= sport_class.duration %> min</div>
-      </div>
-    </div>
-  <% end %>
+  <div class="agenda">
+    <div id="coach_calendar" style="width: 100%; height: 800px" data-events="<%= @db_events.to_json%>"></div>
   </div>
-</div>
 
-
-<div class="agenda">
-  <div id="coach_calendar" style="width: 100%" data-events="<%= @db_events.to_json%>"></div>
-</div>
-
-
-<!-- Button trigger modal -->
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <%# <h5 class="modal-title" id="exampleModalLabel">Modal title</h5> %>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+  <div id='external-events'>
+    <p>
+      <%= image_tag("swipe.png") %>
+      <strong>Vos cours</strong>
+    </p>
+    <% @sport_classes.each do |sport_class| %>
+      <div id="sport-class" data-sportclass="<%= sport_class.to_json %>" class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+        <div class='fc-event-main'><h6><%= sport_class.name %></h6></div>
+        <div class='fc-event-main'><h5><%= sport_class.level %></h5></div>
+        <div class="details1">
+          <div class='fc-event-main'><%= sport_class.group_size%><i class="fas fa-user-friends"></i></div>
+          <div class='fc-event-main'></div>
+          <div class='fc-event-main' id='sport_class_duration'><%= sport_class.duration %> min</div>
+        </div>
       </div>
-      <div class="modal-body">
+    <% end %>
+    </div>
+  </div>
 
+  <div class="agenda">
+    <div id="coach_calendar" style="width: 100%" data-events="<%= @db_events.to_json%>"></div>
+  </div>
 
-
-        <%# <form id="form1" action="" method="get" class="form-example">
-          <div class="form-example">
-            <label for="name">Choose a class: </label>
-        <div data-controller="hello>">
-            <input type="text" name="name" id="name" required>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <%# <h5 class="modal-title" id="exampleModalLabel">Modal title</h5> %>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h3>Modifier le créneau</h3>
+          <%= simple_form_for(@time_slot) do |f| %>
+          <%# <%= f.input :category , label: 'Catégorie', collection: SportClass::SPORT_CATEGORY%>
+          <%= f.input :name,label: false, placeholder: 'Nom'  %>
+          <%= f.input :description, label: false, placeholder: 'Description' %>
+          <%= f.input :level,
+                      label: "Niveau",
+                      as: :radio_buttons,
+                      input_html: { class: "tag-selector" },
+                      item_wrapper_class: 'tag-item',
+                      collection: SportClass::LEVELS%>
+          <%= f.input :group_size,label: false, label: 'Type de groupe',
+                    as: :radio_buttons,
+                    input_html: { class: "tag-selector" },
+                    item_wrapper_class: 'tag-item',
+                    collection: ['Individuel', 'Collectif'] %>
+          <%= f.input :group_size, label: 'Capacité maximale', collection: 1..30 %>
+          <%= f.input :price,label: false, placeholder: 'Prix' %>
+          <%= f.input :address1, label: false, placeholder: 'Adresse' %>
+          <div class="form-group1">
+            <%= f.input :post_code, label: false, placeholder: 'Code postal' %>
+            <%= f.input :town, label: false, placeholder: 'Ville' %>
           </div>
-        <div class="form-example">
-            <label for="date">Enter a date: </label>
-            <input type="date" id="date" name="date" required >
+          <%= f.hidden_field :coach_id,  :value => current_user.id %>
+          <div class="button2">
+            <%= f.button :submit,label: false, placeholder: 'Enregistrer' %>
           </div>
-          <div class="form-example">
-            <label for="email">Enter a debut time: </label>
-            <input type="time" id="debut_time" name="debut_time" required >
-          </div>
-            <div class="form-example">
-            <label for="email">Enter a ending time: </label>
-            <input type="time" id="ending_time" name="ending_time" required >
-          </div>
-          <div class="form-example">
-            <input type="submit" value="Validate">
-          </div>
-        </form> %>
-
-        <%# <hr>
-        <hr>
-        <hr>
-        <hr> %>
-        <h3>Modifier le créneau</h3>
-
-        <%# <%= simple_form_for(@time_slot) do |f| %>
-          <%# <%= f.input :level %>
-          <%# <%= f.input :group_size %>
-          <%# <%= f.input :price %>
-          <%# <%= f.input :start_at, html5: true %>
-          <%# <%= f.input :end_at, html5: true %>
-          <%# <%= f.input :name %>
-          <%# <%= f.input :description %>
-          <%# <%= f.input :address1 %>
-          <%# <%= f.input :address2 %>
-          <%# <%= f.input :post_code %>
-          <%# <%= f.input :town %>
-
-          <%# <%= f.submit %>
-      <%# <% end %>
-
-<%= simple_form_for(@time_slot) do |f| %>
-<%# <%= f.input :category , label: 'Catégorie', collection: SportClass::SPORT_CATEGORY%>
-      <%= f.input :name,label: false, placeholder: 'Nom'  %>
-      <%= f.input :description, label: false, placeholder: 'Description' %>
-      <%= f.input :level,
-                  label: "Niveau",
-                  as: :radio_buttons,
-                  input_html: { class: "tag-selector" },
-                  item_wrapper_class: 'tag-item',
-                  collection: SportClass::LEVELS%>
-      <%= f.input :group_size,label: false, label: 'Type de groupe',
-                  as: :radio_buttons,
-                  input_html: { class: "tag-selector" },
-                  item_wrapper_class: 'tag-item',
-                  collection: ['Individuel', 'Collectif'] %>
-                  <%= f.input :start_at, html5: true %>
-          <%= f.input :end_at, html5: true %>
-      <%= f.input :group_size, label: 'Capacité maximale', collection: 1..30 %>
-      <%= f.input :price,label: false, placeholder: 'Prix' %>
-      <%= f.input :address1, label: false, placeholder: 'Adresse' %>
-      <div class="form-group1">
-        <%= f.input :post_code, label: false, placeholder: 'Code postale' %>
-        <%= f.input :town, label: false, placeholder: 'Ville' %>
-      </div>
-      <%= f.hidden_field :coach_id,  :value => current_user.id %>
-
-      <div class="button2">
-        <%= f.button :submit,label: false, placeholder: 'Enregistrer' %>
-      </div>
-<% end %>
-
-
-<%#
-
-        <hr>
-        <hr>
-        <hr>
-        <hr>
-        <hr>
-        <hr> %>
-
-
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </div>
