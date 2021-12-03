@@ -1,5 +1,19 @@
 
 badge = document.querySelector('.badge-booking-payment[data-booking-id="<%= @booking.id %>"]')
-console.log(badge)
-
 badge.outerHTML = "<%= j render 'shared/badge_booking_payment', booking: @booking %>"
+
+
+globalDuePayment = document.querySelector('.paiement-card-impayes-home')
+
+if (globalDuePayment) {
+  globalDuePayment.outerHTML = "<%= j render 'shared/global_due_payments.html' %>"
+}
+
+
+
+
+clientDuePayment = document.querySelector('.paiement-card-impayes-show')
+
+if (clientDuePayment) {
+  clientDuePayment.outerHTML = "<%= j render 'shared/client_due_payments.html' %>"
+}

@@ -59,16 +59,6 @@
       <h6>Chiffre d'affaires réalisé</h6>
       <h4><%= @ca.round(0) %>€</h4>
     </div>
-    <div class="paiement-card-impayés-home">
-      <div  data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"> </a>
-        <h6>Solde des paiements à recevoir</h6>
-        <h4> <%= @unpaid_ca.round(0) %>€</h4>
-      </div>
-      <div class="collapse unpaid" id="collapseExample">
-        <% @unpaid_client.uniq.each do |c| %>
-        <%= link_to client_profile_path(c) do %> <%= "#{c.first_name} #{c.last_name}"%> <% end %>
-        <% end %>
-      </div>
-    </div>
+    <%= render 'shared/global_due_payments' %>
   </div>
 <div>

@@ -1,0 +1,4 @@
+<div class="paiement-card-impayes-show">
+  <h6>Montant restant à payer par ce client </h6>
+  <h4> <%=@bookings.filter{ |b| b.payment_received == false}.map {|b| b.time_slot_price }.sum.round(0) %>€</h4>
+</div>
