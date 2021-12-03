@@ -456,7 +456,7 @@ creneau_crossfit_john_2 = TimeSlot.create!(
 # Créneaux Fitness Victoire
 # =========================
 
-creneau_fitness_victoire_1 = TimeSlot.create!(
+creneau_musculation_victoire_1 = TimeSlot.create!(
   name: "Séance de coaching",
   description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
   level: "Tous niveaux",
@@ -468,10 +468,10 @@ creneau_fitness_victoire_1 = TimeSlot.create!(
   town: "Lyon",
   start_at: DateTime.strptime("03/12/2021 08:00", "%d/%m/%Y %H:%M"),
   end_at: DateTime.strptime("03/12/2021 08:45", "%d/%m/%Y %H:%M"),
-  sport_class: fitness_victoire
+  sport_class: musculation_victoire
 )
 
-creneau_fitness_victoire_1 = TimeSlot.create!(
+creneau_musculation_victoire_1 = TimeSlot.create!(
   name: "Séance de coaching",
   description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
   level: "Tous niveaux",
@@ -483,10 +483,10 @@ creneau_fitness_victoire_1 = TimeSlot.create!(
   town: "Lyon",
   start_at: DateTime.strptime("02/12/2021 08:00", "%d/%m/%Y %H:%M"),
   end_at: DateTime.strptime("02/12/2021 08:45", "%d/%m/%Y %H:%M"),
-  sport_class: fitness_victoire
+  sport_class: musculation_victoire
 )
 
-creneau_fitness_victoire_1 = TimeSlot.create!(
+creneau_musculation_victoire_1 = TimeSlot.create!(
   name: "Séance de coaching",
   description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
   level: "Tous niveaux",
@@ -498,9 +498,9 @@ creneau_fitness_victoire_1 = TimeSlot.create!(
   town: "Lyon",
   start_at: DateTime.strptime("01/12/2021 08:00", "%d/%m/%Y %H:%M"),
   end_at: DateTime.strptime("01/12/2021 08:45", "%d/%m/%Y %H:%M"),
-  sport_class: fitness_victoire
+  sport_class: musculation_victoire
 )
-creneau_fitness_victoire_1 = TimeSlot.create!(
+creneau_musculation_victoire_1 = TimeSlot.create!(
   name: "Séance de coaching",
   description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
   level: "Tous niveaux",
@@ -512,10 +512,10 @@ creneau_fitness_victoire_1 = TimeSlot.create!(
   town: "Lyon",
   start_at: DateTime.strptime("30/11/2021 08:00", "%d/%m/%Y %H:%M"),
   end_at: DateTime.strptime("30/11/2021 08:45", "%d/%m/%Y %H:%M"),
-  sport_class: fitness_victoire
+  sport_class: musculation_victoire
 )
 
-creneau_fitness_victoire_1 = TimeSlot.create!(
+creneau_musculation_victoire_1 = TimeSlot.create!(
   name: "Séance de coaching",
   description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
   level: "Tous niveaux",
@@ -527,9 +527,9 @@ creneau_fitness_victoire_1 = TimeSlot.create!(
   town: "Lyon",
   start_at: DateTime.strptime("29/11/2021 08:00", "%d/%m/%Y %H:%M"),
   end_at: DateTime.strptime("29/11/2021 08:45", "%d/%m/%Y %H:%M"),
-  sport_class: fitness_victoire
+  sport_class: musculation_victoire
 )
-creneau_fitness_victoire_1 = TimeSlot.create!(
+creneau_musculation_victoire_1 = TimeSlot.create!(
   name: "Séance de coaching",
   description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
   level: "Tous niveaux",
@@ -541,9 +541,9 @@ creneau_fitness_victoire_1 = TimeSlot.create!(
   town: "Lyon",
   start_at: DateTime.strptime("29/11/2021 13:00", "%d/%m/%Y %H:%M"),
   end_at: DateTime.strptime("29/11/2021 13:45", "%d/%m/%Y %H:%M"),
-  sport_class: fitness_victoire
+  sport_class: musculation_victoire
 )
-creneau_fitness_victoire_1 = TimeSlot.create!(
+creneau_musculation_victoire_1 = TimeSlot.create!(
   name: "Séance de coaching",
   description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
   level: "Tous niveaux",
@@ -555,9 +555,9 @@ creneau_fitness_victoire_1 = TimeSlot.create!(
   town: "Lyon",
   start_at: DateTime.strptime("30/11/2021 13:00", "%d/%m/%Y %H:%M"),
   end_at: DateTime.strptime("30/11/2021 13:45", "%d/%m/%Y %H:%M"),
-  sport_class: fitness_victoire
+  sport_class: musculation_victoire
 )
-creneau_fitness_victoire_1 = TimeSlot.create!(
+creneau_musculation_victoire_1 = TimeSlot.create!(
   name: "Séance de coaching",
   description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
   level: "Tous niveaux",
@@ -569,9 +569,9 @@ creneau_fitness_victoire_1 = TimeSlot.create!(
   town: "Lyon",
   start_at: DateTime.strptime("01/12/2021 13:00", "%d/%m/%Y %H:%M"),
   end_at: DateTime.strptime("01/11/2021 13:45", "%d/%m/%Y %H:%M"),
-  sport_class: fitness_victoire
+  sport_class: musculation_victoire
 )
-creneau_fitness_victoire_1 = TimeSlot.create!(
+creneau_musculation_victoire_1 = TimeSlot.create!(
   name: "Séance de coaching",
   description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
   level: "Tous niveaux",
@@ -583,9 +583,9 @@ creneau_fitness_victoire_1 = TimeSlot.create!(
   town: "Lyon",
   start_at: DateTime.strptime("02/12/2021 13:00", "%d/%m/%Y %H:%M"),
   end_at: DateTime.strptime("02/12/2021 13:45", "%d/%m/%Y %H:%M"),
-  sport_class: fitness_victoire
+  sport_class: musculation_victoire
 )
-creneau_fitness_victoire_1 = TimeSlot.create!(
+creneau_musculation_victoire_1 = TimeSlot.create!(
   name: "Séance de coaching",
   description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
   level: "Tous niveaux",
@@ -597,11 +597,11 @@ creneau_fitness_victoire_1 = TimeSlot.create!(
   town: "Lyon",
   start_at: DateTime.strptime("03/12/2021 13:00", "%d/%m/%Y %H:%M"),
   end_at: DateTime.strptime("03/12/2021 13:45", "%d/%m/%Y %H:%M"),
-  sport_class: fitness_victoire
+  sport_class: musculation_victoire
 )
 
 
-creneau_fitness_victoire_1 = TimeSlot.create!(
+creneau_musculation_victoire_1 = TimeSlot.create!(
   name: "Séance de coaching",
   description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
   level: "Tous niveaux",
@@ -613,10 +613,10 @@ creneau_fitness_victoire_1 = TimeSlot.create!(
   town: "Lyon",
   start_at: DateTime.strptime("03/12/2021 17:00", "%d/%m/%Y %H:%M"),
   end_at: DateTime.strptime("03/12/2021 17:45", "%d/%m/%Y %H:%M"),
-  sport_class: fitness_victoire
+  sport_class: musculation_victoire
 )
 
-creneau_fitness_victoire_1 = TimeSlot.create!(
+creneau_musculation_victoire_1 = TimeSlot.create!(
   name: "Séance de coaching",
   description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
   level: "Tous niveaux",
@@ -628,10 +628,10 @@ creneau_fitness_victoire_1 = TimeSlot.create!(
   town: "Lyon",
   start_at: DateTime.strptime("02/12/2021 17:00", "%d/%m/%Y %H:%M"),
   end_at: DateTime.strptime("02/12/2021 17:45", "%d/%m/%Y %H:%M"),
-  sport_class: fitness_victoire
+  sport_class: musculation_victoire
 )
 
-creneau_fitness_victoire_1 = TimeSlot.create!(
+creneau_musculation_victoire_1 = TimeSlot.create!(
   name: "Séance de coaching",
   description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
   level: "Tous niveaux",
@@ -643,10 +643,10 @@ creneau_fitness_victoire_1 = TimeSlot.create!(
   town: "Lyon",
   start_at: DateTime.strptime("30/11/2021 17:00", "%d/%m/%Y %H:%M"),
   end_at: DateTime.strptime("30/11/2021 17:45", "%d/%m/%Y %H:%M"),
-  sport_class: fitness_victoire
+  sport_class: musculation_victoire
 )
 
-creneau_fitness_victoire_1 = TimeSlot.create!(
+creneau_musculation_victoire_1 = TimeSlot.create!(
   name: "Séance de coaching",
   description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
   level: "Tous niveaux",
@@ -658,13 +658,13 @@ creneau_fitness_victoire_1 = TimeSlot.create!(
   town: "Lyon",
   start_at: DateTime.strptime("29/11/2021 17:00", "%d/%m/%Y %H:%M"),
   end_at: DateTime.strptime("29/11/2021 17:45", "%d/%m/%Y %H:%M"),
-  sport_class: fitness_victoire
+  sport_class: musculation_victoire
 )
 
 # ///////////////////SEMAINE 2//////
 
 
-creneau_fitness_victoire_1 = TimeSlot.create!(
+creneau_musculation_victoire_1 = TimeSlot.create!(
   name: "Séance de coaching",
   description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
   level: "Tous niveaux",
@@ -675,11 +675,11 @@ creneau_fitness_victoire_1 = TimeSlot.create!(
   post_code: "69001",
   town: "Lyon",
   start_at: DateTime.strptime("06/12/2021 08:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("06/12/2021 09:00", "%d/%m/%Y %H:%M"),
-  sport_class: fitness_victoire
+  end_at: DateTime.strptime("06/12/2021 08:45", "%d/%m/%Y %H:%M"),
+  sport_class: musculation_victoire
 )
 
-creneau_fitness_victoire_1 = TimeSlot.create!(
+creneau_musculation_victoire_1 = TimeSlot.create!(
   name: "Séance de coaching",
   description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
   level: "Tous niveaux",
@@ -690,11 +690,11 @@ creneau_fitness_victoire_1 = TimeSlot.create!(
   post_code: "69001",
   town: "Lyon",
   start_at: DateTime.strptime("07/12/2021 08:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("07/12/2021 09:00", "%d/%m/%Y %H:%M"),
-  sport_class: fitness_victoire
+  end_at: DateTime.strptime("07/12/2021 08:45", "%d/%m/%Y %H:%M"),
+  sport_class: musculation_victoire
 )
 
-creneau_fitness_victoire_1 = TimeSlot.create!(
+creneau_musculation_victoire_1 = TimeSlot.create!(
   name: "Séance de coaching",
   description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
   level: "Tous niveaux",
@@ -705,10 +705,10 @@ creneau_fitness_victoire_1 = TimeSlot.create!(
   post_code: "69001",
   town: "Lyon",
   start_at: DateTime.strptime("08/12/2021 08:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("08/12/2021 09:00", "%d/%m/%Y %H:%M"),
-  sport_class: fitness_victoire
+  end_at: DateTime.strptime("08/12/2021 08:45", "%d/%m/%Y %H:%M"),
+  sport_class: musculation_victoire
 )
-creneau_fitness_victoire_1 = TimeSlot.create!(
+creneau_musculation_victoire_1 = TimeSlot.create!(
   name: "Séance de coaching",
   description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
   level: "Tous niveaux",
@@ -719,11 +719,11 @@ creneau_fitness_victoire_1 = TimeSlot.create!(
   post_code: "69001",
   town: "Lyon",
   start_at: DateTime.strptime("09/12/2021 08:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("09/12/2021 09:00", "%d/%m/%Y %H:%M"),
-  sport_class: fitness_victoire
+  end_at: DateTime.strptime("09/12/2021 08:45", "%d/%m/%Y %H:%M"),
+  sport_class: musculation_victoire
 )
 
-creneau_fitness_victoire_1 = TimeSlot.create!(
+creneau_musculation_victoire_1 = TimeSlot.create!(
   name: "Séance de coaching",
   description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
   level: "Tous niveaux",
@@ -734,10 +734,10 @@ creneau_fitness_victoire_1 = TimeSlot.create!(
   post_code: "69001",
   town: "Lyon",
   start_at: DateTime.strptime("10/12/2021 08:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("10/12/2021 09:00", "%d/%m/%Y %H:%M"),
-  sport_class: fitness_victoire
+  end_at: DateTime.strptime("10/12/2021 08:45", "%d/%m/%Y %H:%M"),
+  sport_class: musculation_victoire
 )
-creneau_fitness_victoire_1 = TimeSlot.create!(
+creneau_musculation_victoire_1 = TimeSlot.create!(
   name: "Séance de coaching",
   description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
   level: "Tous niveaux",
@@ -749,9 +749,9 @@ creneau_fitness_victoire_1 = TimeSlot.create!(
   town: "Lyon",
   start_at: DateTime.strptime("10/12/2021 13:00", "%d/%m/%Y %H:%M"),
   end_at: DateTime.strptime("10/12/2021 13:45", "%d/%m/%Y %H:%M"),
-  sport_class: fitness_victoire
+  sport_class: musculation_victoire
 )
-creneau_fitness_victoire_1 = TimeSlot.create!(
+creneau_musculation_victoire_1 = TimeSlot.create!(
   name: "Séance de coaching",
   description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
   level: "Tous niveaux",
@@ -763,9 +763,9 @@ creneau_fitness_victoire_1 = TimeSlot.create!(
   town: "Lyon",
   start_at: DateTime.strptime("09/12/2021 13:00", "%d/%m/%Y %H:%M"),
   end_at: DateTime.strptime("09/12/2021 13:45", "%d/%m/%Y %H:%M"),
-  sport_class: fitness_victoire
+  sport_class: musculation_victoire
 )
-creneau_fitness_victoire_1 = TimeSlot.create!(
+creneau_musculation_victoire_1 = TimeSlot.create!(
   name: "Séance de coaching",
   description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
   level: "Tous niveaux",
@@ -777,9 +777,9 @@ creneau_fitness_victoire_1 = TimeSlot.create!(
   town: "Lyon",
   start_at: DateTime.strptime("08/12/2021 13:00", "%d/%m/%Y %H:%M"),
   end_at: DateTime.strptime("08/11/2021 13:45", "%d/%m/%Y %H:%M"),
-  sport_class: fitness_victoire
+  sport_class: musculation_victoire
 )
-creneau_fitness_victoire_1 = TimeSlot.create!(
+creneau_musculation_victoire_1 = TimeSlot.create!(
   name: "Séance de coaching",
   description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
   level: "Tous niveaux",
@@ -791,9 +791,9 @@ creneau_fitness_victoire_1 = TimeSlot.create!(
   town: "Lyon",
   start_at: DateTime.strptime("07/12/2021 13:00", "%d/%m/%Y %H:%M"),
   end_at: DateTime.strptime("07/12/2021 13:45", "%d/%m/%Y %H:%M"),
-  sport_class: fitness_victoire
+  sport_class: musculation_victoire
 )
-creneau_fitness_victoire_1 = TimeSlot.create!(
+creneau_musculation_victoire_1 = TimeSlot.create!(
   name: "Séance de coaching",
   description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
   level: "Tous niveaux",
@@ -805,11 +805,11 @@ creneau_fitness_victoire_1 = TimeSlot.create!(
   town: "Lyon",
   start_at: DateTime.strptime("06/12/2021 13:00", "%d/%m/%Y %H:%M"),
   end_at: DateTime.strptime("06/12/2021 13:45", "%d/%m/%Y %H:%M"),
-  sport_class: fitness_victoire
+  sport_class: musculation_victoire
 )
 
 
-creneau_fitness_victoire_1 = TimeSlot.create!(
+creneau_musculation_victoire_1 = TimeSlot.create!(
   name: "Séance de coaching",
   description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
   level: "Tous niveaux",
@@ -820,11 +820,11 @@ creneau_fitness_victoire_1 = TimeSlot.create!(
   post_code: "69001",
   town: "Lyon",
   start_at: DateTime.strptime("06/12/2021 17:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("06/12/2021 18:45", "%d/%m/%Y %H:%M"),
-  sport_class: fitness_victoire
+  end_at: DateTime.strptime("06/12/2021 17:45", "%d/%m/%Y %H:%M"),
+  sport_class: musculation_victoire
 )
 
-creneau_fitness_victoire_1 = TimeSlot.create!(
+creneau_musculation_victoire_1 = TimeSlot.create!(
   name: "Séance de coaching",
   description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
   level: "Tous niveaux",
@@ -835,11 +835,11 @@ creneau_fitness_victoire_1 = TimeSlot.create!(
   post_code: "69001",
   town: "Lyon",
   start_at: DateTime.strptime("07/12/2021 17:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("07/12/2021 18:45", "%d/%m/%Y %H:%M"),
-  sport_class: fitness_victoire
+  end_at: DateTime.strptime("07/12/2021 17:45", "%d/%m/%Y %H:%M"),
+  sport_class: musculation_victoire
 )
 
-creneau_fitness_victoire_1 = TimeSlot.create!(
+creneau_musculation_victoire_1 = TimeSlot.create!(
   name: "Séance de coaching",
   description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
   level: "Tous niveaux",
@@ -850,11 +850,11 @@ creneau_fitness_victoire_1 = TimeSlot.create!(
   post_code: "69001",
   town: "Lyon",
   start_at: DateTime.strptime("09/12/2021 17:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("09/12/2021 18:45", "%d/%m/%Y %H:%M"),
-  sport_class: fitness_victoire
+  end_at: DateTime.strptime("09/12/2021 17:45", "%d/%m/%Y %H:%M"),
+  sport_class: musculation_victoire
 )
 
-creneau_fitness_victoire_1 = TimeSlot.create!(
+creneau_musculation_victoire_1 = TimeSlot.create!(
   name: "Séance de coaching",
   description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
   level: "Tous niveaux",
@@ -865,8 +865,8 @@ creneau_fitness_victoire_1 = TimeSlot.create!(
   post_code: "69001",
   town: "Lyon",
   start_at: DateTime.strptime("10/12/2021 17:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("10/12/2021 18:45", "%d/%m/%Y %H:%M"),
-  sport_class: fitness_victoire
+  end_at: DateTime.strptime("10/12/2021 17:45", "%d/%m/%Y %H:%M"),
+  sport_class: musculation_victoire
 )
 
 
