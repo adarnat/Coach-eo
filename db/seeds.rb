@@ -198,11 +198,11 @@ crossfit_john = SportClass.create!(
 fitness_victoire = SportClass.create!(
   category: "Fitness",
   name: "Gym suédoise",
-  description: "Venez bouger sur de la bonne musique",
+  description: "Abdos, épaules, bras, dos, cuisses, mollets… Les différents exercices proposés dans les cours de gym suédoise font travailler l'ensemble du corps grâce à des mouvements simples, mais toujours très toniques.",
   level: "Intermédiaire",
-  group_size: 1,
-  price: 50,
-  duration: 120,
+  group_size: 10,
+  price: 20,
+  duration: 60,
   address1: "20 rue des Capucins",
   address2: "",
   post_code: "69001",
@@ -215,27 +215,72 @@ pilates_victoire = SportClass.create!(
   name: "Pilates sur reformer",
   description: "Initiation au pilates",
   level: "Débutant",
+  group_size: 2,
+  price: 35,
+  duration: 60,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  coach: victoire_coach
+)
+
+fitness_victoire = SportClass.create!(
+  category: "Fitness",
+  name: "Steps",
+  description: "Venez bouger au rythme de la musique. Renforcement du bas du corps et travail du cardio. Prévoir serviette et eau.",
+  level: "Tous niveaux",
   group_size: 10,
   price: 20,
   duration: 60,
-  address1: "15 rue de la Charité",
+  address1: "20 rue des Capucins",
   address2: "",
-  post_code: "69002",
+  post_code: "69001",
+  town: "Lyon",
+  coach: victoire_coach
+)
+
+fitness_victoire = SportClass.create!(
+  category: "Fitness",
+  name: "Séance de coaching",
+  description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
+  level: "Tous niveaux",
+  group_size: 1,
+  price: 60,
+  duration: 60,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
   town: "Lyon",
   coach: victoire_coach
 )
 
 yoga_victoire = SportClass.create!(
   category: "Yoga",
-  name: "Yoga classique",
-  description: "Venez vous détendre",
+  name: "Hatha Yoga",
+  description: "C’est un yoga doux dont chaque posture doit normalement être adaptée au niveau de chacun. Il n’existe ainsi aucune contre-indication particulière. Le hatha yoga peut se pratiquer à tout âge. Il est même conseillé aux personnes qui n’aiment pas le sport puisqu’il est davantage une méthode de relaxation et de bien-être.",
   level: "Tous niveaux",
-  group_size: 5,
-  price: 30,
+  group_size: 10,
+  price: 20,
   duration: 60,
-  address1: "8 Boulevard des Brotteaux",
+  address1: "20 rue des Capucins",
   address2: "",
-  post_code: "69006",
+  post_code: "69001",
+  town: "Lyon",
+  coach: victoire_coach
+)
+
+yoga_victoire = SportClass.create!(
+  category: "Yoga",
+  name: "Yoga découverte",
+  description: "Le yoga permet d'acquérir et de développer la souplesse musculaire des membres inférieurs et supérieurs.",
+  level: "Débutant",
+  group_size: 15,
+  price: 15,
+  duration: 60,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
   town: "Lyon",
   coach: victoire_coach
 )
@@ -412,167 +457,752 @@ creneau_crossfit_john_2 = TimeSlot.create!(
 # =========================
 
 creneau_fitness_victoire_1 = TimeSlot.create!(
-  name: "Cours individuel de Fitness",
-  description: "Cours individuel personnalisé",
-  level: "Intermédiaire",
+  name: "Séance de coaching",
+  description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
+  level: "Tous niveaux",
   group_size: 1,
   price: 60,
   address1: "20 rue des Capucins",
   address2: "",
   post_code: "69001",
   town: "Lyon",
+  start_at: DateTime.strptime("03/12/2021 08:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("03/12/2021 09:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+creneau_fitness_victoire_1 = TimeSlot.create!(
+  name: "Séance de coaching",
+  description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
+  level: "Tous niveaux",
+  group_size: 1,
+  price: 60,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("02/12/2021 08:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("02/12/2021 09:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+creneau_fitness_victoire_1 = TimeSlot.create!(
+  name: "Séance de coaching",
+  description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
+  level: "Tous niveaux",
+  group_size: 1,
+  price: 60,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("01/12/2021 08:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("01/12/2021 09:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+creneau_fitness_victoire_1 = TimeSlot.create!(
+  name: "Séance de coaching",
+  description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
+  level: "Tous niveaux",
+  group_size: 1,
+  price: 60,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("30/11/2021 08:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("30/11/2021 09:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+creneau_fitness_victoire_1 = TimeSlot.create!(
+  name: "Séance de coaching",
+  description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
+  level: "Tous niveaux",
+  group_size: 1,
+  price: 60,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("29/11/2021 08:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("29/11/2021 09:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+creneau_fitness_victoire_1 = TimeSlot.create!(
+  name: "Séance de coaching",
+  description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
+  level: "Tous niveaux",
+  group_size: 1,
+  price: 60,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("29/11/2021 13:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("29/11/2021 14:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+creneau_fitness_victoire_1 = TimeSlot.create!(
+  name: "Séance de coaching",
+  description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
+  level: "Tous niveaux",
+  group_size: 1,
+  price: 60,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("30/11/2021 13:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("30/11/2021 14:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+creneau_fitness_victoire_1 = TimeSlot.create!(
+  name: "Séance de coaching",
+  description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
+  level: "Tous niveaux",
+  group_size: 1,
+  price: 60,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("01/12/2021 13:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("01/11/2021 14:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+creneau_fitness_victoire_1 = TimeSlot.create!(
+  name: "Séance de coaching",
+  description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
+  level: "Tous niveaux",
+  group_size: 1,
+  price: 60,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("02/12/2021 13:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("02/12/2021 14:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+creneau_fitness_victoire_1 = TimeSlot.create!(
+  name: "Séance de coaching",
+  description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
+  level: "Tous niveaux",
+  group_size: 1,
+  price: 60,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("03/12/2021 13:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("03/12/2021 14:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+
+creneau_fitness_victoire_1 = TimeSlot.create!(
+  name: "Séance de coaching",
+  description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
+  level: "Tous niveaux",
+  group_size: 1,
+  price: 60,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("03/12/2021 17:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("03/12/2021 18:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+creneau_fitness_victoire_1 = TimeSlot.create!(
+  name: "Séance de coaching",
+  description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
+  level: "Tous niveaux",
+  group_size: 1,
+  price: 60,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("02/12/2021 17:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("02/12/2021 18:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+creneau_fitness_victoire_1 = TimeSlot.create!(
+  name: "Séance de coaching",
+  description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
+  level: "Tous niveaux",
+  group_size: 1,
+  price: 60,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("30/11/2021 17:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("30/11/2021 18:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+creneau_fitness_victoire_1 = TimeSlot.create!(
+  name: "Séance de coaching",
+  description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
+  level: "Tous niveaux",
+  group_size: 1,
+  price: 60,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("29/11/2021 17:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("29/11/2021 18:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+# ///////////////////SEMAINE 2//////
+
+
+creneau_fitness_victoire_1 = TimeSlot.create!(
+  name: "Séance de coaching",
+  description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
+  level: "Tous niveaux",
+  group_size: 1,
+  price: 60,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("06/12/2021 08:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("06/12/2021 09:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+creneau_fitness_victoire_1 = TimeSlot.create!(
+  name: "Séance de coaching",
+  description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
+  level: "Tous niveaux",
+  group_size: 1,
+  price: 60,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("07/12/2021 08:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("07/12/2021 09:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+creneau_fitness_victoire_1 = TimeSlot.create!(
+  name: "Séance de coaching",
+  description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
+  level: "Tous niveaux",
+  group_size: 1,
+  price: 60,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("08/12/2021 08:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("08/12/2021 09:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+creneau_fitness_victoire_1 = TimeSlot.create!(
+  name: "Séance de coaching",
+  description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
+  level: "Tous niveaux",
+  group_size: 1,
+  price: 60,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("09/12/2021 08:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("09/12/2021 09:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+creneau_fitness_victoire_1 = TimeSlot.create!(
+  name: "Séance de coaching",
+  description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
+  level: "Tous niveaux",
+  group_size: 1,
+  price: 60,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("10/12/2021 08:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("10/12/2021 09:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+creneau_fitness_victoire_1 = TimeSlot.create!(
+  name: "Séance de coaching",
+  description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
+  level: "Tous niveaux",
+  group_size: 1,
+  price: 60,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("10/12/2021 13:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("10/12/2021 14:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+creneau_fitness_victoire_1 = TimeSlot.create!(
+  name: "Séance de coaching",
+  description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
+  level: "Tous niveaux",
+  group_size: 1,
+  price: 60,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("09/12/2021 13:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("09/12/2021 14:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+creneau_fitness_victoire_1 = TimeSlot.create!(
+  name: "Séance de coaching",
+  description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
+  level: "Tous niveaux",
+  group_size: 1,
+  price: 60,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("08/12/2021 13:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("08/11/2021 14:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+creneau_fitness_victoire_1 = TimeSlot.create!(
+  name: "Séance de coaching",
+  description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
+  level: "Tous niveaux",
+  group_size: 1,
+  price: 60,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("07/12/2021 13:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("07/12/2021 14:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+creneau_fitness_victoire_1 = TimeSlot.create!(
+  name: "Séance de coaching",
+  description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
+  level: "Tous niveaux",
+  group_size: 1,
+  price: 60,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("06/12/2021 13:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("06/12/2021 14:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+
+creneau_fitness_victoire_1 = TimeSlot.create!(
+  name: "Séance de coaching",
+  description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
+  level: "Tous niveaux",
+  group_size: 1,
+  price: 60,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("06/12/2021 17:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("06/12/2021 18:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+creneau_fitness_victoire_1 = TimeSlot.create!(
+  name: "Séance de coaching",
+  description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
+  level: "Tous niveaux",
+  group_size: 1,
+  price: 60,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("07/12/2021 17:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("07/12/2021 18:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+creneau_fitness_victoire_1 = TimeSlot.create!(
+  name: "Séance de coaching",
+  description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
+  level: "Tous niveaux",
+  group_size: 1,
+  price: 60,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("09/12/2021 17:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("09/12/2021 18:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+creneau_fitness_victoire_1 = TimeSlot.create!(
+  name: "Séance de coaching",
+  description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
+  level: "Tous niveaux",
+  group_size: 1,
+  price: 60,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("10/12/2021 17:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("10/12/2021 18:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+
+creneau_fitness_victoire_2 = TimeSlot.create!(
+  name: "Steps",
+  description: "Venez bouger au rythme de la musique. Renforcement du bas du corps et travail du cardio. Prévoir serviette et eau.",
+  level: "Intermédiaire",
+  group_size: 10,
+  price: 20,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("29/11/2021 09:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("29/11/2021 10:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+creneau_fitness_victoire_2 = TimeSlot.create!(
+  name: "Gym suédoise",
+  description: "Abdos, épaules, bras, dos, cuisses, mollets… Les différents exercices proposés dans les cours de gym suédoise font travailler l'ensemble du corps grâce à des mouvements simples, mais toujours très toniques.",
+  level: "Débutant",
+  group_size: 10,
+  price: 20,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("29/11/2021 10:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("29/11/2021 11:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+creneau_fitness_victoire_2 = TimeSlot.create!(
+  name: "Steps",
+  description: "Venez bouger au rythme de la musique. Renforcement du bas du corps et travail du cardio. Prévoir serviette et eau.",
+  level: "Expert",
+  group_size: 10,
+  price: 20,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("29/11/2021 16:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("29/11/2021 17:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+
+creneau_fitness_victoire_2 = TimeSlot.create!(
+  name: "Steps",
+  description: "Venez bouger au rythme de la musique. Renforcement du bas du corps et travail du cardio. Prévoir serviette et eau.",
+  level: "Intermédiaire",
+  group_size: 10,
+  price: 20,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
   start_at: DateTime.strptime("02/12/2021 09:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("02/12/2021 10:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+creneau_fitness_victoire_2 = TimeSlot.create!(
+  name: "Gym suédoise",
+  description: "Abdos, épaules, bras, dos, cuisses, mollets… Les différents exercices proposés dans les cours de gym suédoise font travailler l'ensemble du corps grâce à des mouvements simples, mais toujours très toniques.",
+  level: "Débutant",
+  group_size: 10,
+  price: 20,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("02/12/2021 10:00", "%d/%m/%Y %H:%M"),
   end_at: DateTime.strptime("02/12/2021 11:00", "%d/%m/%Y %H:%M"),
   sport_class: fitness_victoire
 )
 
 creneau_fitness_victoire_2 = TimeSlot.create!(
-  name: "Fitness en groupe",
-  description: "Fitness pour niveau intermédiaire",
-  level: "Intermédiaire",
-  group_size: 10,
-  price: 40,
-  address1: "20 rue des Capucins",
-  address2: "",
-  post_code: "69001",
-  town: "Lyon",
-  start_at: DateTime.strptime("30/11/2021 13:30", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("30/11/2021 15:00", "%d/%m/%Y %H:%M"),
-  sport_class: fitness_victoire
-)
-
-creneau_fitness_victoire_3 = TimeSlot.create!(
-  name: "Fitness en groupe",
-  description: "Fitness pour niveau intermédiaire",
-  level: "Intermédiaire",
-  group_size: 10,
-  price: 40,
-  address1: "20 rue des Capucins",
-  address2: "",
-  post_code: "69001",
-  town: "Lyon",
-  start_at: DateTime.strptime("03/12/2021 16:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("03/12/2021 17:30", "%d/%m/%Y %H:%M"),
-  sport_class: fitness_victoire
-)
-
-creneau_fitness_victoire_4 = TimeSlot.create!(
-  name: "Fitness",
-  description: "Fitness intensif",
-  level: "Intermédiaire",
-  group_size: 10,
-  price: 50,
-  address1: "20 rue des Capucins",
-  address2: "",
-  post_code: "69001",
-  town: "Lyon",
-  start_at: DateTime.strptime("01/12/2021 16:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("01/12/2021 17:00", "%d/%m/%Y %H:%M"),
-  sport_class: fitness_victoire
-)
-
-creneau_pilates_victoire_1 = TimeSlot.create!(
-  name: "Pilates",
-  description: "Initiation au pilates",
-  level: "Débutant",
-  group_size: 8,
-  price: 35,
-  address1: "20 rue des Capucins",
-  address2: "",
-  post_code: "69001",
-  town: "Lyon",
-  start_at: DateTime.strptime("02/12/2021 13:30", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("02/12/2021 14:30", "%d/%m/%Y %H:%M"),
-  sport_class: pilates_victoire
-)
-
-creneau_pilates_victoire_2 = TimeSlot.create!(
-  name: "Pilates",
-  description: "Initiation au pilates",
-  level: "Débutant",
-  group_size: 8,
-  price: 35,
-  address1: "20 rue des Capucins",
-  address2: "",
-  post_code: "69001",
-  town: "Lyon",
-  start_at: DateTime.strptime("30/11/2021 9:30", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("30/11/2021 11:30", "%d/%m/%Y %H:%M"),
-  sport_class: pilates_victoire
-)
-
-creneau_pilates_victoire_3 = TimeSlot.create!(
-  name: "Pilates intensif",
-  description: "Pilates intensif en petit groupe",
-  level: "Tous niveaux",
-  group_size: 4,
-  price: 40,
-  address1: "20 rue des Capucins",
-  address2: "",
-  post_code: "69001",
-  town: "Lyon",
-  start_at: DateTime.strptime("03/12/2021 9:30", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("03/12/2021 11:30", "%d/%m/%Y %H:%M"),
-  sport_class: pilates_victoire
-)
-
-creneau_pilates_victoire_4 = TimeSlot.create!(
-  name: "Pilates intensif",
-  description: "Pilates intensif en petit groupe",
-  level: "Tous niveaux",
-  group_size: 4,
-  price: 40,
-  address1: "20 rue des Capucins",
-  address2: "",
-  post_code: "69001",
-  town: "Lyon",
-  start_at: DateTime.strptime("06/12/2021 9:30", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("06/12/2021 11:30", "%d/%m/%Y %H:%M"),
-  sport_class: pilates_victoire
-)
-
-creneau_yoga_victoire_1 = TimeSlot.create!(
-  name: "Yoga",
-  description: "Yoga intensif en petit groupe",
+  name: "Steps",
+  description: "Venez bouger au rythme de la musique. Renforcement du bas du corps et travail du cardio. Prévoir serviette et eau.",
   level: "Expert",
-  group_size: 3,
-  price: 50,
-  address1: "20 rue des Capucins",
-  address2: "",
-  post_code: "69001",
-  town: "Lyon",
-  start_at: DateTime.strptime("01/12/2021 9:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("01/12/2021 10:00", "%d/%m/%Y %H:%M"),
-  sport_class: yoga_victoire
-)
-
-creneau_yoga_victoire_2 = TimeSlot.create!(
-  name: "Yoga",
-  description: "Yoga intensif en petit groupe",
-  level: "Expert",
-  group_size: 3,
-  price: 50,
+  group_size: 10,
+  price: 20,
   address1: "20 rue des Capucins",
   address2: "",
   post_code: "69001",
   town: "Lyon",
   start_at: DateTime.strptime("02/12/2021 16:00", "%d/%m/%Y %H:%M"),
   end_at: DateTime.strptime("02/12/2021 17:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+
+creneau_fitness_victoire_2 = TimeSlot.create!(
+  name: "Steps",
+  description: "Venez bouger au rythme de la musique. Renforcement du bas du corps et travail du cardio. Prévoir serviette et eau.",
+  level: "Intermédiaire",
+  group_size: 10,
+  price: 20,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("30/11/2021 09:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("30/11/2021 10:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+creneau_fitness_victoire_2 = TimeSlot.create!(
+  name: "Gym suédoise",
+  description: "Abdos, épaules, bras, dos, cuisses, mollets… Les différents exercices proposés dans les cours de gym suédoise font travailler l'ensemble du corps grâce à des mouvements simples, mais toujours très toniques.",
+  level: "Débutant",
+  group_size: 10,
+  price: 20,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("30/11/2021 10:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("30/11/2021 11:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+creneau_fitness_victoire_2 = TimeSlot.create!(
+  name: "Steps",
+  description: "Venez bouger au rythme de la musique. Renforcement du bas du corps et travail du cardio. Prévoir serviette et eau.",
+  level: "Expert",
+  group_size: 10,
+  price: 20,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("03/12/2021 16:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("03/12/2021 17:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+
+creneau_fitness_victoire_2 = TimeSlot.create!(
+  name: "Steps",
+  description: "Venez bouger au rythme de la musique. Renforcement du bas du corps et travail du cardio. Prévoir serviette et eau.",
+  level: "Intermédiaire",
+  group_size: 10,
+  price: 20,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("06/12/2021 09:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("06/12/2021 10:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+creneau_fitness_victoire_2 = TimeSlot.create!(
+  name: "Gym suédoise",
+  description: "Abdos, épaules, bras, dos, cuisses, mollets… Les différents exercices proposés dans les cours de gym suédoise font travailler l'ensemble du corps grâce à des mouvements simples, mais toujours très toniques.",
+  level: "Débutant",
+  group_size: 10,
+  price: 20,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("06/12/2021 10:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("06/12/2021 11:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+
+creneau_fitness_victoire_2 = TimeSlot.create!(
+  name: "Steps",
+  description: "Venez bouger au rythme de la musique. Renforcement du bas du corps et travail du cardio. Prévoir serviette et eau.",
+  level: "Intermédiaire",
+  group_size: 10,
+  price: 20,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("07/12/2021 09:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("07/12/2021 10:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+creneau_fitness_victoire_2 = TimeSlot.create!(
+  name: "Gym suédoise",
+  description: "Abdos, épaules, bras, dos, cuisses, mollets… Les différents exercices proposés dans les cours de gym suédoise font travailler l'ensemble du corps grâce à des mouvements simples, mais toujours très toniques.",
+  level: "Débutant",
+  group_size: 10,
+  price: 20,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("07/12/2021 10:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("07/12/2021 11:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+creneau_fitness_victoire_2 = TimeSlot.create!(
+  name: "Steps",
+  description: "Venez bouger au rythme de la musique. Renforcement du bas du corps et travail du cardio. Prévoir serviette et eau.",
+  level: "Expert",
+  group_size: 10,
+  price: 20,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("07/12/2021 16:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("07/12/2021 17:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+
+creneau_fitness_victoire_2 = TimeSlot.create!(
+  name: "Steps",
+  description: "Venez bouger au rythme de la musique. Renforcement du bas du corps et travail du cardio. Prévoir serviette et eau.",
+  level: "Intermédiaire",
+  group_size: 10,
+  price: 20,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("09/12/2021 09:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("09/11/2021 10:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+creneau_fitness_victoire_2 = TimeSlot.create!(
+  name: "Steps",
+  description: "Venez bouger au rythme de la musique. Renforcement du bas du corps et travail du cardio. Prévoir serviette et eau.",
+  level: "Débutant",
+  group_size: 10,
+  price: 20,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("09/12/2021 10:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("09/12/2021 11:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+creneau_fitness_victoire_2 = TimeSlot.create!(
+  name: "Steps",
+  description: "Venez bouger au rythme de la musique. Renforcement du bas du corps et travail du cardio. Prévoir serviette et eau.",
+  level: "Expert",
+  group_size: 10,
+  price: 20,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("10/12/2021 16:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("10/12/2021 17:00", "%d/%m/%Y %H:%M"),
+  sport_class: fitness_victoire
+)
+
+
+
+
+
+creneau_yoga_victoire_1 = TimeSlot.create!(
+  name: "Hatha yoga",
+  description: "C’est un yoga doux dont chaque posture doit normalement être adaptée au niveau de chacun. Il n’existe ainsi aucune contre-indication particulière. Le hatha yoga peut se pratiquer à tout âge. Il est même conseillé aux personnes qui n’aiment pas le sport puisqu’il est davantage une méthode de relaxation et de bien-être. ",
+  level: "Tous niveaux",
+  group_size: 10,
+  price: 20,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("01/12/2021 14:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("01/12/2021 15:30", "%d/%m/%Y %H:%M"),
+  sport_class: yoga_victoire
+)
+creneau_yoga_victoire_1 = TimeSlot.create!(
+  name: "Hatha yoga",
+  description: "C’est un yoga doux dont chaque posture doit normalement être adaptée au niveau de chacun. Il n’existe ainsi aucune contre-indication particulière. Le hatha yoga peut se pratiquer à tout âge. Il est même conseillé aux personnes qui n’aiment pas le sport puisqu’il est davantage une méthode de relaxation et de bien-être. ",
+  level: "Tous niveaux",
+  group_size: 10,
+  price: 20,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("02/12/2021 14:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("02/12/2021 15:30", "%d/%m/%Y %H:%M"),
+  sport_class: yoga_victoire
+)
+creneau_yoga_victoire_1 = TimeSlot.create!(
+  name: "Hatha yoga",
+  description: "C’est un yoga doux dont chaque posture doit normalement être adaptée au niveau de chacun. Il n’existe ainsi aucune contre-indication particulière. Le hatha yoga peut se pratiquer à tout âge. Il est même conseillé aux personnes qui n’aiment pas le sport puisqu’il est davantage une méthode de relaxation et de bien-être. ",
+  level: "Tous niveaux",
+  group_size: 10,
+  price: 20,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("06/12/2021 14:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("06/12/2021 15:30", "%d/%m/%Y %H:%M"),
+  sport_class: yoga_victoire
+)
+creneau_yoga_victoire_1 = TimeSlot.create!(
+  name: "Hatha yoga",
+  description: "C’est un yoga doux dont chaque posture doit normalement être adaptée au niveau de chacun. Il n’existe ainsi aucune contre-indication particulière. Le hatha yoga peut se pratiquer à tout âge. Il est même conseillé aux personnes qui n’aiment pas le sport puisqu’il est davantage une méthode de relaxation et de bien-être. ",
+  level: "Tous niveaux",
+  group_size: 10,
+  price: 20,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("09/12/2021 14:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("09/12/2021 15:30", "%d/%m/%Y %H:%M"),
   sport_class: yoga_victoire
 )
 
-creneau_yoga_victoire_3 = TimeSlot.create!(
+creneau_yoga_victoire_4 = TimeSlot.create!(
   name: "Découverte Yoga",
   description: "N'hésite pas à inviter tes amis. Petit prix pour session d'initiation",
   level: "Débutant",
-  group_size: 30,
+  group_size: 15,
   price: 15,
   address1: "20 rue des Capucins",
   address2: "",
   post_code: "69001",
   town: "Lyon",
-  start_at: DateTime.strptime("03/12/2021 14:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("03/12/2021 15:00", "%d/%m/%Y %H:%M"),
+  start_at: DateTime.strptime("30/11/2021 11:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("30/11/2021 12:00", "%d/%m/%Y %H:%M"),
   sport_class: yoga_victoire
 )
 
@@ -586,10 +1216,65 @@ creneau_yoga_victoire_4 = TimeSlot.create!(
   address2: "",
   post_code: "69001",
   town: "Lyon",
-  start_at: DateTime.strptime("10/12/2021 14:00", "%d/%m/%Y %H:%M"),
-  end_at: DateTime.strptime("10/12/2021 15:00", "%d/%m/%Y %H:%M"),
+  start_at: DateTime.strptime("03/12/2021 11:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("03/12/2021 12:00", "%d/%m/%Y %H:%M"),
   sport_class: yoga_victoire
 )
+
+
+
+creneau_yoga_victoire_4 = TimeSlot.create!(
+  name: "Découverte Yoga",
+  description: "N'hésite pas à inviter tes amis. Petit prix pour session d'initiation",
+  level: "Débutant",
+  group_size: 30,
+  price: 15,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("10/12/2021 11:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("10/12/2021 12:00", "%d/%m/%Y %H:%M"),
+  sport_class: yoga_victoire
+)
+
+creneau_pilates_victoire_1 = TimeSlot.create!(
+  name: "Pilates sur reformer",
+  description: "Le pilates a pour but de faire travailler la posture, les muscles et la mobilité en douceur.",
+  level: "Débutant",
+  group_size: 2,
+  price: 35,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("03/12/2021 9:00", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("07/12/2021 10:00", "%d/%m/%Y %H:%M"),
+  sport_class: pilates_victoire
+)
+
+creneau_pilates_victoire_1 = TimeSlot.create!(
+  name: "Pilates sur reformer",
+  description: "Le pilates a pour but de faire travailler la posture, les muscles et la mobilité en douceur.",
+  level: "Débutant",
+  group_size: 2,
+  price: 35,
+  address1: "20 rue des Capucins",
+  address2: "",
+  post_code: "69001",
+  town: "Lyon",
+  start_at: DateTime.strptime("03/12/2021 19:30", "%d/%m/%Y %H:%M"),
+  end_at: DateTime.strptime("03/12/2021 20:30", "%d/%m/%Y %H:%M"),
+  sport_class: pilates_victoire
+)
+
+# //////////////////////////////
+# /////////////
+
+
+
+
+
 
 puts "#{TimeSlot.count} slots were created"
 
