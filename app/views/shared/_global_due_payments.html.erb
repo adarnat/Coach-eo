@@ -10,7 +10,7 @@
           <%= "#{c.first_name} #{c.last_name}"%>
         </span>
         <span>
-          <%= c.client_bookings.select {|b| b.time_slot.sport_class.coach_id = current_user.id && !b.payment_received}.map {|b| b.time_slot.price}.sum.round(0) %>€
+          <%= c.client_bookings.where(payment_received: false).select {|b| b.time_slot.sport_class.coach_id == current_user.id}.map(&:time_slot).sum(&:price).round(0) %>€
         </span>
       <% end %>
     <% end %>

@@ -1,4 +1,4 @@
 <div class="paiement-card-impayes-show">
   <h6>Montant restant à payer par ce client </h6>
-  <h4> <%=@bookings.filter{ |b| b.payment_received == false}.map {|b| b.time_slot_price }.sum.round(0) %>€</h4>
+  <h4> <%= @bookings.where(payment_received: false).select {|b| b.time_slot.sport_class.coach_id == current_user.id}.map(&:time_slot).sum(&:price).round(0) %>€</h4>
 </div>

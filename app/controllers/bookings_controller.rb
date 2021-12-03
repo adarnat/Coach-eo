@@ -4,10 +4,11 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.update(payment_received: params[:choice])
 
-    @unpaid_ca = current_user.time_slots.map{|t| t.bookings.filter{|b| !b.payment_received }.map{ |b| b.time_slot_price}.sum }.sum
+    @unpaid_ca = Booking.where(payment_received: false).select {|b| b.time_slot.sport_class.coach_id == current_user.id}.map(&:time_slot).sum(&:price)
+
     @unpaid_client = current_user.time_slots.map{|t| t.bookings.filter{|b| !b.payment_received }.map{ |b| b.client}}.flatten
 
     @client = @booking.client
-    @bookings = @client.client_bookings.select { |b| b.time_slot.sport_class.coach == current_user }.sort_by { |booking| booking.time_slot.start_at }
+    @bookings = @client.client_bookings.joins(time_slot: :sport_class).where(sport_classes: {coach_id: current_user.id}).order(start_at: :desc)
   end
 end

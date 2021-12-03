@@ -47,7 +47,7 @@
       <div class="name-sport">
         <h5><%= booking.time_slot.sport_class.name %></h5>
       </div>
-      <h5><%= booking.time_slot.sport_class.price.round(0) %> €</h5>
+      <h5><%= booking.time_slot.price.round(0) %> €</h5>
       <%= render 'shared/badge_booking_payment', booking: booking %>
     </div>
   <% end %>

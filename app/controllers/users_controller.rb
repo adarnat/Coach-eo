@@ -13,6 +13,6 @@ class UsersController < ApplicationController
 
   def client_profile
     @client = User.find(params[:id])
-    @bookings = @client.client_bookings.select { |b| b.time_slot.sport_class.coach == current_user }.sort_by { |booking| booking.time_slot.start_at }
+    @bookings = @client.client_bookings.joins(time_slot: :sport_class).where(sport_classes: {coach_id: current_user.id}).order(start_at: :desc)
   end
 end
