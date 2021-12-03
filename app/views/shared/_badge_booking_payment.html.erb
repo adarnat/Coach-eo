@@ -1,0 +1,11 @@
+<div class="badge-booking-payment" data-booking-id="<%= booking.id %>">
+  <% if booking.payment_received? %>
+    <div class="item-timeslot-details">
+      <%= link_to "Payé",booking_path(booking, choice: false), remote: true, method: :put, data: { confirm: "Êtes vous sûr(e) de passer le statut du paiement en impayé?"}, class:"payé" %>
+    </div>
+  <% else %>
+    <div class="item-timeslot-details">
+      <%= link_to "Impayé",booking_path(booking, choice: true), remote: true, method: :put, data: { confirm: "Êtes vous sûr(e) de passer le statut du paiement en payé?"}, class:"impayé" %>
+    </div>
+  <% end %>
+</div>

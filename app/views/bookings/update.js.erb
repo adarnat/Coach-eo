@@ -1,0 +1,5 @@
+
+badge = document.querySelector('.badge-booking-payment[data-booking-id="<%= @booking.id %>"]')
+console.log(badge)
+
+badge.outerHTML = "<%= j render 'shared/badge_booking_payment', booking: @booking %>"

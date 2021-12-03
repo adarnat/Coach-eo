@@ -50,17 +50,9 @@
       <div class="name-sport">
         <h5><%= booking.time_slot.sport_class.name %></h5>
       </div>
-      <% if booking.payment_received? %>
-          <h5><%= booking.time_slot.sport_class.price.round(0) %> €</h5>
+      <h5><%= booking.time_slot.sport_class.price.round(0) %> €</h5>
+      <%= render 'shared/badge_booking_payment', booking: booking %>
 
-          <%= link_to "Payé", booking_path(booking, choice: false, redirect: "client"), method: :put, data: { confirm: "Êtes vous sûr(e) de passer le statut du paiement en impayé?"}, class:"payé" %>
-
-      <% else %>
-
-          <h5><%= booking.time_slot.sport_class.price.round(0) %> €</h5>
-          <%= link_to "Impayé", booking_path(booking, choice: true, redirect: "client"), method: :put, data: { confirm: "Êtes vous sûr(e) de passer le statut du paiement en payé?"}, class:"impayé" %>
-
-      <% end %>
     </div>
   <% end %>
 </div>
