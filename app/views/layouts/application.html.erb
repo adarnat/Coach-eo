@@ -13,7 +13,13 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-  <body>
+  <%
+
+    url = "https://images.unsplash.com/photo-1518459031867-a89b944bffe4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2341&q=80"
+    body_style = !devise_controller? ? '' : "background-blend-mode:luminosity;background-size: cover;background-position: center;background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(#{url});"
+  %>
+
+  <body style="<%= body_style %>">
 
 <%#
     <div id="sidebar">
@@ -39,26 +45,20 @@
     <%# </div> %>
 
 
-
-    <div id="sidebar">
-    <div>
-      <%= link_to root_path do %>
-        <%# <h1>Coach'eo</h1> %>
-      <% end %>
-    </div>
-    <div class="icone">
-      <% if current_user.present? %>
-
-        <%= link_to root_path do %> <i class="fas fa-home"></i> <%end%>
-        <%= link_to calendar_path do %> <i class="fas fa-calendar-week"></i> <%end%>
-        <%= link_to user_clients_path do %> <i class="fas fa-users"></i> <%end%>
-        <%= link_to sport_classes_path do%> <i class="fas fa-dumbbell"></i> <%end%>
+    <% if current_user %>
+      <div id="sidebar">
+        <div class="icone">
+          <%= link_to root_path do %> <i class="fas fa-home"></i> <%end%>
+          <%= link_to calendar_path do %> <i class="fas fa-calendar-week"></i> <%end%>
+          <%= link_to user_clients_path do %> <i class="fas fa-users"></i> <%end%>
+          <%= link_to sport_classes_path do%> <i class="fas fa-dumbbell"></i> <%end%>
+        </div>
+      </div>
+    <% end %>
 
 
 
-      <% end %>
-    </div>
-    </div>
+
     <div class="main-container">
       <%= render 'shared/navbar' %>
       <div class="container">
