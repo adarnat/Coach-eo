@@ -247,7 +247,7 @@ fitness_victoire = SportClass.create!(
   level: "Tous niveaux",
   group_size: 1,
   price: 60,
-  duration: 60,
+  duration: 45,
   address1: "20 rue des Capucins",
   address2: "",
   post_code: "69001",
