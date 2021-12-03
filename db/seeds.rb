@@ -240,8 +240,8 @@ fitness_victoire = SportClass.create!(
   coach: victoire_coach
 )
 
-fitness_victoire = SportClass.create!(
-  category: "Fitness",
+musculation_victoire = SportClass.create!(
+  category: "Musculation",
   name: "Séance de coaching",
   description: "Coaching personnalisé: Renforcement musculaire, perte de poids, cardio, remise en forme, réeducation etc.",
   level: "Tous niveaux",
