@@ -1,5 +1,8 @@
 
 export const initToggle = () => {
+  if (!document.querySelector('.tag-item'))
+    return
+
   const btnCollectif = document.getElementById("sport_class_group_size_collectif");
   const btnIndividuel = document.getElementById("sport_class_group_size_individuel");
   const nbParticipantsInput = document.getElementById("sport_class_group_size");
